@@ -2,71 +2,525 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: "K2D", serif !important;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+code {
+  font-family: "K2D", serif !important;
+
+}
+.font-HiJack{
+  font-family: 'Hi Jack', sans-serif;                                           
+}
+.font-Lato{
+  font-family: 'Lato', sans-serif;                                           
+}
+.font-Inter{
+  font-family: 'Lato', sans-serif;                                           
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+
+.bgmainvip{
+  background-image: url(../src/assets/Vipticketsec/bg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
-button:hover {
-  border-color: #646cff;
+.Communitybg{
+  background-image: url(../src/assets/CommunitySec/Communitybg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.Communitymobbg{
+  background-image: url(../src/assets/CommunitySec/Commobbg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.Tokenomicsbg{
+  background-image: url(../src/assets/tokenomics/token-bg.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.DontWaitSec{
+  background-image: url(../src/assets/DontWaitSec/dont-wait-d-bg.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.DontWaitmobSec{
+  background-image: url(../src/assets/DontWaitSec/dont-wait-bg.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.dogevspepebg{
+  background-image: url(../src/assets/DogeVSPepeSec/doge-vs-pepe-bg.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.crypbg {
+  background-image: url(../src/assets/DogeVSPepeSec/doge-vs-pepe-headline.webp);
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  -webkit-background-size: cover; 
+  object-fit: cover;
+}
+.crypbg2 {
+  background-image: url(../src/assets/DogeVSPepeSec/pepe-headline.webp);
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  height: 150px;
+  -webkit-background-size: cover; 
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.crypbg3 {
+  background-image: url(../src/assets/DogeVSPepeSec/doge-headline.webp);
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  height: 150px;
+  -webkit-background-size: cover; 
+}
+.Biggestbg{
+  background-image: url(../src/assets/BiggestSec/bigest-crypto-bg.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.Biggestmobbg{
+  background-image: url(../src/assets/BiggestSec/mob.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.Biggestbgcard{
+  background-image: url(../src/assets/BiggestSec/cardbg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 550px;
+}
+.Biggestcardgr{
+  background-image: url(../src/assets/BiggestSec/cardgr.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.Hypebg{
+  background-image: url(../src/assets/Hype/hypebg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.Pressbg{
+  background-image: url(../src/assets/PressSec/press-and-media-bg.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.Pressbgmob{
+  background-image: url(../src/assets/PressSec/pressbgmob.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgroadmap{
+  background-image: url(../src/assets/RoadmapSec/roadbg.png);
+  background-position: 0px -20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bgroadmapMob{
+  background-image: url(../src/assets/RoadmapSec/roadmap-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bgmainvipcard{
+  background-image: url(../src/assets/Vipticketsec/cardbg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.Mysterybg{
+  background-image: url(../src/assets/MilestonesSec/bgmile.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.Mysterymobbg{
+  background-image: url(../src/assets/MilestonesSec/bgmilemob.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgrule{
+  background-image: url(../src/assets/RuleSec/rulebg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgmainvipcardbox{
+  background-image: url(../src/assets/Vipticketsec/boxxx.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgherosec {
+  background-image: url('./assets/herosec/hero-sec-bg.webp');
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bgheromobsec {
+  /* background-image: url(./assets/herosec/mobbg.png); */
+  background-image: url(./assets/herosec/hero-sec-bg-mob.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bgwltsec {
+  background-image: url(./assets/walletsec/buy-bg.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bgwltsecmob {
+  background-image: url(./assets/walletsec/mobbg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bgwltsecmobUp {
+  background-image: url(./assets/Mobile/wallet-1.png);
+  background-position:center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bgwltsecmobDn {
+  background-image: url(./assets/Mobile/walled-2.png);
+  background-position:center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ticketBgMob {
+  background-image: url(./assets/Mobile/ticket-bg.png);
+  background-position:center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bgeversec {
+  background-image: url(./assets/FirstEver/back-frame.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 739px;
+}
+
+.bgeversecmob {
+  background-image: url(./assets/Mobile/century-ring.png);
+  /* background-image: url(./assets/FirstEver/first-ever-bg-mob.webp); */
+  background-position: center; 
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgRulesmob {
+  background-image: url(./assets/Mobile/rules-bg.png);
+  /* background-image: url(./assets/FirstEver/first-ever-bg-mob.webp); */
+  background-position: center; 
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgMystrymob {
+  background-image: url(./assets/Mobile/mystry-milestone.png);
+  /* background-image: url(./assets/FirstEver/first-ever-bg-mob.webp); */
+  background-position: center; 
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bgprizsec {
+  background-image: url(./assets/PrizeMoneySec//prixebg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgmobprizsec {
+  background-image: url(./assets/PrizeMoneySec/mobbg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.howitbg{
+  background-image: url(./assets/HowItSec/how-it-began-bg.webp);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bgMadebySec {
+  background-image: url(./assets/madebySec/baby-bg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bgDontWaitSec {
+  background-image: url(./assets/DontWaitSec/Frame_1410116803.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.gradient-border {
+  position: relative;
+  padding: 3px;
+  /* Border thickness */
+  border-radius: 12px;
+  background: conic-gradient(from 45deg,
+      rgba(0, 0, 0, 0) 0deg,
+      /* Transparent at top-right */
+      #efab007d 25deg,
+      /* Gradient starts */
+      #4eb52a 50deg,
+      /* Gradient at bottom-right */
+      rgba(0, 0, 0, 0) 75deg,
+      /* Transparent at left-bottom */
+      #efab0087 100deg
+      /* Full cycle back to top-left */
+    );
+  /* mask-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff); */
+  mask-clip: padding-box, border-box;
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+
+.gradient-border>div {
+  background: #2a2a2a;
+  /* Solid background for inner content */
+  border-radius: 10px;
+  /* Match the outer border radius */
+  overflow: hidden;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: 'next';
+  display: none !important;
+}
+
+.answer span {
+  font-size: 30px;
+  line-height: 18px;
+  padding-left: 0.5rem;
+}
+
+.faqsbrder {
+  position: relative;
+  width: 100% !important;
+  box-sizing: border-box;
+  z-index: 1;
+  overflow: hidden;
+  border: none;
+}
+
+.faqsbrder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 1.1px;
+  background: linear-gradient(10deg, #4EB52A -53%, #fac000d8 -53%, transparent 46%, transparent 46%, #4EB52A 215%, #fac000d8 -53%, transparent 329%, transparent 329%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.roadborder {
+  position: relative;
+  width: 100% !important;
+  box-sizing: border-box;
+  z-index: 1;
+  border: none;
+}
+
+.roadborder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 1px;
+  background: linear-gradient(16deg, #fac000d8 -53%, transparent 46%, #fac000ad 215%, transparent 329%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.howitborder {
+  position: relative;
+  width: 100% !important;
+  box-sizing: border-box;
+  z-index: 1;
+  border: none;
+}
+
+.howitborder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(16deg, #fac000d8 -53%, transparent 46%, #01FE37 215%, transparent 329%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+.Mysteryborder {
+  position: relative;
+  width: 100% !important;
+  box-sizing: border-box;
+  z-index: 1;
+  border: none;
+}
+
+.Mysteryborder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(16deg, #fac000d8 -53%, transparent 46%, #01FE37 215%, transparent 329%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.card2border {
+  position: relative;
+  width: 100% !important;
+  box-sizing: border-box;
+  z-index: 1;
+  border: none;
+}
+
+.card2border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 1px;
+  background: linear-gradient(16deg, #4EB52A -53%, transparent 46%, #4EB52A 215%, transparent 329%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.Pressborder {
+  position: relative;
+  width: 100% !important;
+  box-sizing: border-box;
+  z-index: 1;
+  border: none;
+}
+
+.Pressborder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 1px;
+  background: linear-gradient(16deg, #fac000d8 -40%, transparent 46%, #4EB52A 200%, transparent 329%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.Rulesborder {
+  position: relative;
+  width: 100% !important;
+  box-sizing: border-box;
+  z-index: 1;
+  border: none;
+}
+
+.Rulesborder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 1px;
+  background: linear-gradient(16deg, #4EB52A -53%, #fac000d8 -53%, transparent 46%, transparent 46%, #4EB52A 215%, #fac000d8 -53%, transparent 329%, transparent 329%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.Rulesborder2 {
+  position: relative;
+  width: 100% !important;
+  box-sizing: border-box;
+  z-index: 1;
+  border: none;
+}
+
+.Rulesborder2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 1px;
+  background: linear-gradient(152deg, #4EB52A -53%, #fac000d8 -53%, transparent 46%, transparent 46%, #4EB52A 215%, #fac000d8 -53%, transparent 329%, transparent 329%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.text-stroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+.text-stroke-2 {
+  -webkit-text-stroke-width: 1.8px;
+  -webkit-text-stroke-color: black;
+}
+
+.gradient-box {
+  /* content: ''; */
+  /* position: absolute; */
+  /* top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -5; /* !importanté */
+  /* border-radius: inherit; /* !importanté */
+  /* background: linear-gradient(to right, red, orange); */ 
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(to right, darkblue, darkorchid) border-box;
+  /* border-radius: 50em; */
+  border: 4px solid transparent;
+}
+.gradient-box-black {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(to right, darkblue, darkorchid) border-box;
+  border: 4px solid transparent;
 }
