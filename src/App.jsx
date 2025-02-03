@@ -1,38 +1,40 @@
-import React, { useEffect, useState } from "react";
-import Home from "./Page/Home/Home";
-import MobileHome from "./Page/MobileHome/MobileHome";
-import ConnectWalletModal from "./component/ConnectWalletModal"
-import { Toaster } from "react-hot-toast";
-import { loadStoredConnection } from "./presale-gg/web3/connections";
-// import Home from "./Page/Home/Home";
+
+import Navbar from "./component/Desktop/Navbar";
+import Footer from "./component/Desktop/Footer";
+import NavbarMobile from "./component/Mobile/NavbarMobile";
+import FooterMobile from "./component/Mobile/FooterMobile";
+
+import HomeDesktop from "./component/Desktop/Home"
+import HomeMobile from "./component/Mobile/Home"
 
 function App() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
-
-  useEffect(() => {
-	if (localStorage.getItem("connect-wallet-id-v2")) {
-		loadStoredConnection()
-	}
-  })
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 700);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  
   return (
-    <div className="bg-[black] w-[100%]">
-      <div>
-        <div>{isMobile ? <MobileHome /> : <Home />}</div>
-        <Toaster position="bottom-center" />
-        <ConnectWalletModal />
+    <>
+      {/* Desktop */}
+      <div className="max-lg:hidden">
+        <Navbar />
       </div>
-    </div>
+      {/* Mobile */}
+      {/* <div className="lg:hidden">
+        <NavbarMobile />
+      </div> */}
+
+
+      {/* Desktop */}
+      <div className="max-lg:hidden"><HomeDesktop /></div>
+      {/* Mobile */}
+      {/* <div className="lg:hidden"><HomeMobile /></div> */}
+
+
+      {/* Desktop */}
+      <div className="max-lg:hidden">
+        <Footer />
+      </div>
+      {/* Mobile */}
+      {/* <div className="lg:hidden">
+        <FooterMobile />
+      </div> */}
+    </>
   );
 }
 
