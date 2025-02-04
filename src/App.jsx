@@ -6,6 +6,8 @@ import FooterMobile from "./component/Mobile/FooterMobile";
 
 import HomeDesktop from "./component/Desktop/Home"
 import HomeMobile from "./component/Mobile/Home"
+import AboutDesktop from "./component/Desktop/About";
+import AboutMobile from "./component/Mobile/About";
 
 function App() {
   return (
@@ -21,10 +23,16 @@ function App() {
 
 
       {/* Desktop */}
-      <div className="2xl:block xl:block lg:block md:block sm:hidden hidden"><HomeDesktop /></div>
+      {/* <div className="2xl:block xl:block lg:block md:block sm:hidden hidden"><HomeDesktop /></div> */}
       {/* Mobile */}
-      <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block"><HomeMobile /></div>
+      {/* <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block"><HomeMobile /></div> */}
 
+        <div  className="2xl:block xl:block lg:block md:block sm:hidden hidden">
+          <AboutDesktop />
+        </div>
+        <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
+          <AboutMobile />
+        </div>
 
       {/* Desktop */}
       <div className="2xl:block xl:block lg:block md:block sm:hidden hidden">
