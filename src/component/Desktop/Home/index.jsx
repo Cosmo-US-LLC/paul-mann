@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import HeroSection from "./HeroSection";
 import Organizations from "./Organizations";
 import JourneyOfLeading from "./JourneyOfLeading";
@@ -10,6 +11,9 @@ import WaterSolutions from "./WaterSolutions";
 import EducationCourses from "./EducationCourses";
 import AdvocacyOfPaulMann from "./AdvocacyOfPaulMann";
 function HomeDesktop() {
+   useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, []);
   return (
     <div>
       <HeroSection />

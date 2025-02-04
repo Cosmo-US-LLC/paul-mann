@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -8,12 +9,14 @@ function Navbar() {
           <div className="max-w-[1440px] w-full h-full mx-auto ">
             <div className="max-w-[1200px]   w-full h-full mx-auto flex items-center justify-between">
               <div className="flex space-x-8 uppercase md:flex">
-                <a
-                  href="#About"
+              
+                <Link to="/about">
+                <p
                   className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] uppercase     hover:text-gray-900"
                 >
                   About
-                </a>
+                </p>
+              </Link>
                 <a
                   href="#Podcast"
                   className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] uppercase    hover:text-gray-900"

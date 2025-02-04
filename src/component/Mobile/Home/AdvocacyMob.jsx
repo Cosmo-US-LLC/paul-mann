@@ -17,12 +17,13 @@ const AdvocacyMob = () => {
               Advocated for Water Conservation <br /> on CBS Evening News
             </div>
           </div>
-          <video
-            className="object-cover w-full h-full"
-            src="your-video-url.mp4"
-            controls
-            alt="Advocated for Water Conservation"
-          />
+         <div>
+         <img
+              className="object-cover -m-[1px]"
+              src="/desktop-assets/AdvocacyOfPaulMann/AdvocacyOfPaulOwner.webp"
+              alt="Advocated for Water Conservation"
+            />
+         </div>
         </div>
       </div>
 
