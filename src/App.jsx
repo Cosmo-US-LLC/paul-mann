@@ -11,29 +11,29 @@ function App() {
   return (
     <>
       {/* Desktop */}
-      <div className="max-lg:hidden">
+      <div className="2xl:block xl:block lg:block md:block sm:hidden hidden ">
         <Navbar />
       </div>
       {/* Mobile */}
-      {/* <div className="lg:hidden">
+      <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
         <NavbarMobile />
-      </div> */}
+      </div>
 
 
       {/* Desktop */}
-      <div className="max-lg:hidden"><HomeDesktop /></div>
+      <div className="2xl:block xl:block lg:block md:block sm:hidden hidden"><HomeDesktop /></div>
       {/* Mobile */}
-      {/* <div className="lg:hidden"><HomeMobile /></div> */}
+      <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block"><HomeMobile /></div>
 
 
       {/* Desktop */}
-      <div className="max-lg:hidden">
+      <div className="2xl:block xl:block lg:block md:block sm:hidden hidden">
         <Footer />
       </div>
       {/* Mobile */}
-      {/* <div className="lg:hidden">
+      <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
         <FooterMobile />
-      </div> */}
+      </div>
     </>
   );
 }

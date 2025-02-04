@@ -28,6 +28,18 @@ code {
   background-repeat: no-repeat;
   min-height: calc(100vh );
 }
+.heroBGmob {
+  background-image: url('/mobile-assets/hero/hero-bg.webp');
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bgavd{
+  background-image: url('/mobile-assets/Advocated/avd-bg.png');
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .organizationsBG {
   background-image: url('/desktop-assets/organization/organizations-bg.webp');
@@ -60,6 +72,13 @@ code {
   background-repeat: no-repeat;
   min-height: 1395px;
 }
+.EndToEndSolutionsBGmob {
+  background-image: url('/desktop-assets/EndToEndSolutions/end-to-end-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 .WaterCycleRestorationBG {
   background-image: url('/desktop-assets/WaterCycleRestoration/WaterCycleRestoration-bg.webp');
@@ -67,6 +86,12 @@ code {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 750px;
+}
+.WaterCycleRestorationBGmob {
+  background-image: url('/desktop-assets/WaterCycleRestoration/WaterCycleRestoration-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .EducationCoursesBG {
