@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  FaTwitter,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaYoutube,
-  FaPinterest,
-} from "react-icons/fa";
+import { Link } from "react-router-dom";
 function FooterMobile() {
   const handleLogoClick = () => {
     window.scrollTo({
@@ -39,9 +32,11 @@ function FooterMobile() {
           </div>
         <div className="flex justify-between py-[20px]">
         <div className="w-[50%] flex flex-col justify-center space-y-[10px]   relative z-10 uppercase">
-            <a href="#About" className="block  text-[11px] font-[700] leading-[13px]">
+            <Link to="/about">
+            <p className="block  text-[11px] font-[700] leading-[13px]">
               About
-            </a>
+            </p>
+            </Link>
             <a
               href="#Podcast"
               className="text-[11px]  block font-[700] leading-[13px]"

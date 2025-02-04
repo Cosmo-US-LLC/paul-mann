@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // import {
 //   Sheet,
@@ -40,8 +41,6 @@ function NavbarMobile() {
     };
   }, []);
 
-
-
   return (
     <div className="bg-[#fff]">
       <div className="flex justify-between h-[48px] items-center px-[20px]">
@@ -57,45 +56,58 @@ function NavbarMobile() {
         </div>
         <div className="w-[100px] flex justify-end items-center">
           <img
-              ref={menuRef}
-          onClick={toggleMenu}
+            ref={menuRef}
+            onClick={toggleMenu}
             src="/desktop-assets/navbar/menu-03.svg"
             className="cursor-pointer"
             alt=""
           />
         </div>
         {isOpen && (
-            <div
-              ref={menuRef}
-              className="absolute top-12 left-0 w-[100%] bg-white shadow-lg p-4"
-            >
-              <div className="flex flex-col space-y-4">
-                <a href="#About" onClick={() => setIsOpen(false)} className="text-black px-2 text-[14px] hover:text-gray-900">
+          <div
+            ref={menuRef}
+            className="absolute top-12 left-0 w-[100%] bg-white shadow-lg p-4"
+          >
+            <div className="flex flex-col space-y-4">
+              <Link to="/about">
+                <p
+                  onClick={() => setIsOpen(false)}
+                  className="text-black px-2 text-[14px] hover:text-gray-900"
+                >
                   About
-                </a>
-                <a href="#Podcast" onClick={() => setIsOpen(false)} className="text-black px-2 text-[14px] hover:text-gray-900">
-                  Podcast
-                </a>
-                <a href="#Press" onClick={() => setIsOpen(false)} className="text-black px-2 text-[14px] hover:text-gray-900">
-                  Press
-                </a>
-                <a
-                  href="#Coaching"
-                  onClick={() => setIsOpen(false)}
-                   className="flex flex-col justify-center px-2 text-black text-[14px] font-medium   capitalize   flex-shrink-0 hover:text-gray-900"
-                >
-                  Coaching
-                </a>
-                <a
-                  href="#Connect"
-                  onClick={() => setIsOpen(false)}
-                   className="flex flex-col justify-center px-2 text-black text-[14px] font-medium   capitalize  flex-shrink-0 hover:text-gray-900"
-                >
-                  Connect
-                </a>
-              </div>
+                </p>
+              </Link>
+              <a
+                href="#Podcast"
+                onClick={() => setIsOpen(false)}
+                className="text-black px-2 text-[14px] hover:text-gray-900"
+              >
+                Podcast
+              </a>
+              <a
+                href="#Press"
+                onClick={() => setIsOpen(false)}
+                className="text-black px-2 text-[14px] hover:text-gray-900"
+              >
+                Press
+              </a>
+              <a
+                href="#Coaching"
+                onClick={() => setIsOpen(false)}
+                className="flex flex-col justify-center px-2 text-black text-[14px] font-medium   capitalize   flex-shrink-0 hover:text-gray-900"
+              >
+                Coaching
+              </a>
+              <a
+                href="#Connect"
+                onClick={() => setIsOpen(false)}
+                className="flex flex-col justify-center px-2 text-black text-[14px] font-medium   capitalize  flex-shrink-0 hover:text-gray-900"
+              >
+                Connect
+              </a>
             </div>
-          )}
+          </div>
+        )}
       </div>
     </div>
   );

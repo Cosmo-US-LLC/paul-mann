@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import HeroSectionMob from './HeroSectionMob'
 import OrganizationsMob from './OrganizationsMob'
 import JourneyOfLeadingMob from './JourneyOfLeadingMob'
@@ -11,6 +11,10 @@ import WaterSolutionsMob from './WaterSolutionsMob'
 import EducationCoursesMob from './EducationCoursesMob'
 
 function HomeMobile() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <div>
         <HeroSectionMob />
