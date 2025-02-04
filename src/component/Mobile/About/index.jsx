@@ -1,9 +1,12 @@
 import React from "react";
+import FounderOfOrganizationsForMobile from "./FounderOfOrganizationsForMobile";
+import FounderHighlightMobile from "./FounderHighlightMobile";
 
 function AboutMobile() {
   return (
     <div>
-        mobileAbout
+      <FounderHighlightMobile />
+      <FounderOfOrganizationsForMobile />
     </div>
   );
 }
