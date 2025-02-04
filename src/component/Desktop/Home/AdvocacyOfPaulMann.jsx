@@ -1,51 +1,78 @@
-import React from 'react';
-
+import React from "react";
+import { FaLinkedin } from "react-icons/fa";
+// AdvocacyOfPaulMann
 const AdvocacyOfPaulMann = () => {
   return (
-    <section className="flex flex-col items-center min-h-screen px-20 py-12 bg-gray-100">
-      <div className="w-full max-w-4xl overflow-hidden bg-white shadow-lg rounded-2xl">
-        <div className="relative flex items-center justify-center h-64 bg-gray-900">
-          <video
-            className="object-cover w-full h-full"
-            src="your-video-url.mp4"
-            controls
-            alt="Advocated for Water Conservation"
-          />
-          <div className="absolute px-3 py-1 text-sm font-semibold text-white bg-black bg-opacity-75 rounded-lg top-4 left-4">
-            Advocated for Water Conservation on CBS Evening News
-          </div>
-        </div>
-        <div className="p-6 text-center">
-          <h2 className="text-xl font-semibold text-gray-800">PAUL MANN</h2>
-          <p className="mt-1 text-sm text-gray-600">Owner, Water Champions</p>
-        </div>
-      </div>
+    <div className="AdvocacyOfPaulMannBG">
+      <div className="max-w-[1440px] w-full h-full mx-auto">
+        <div className="max-w-[1200px]  h-[750px] gap-8 mx-auto flex flex-col justify-center items-center text-white">
+          <div className="relative w-full max-w-[908px] h-[492px] overflow-hidden shadow-lg rounded-2xl ">
+            <img
+              className="object-cover rounded-lg w-full max-w-[908px] h-[492px]"
+              src="/desktop-assets/AdvocacyOfPaulMann/AdvocacyOfPaulOwner.webp"
+              alt="Advocated for Water Conservation"
+            />
 
-      <div className="flex justify-around w-full max-w-4xl mt-12">
-        <div className="flex items-center p-4 space-x-2 bg-white shadow-lg rounded-2xl">
-          <div className="text-4xl text-blue-700">🔗</div>
-          <div>
-            <span className="text-xl font-bold text-gray-800">1,000+</span>
-            <p className="text-sm text-gray-600">LinkedIn Followers</p>
-          </div>
-        </div>
+            {/* Top Caption */}
+            <div className="absolute top-0 left-0 right-0 flex items-center px-4 py-2 text-white bg-gray-700 bg-opacity-75">
+              <img src="/desktop-assets/AdvocacyOfPaulMann/cbs-header-logo.webp" alt="CBS Logo" className="h-12 mr-6" />
+              <p className="text-[20px] font-[700] w-[381px] h-[58px]">
+                Advocated for Water Conservation on CBS Evening News
+              </p>
+            </div>
 
-        <div className="flex items-center p-4 space-x-2 bg-white shadow-lg rounded-2xl">
-          <div className="text-4xl text-gray-700">📺</div>
-          <div>
-            <p className="text-sm text-gray-600">Featured In:</p>
-            <div className="flex mt-1 space-x-2">
-              <span className="font-medium text-gray-800">CBS</span>
-              <span className="font-medium text-gray-800">Smart Business</span>
+            {/* Bottom Overlay */}
+            {/* <div className="absolute bottom-0 left-0 right-0 px-4 py-3 text-white bg-blue-800">
+                  <h2 className="text-lg font-bold">PAUL MANN</h2>
+                  <p className="text-sm font-medium">Owner, Water Champions</p>
+                </div> */}
+          </div>
+
+          <div className="flex justify-center w-full gap-10">
+            <div className="flex justify-center items-center w-full max-w-[435px] p-6 space-x-4 bg-[#D9D9D9] shadow-lg rounded-lg  ">
+              <img
+                src="/desktop-assets/AdvocacyOfPaulMann/linkedin-logo.webp"
+                alt="CBS Logo"
+                className="h-12 pr-2"
+              />
+              <div className="flex flex-row pr-12">
+                <span className="text-[45px] font-[900] text-[#073B63]">
+                  1,000+
+                </span>
+              </div>
+              <div className="flex flex-row pl-3 border-l-2 border-gray-800">
+                <p className="text-[20px] font-[700] text-[#073B63]">
+                  LinkedIn <br /> Followers
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center w-full max-w-[435px] justify-between gap-4 p-6 space-x-4 bg-[#D9D9D9] shadow-lg rounded-lg">
+              <p className="text-[18px] font-[700] text-[#073B63]">
+                Featured In:
+              </p>
+              <div className="flex gap-8">
+                <img
+                  src="/desktop-assets/AdvocacyOfPaulMann/cbs-logo.webp"
+                  alt="CBS Logo"
+                  className="h-12"
+                />
+                <img
+                  src="/desktop-assets/AdvocacyOfPaulMann/smart-business-logo.webp"
+                  alt="Smart Business Logo"
+                  className="h-12"
+                />
+              </div>
             </div>
           </div>
+          <div className="flex justify-center ">
+            <button className="px-6 py-3 border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+              The Solution
+            </button>
+          </div>
         </div>
       </div>
-
-      <button className="px-8 py-3 mt-8 text-lg font-semibold text-white transition bg-blue-600 rounded-full shadow-lg hover:bg-blue-700">
-        PRESS
-      </button>
-    </section>
+    </div>
   );
 };
 

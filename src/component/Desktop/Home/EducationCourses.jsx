@@ -28,31 +28,38 @@ const EducationCourses = () => {
     <div className="EducationCoursesBG">
       <div className="max-w-[1440px] w-full h-full mx-auto">
         <div className="max-w-[1200px] h-[750px] gap-10 mx-auto flex flex-col justify-center text-white">
-          <section className="px-20 py-12 bg-blue-100">
-            <h1 className="mb-8 text-4xl font-bold text-center text-gray-800">
-              Creating Change Through Education
-            </h1>
-            <p className="max-w-3xl mx-auto mb-12 text-lg text-center text-gray-600">
-              Renova Academy empowers students with the knowledge and skills to
-              implement impactful solutions, creating a sustainable future
-              through global water literacy and training programs.
-            </p>
-            <div className="grid grid-cols-2 gap-8">
-              {courses.map((course, index) => (
-                <div
-                  key={index}
-                  className="p-6 text-center bg-white shadow-lg rounded-2xl"
-                >
-                  <h2 className="mb-2 text-xl font-semibold text-blue-700">
-                    {course.title}
-                  </h2>
-                  <p className="text-base text-gray-600">
-                    {course.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <h1 className="text-[45px] font-[700] leading-[53px] capitalize">
+            Creating Change Through Education
+          </h1>
+          <p className="text-[16px] font-[400] leading-[21px] ">
+            Renova Academy is an educational platform dedicated to driving
+            global change through water literacy and training. Designed for
+            architects, builders, sustainability professionals, and community
+            leaders, Renova Academy offers courses in greywater recycling
+            technology, rainwater harvesting systems, water-efficient fixture
+            installation, and permaculture solutions. By equipping participants
+            with practical knowledge and skills, Renova Academy empowers them to
+            implement impactful water-saving solutions, supporting a sustainable
+            future and fostering innovation in water management practices.
+          </p>
+          <div className="flex flex-wrap items-start justify-center gap-6 text-white">
+            {courses.map((course, index) => (
+              <div
+                key={index}
+                className="relative px-10 py-4 bg-[#ffffff29] bg-opacity-60 rounded-xl overflow-hidden shadow-lg w-[511px] h-[170px]"
+              >
+                <h2 className="w-[345px] text-[25px] font-[700] text-[#00D4F1]">
+                  {course.title}
+                </h2>
+                <p className="w-[345px] text-[14px] font-[400] leading-[16px]">{course.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center ">
+            <button className="px-6 py-3 border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+              The Solution
+            </button>
+          </div>
         </div>
       </div>
     </div>
