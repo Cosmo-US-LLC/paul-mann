@@ -43,7 +43,12 @@ const WaterSolutions = () => {
   return (
     <div className="WaterSolutionsBG">
       <div className="max-w-[1440px] w-full h-full mx-auto">
-        <div className="max-w-[1200px] h-[750px] gap-6 mx-auto flex flex-col justify-center   text-white">
+        <div className="max-w-[1200px] h-[750px] gap-6 mx-auto flex flex-col justify-center  relative text-white">
+        <img
+            className="absolute top-2 right-2 w-[190px] h-[94px]"
+            src="/desktop-assets/WaterSolutions/water-solution-company-logo.webp"
+            alt="Founder Highlight with water conservation system"
+          />
           <h1 className="text-[45px] leading-[53px] capitalize font-[700] ">
             Making Water Go Farther
           </h1>

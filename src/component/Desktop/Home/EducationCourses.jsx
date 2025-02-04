@@ -27,9 +27,15 @@ const EducationCourses = () => {
   return (
     <div className="EducationCoursesBG">
       <div className="max-w-[1440px] w-full h-full mx-auto">
-        <div className="max-w-[1200px] h-[750px] gap-10 mx-auto flex flex-col justify-center text-white">
+        <div className="max-w-[1200px] h-[750px] gap-6 mx-auto flex flex-col justify-center text-white relative">
+          <img
+            className="absolute top-10 right-0 w-[333px] h-[60px]"
+            src="/desktop-assets/EducationCourses/EducationCourses-logo.webp"
+            alt="Founder Highlight with water conservation system"
+          />
+
           <h1 className="text-[45px] font-[700] leading-[53px] capitalize">
-            Creating Change Through Education
+            Creating Change <br /> Through Education
           </h1>
           <p className="text-[16px] font-[400] leading-[21px] ">
             Renova Academy is an educational platform dedicated to driving
@@ -51,7 +57,9 @@ const EducationCourses = () => {
                 <h2 className="w-[345px] text-[25px] font-[700] text-[#00D4F1]">
                   {course.title}
                 </h2>
-                <p className="w-[345px] text-[14px] font-[400] leading-[16px]">{course.description}</p>
+                <p className="w-[345px] text-[14px] font-[400] leading-[16px]">
+                  {course.description}
+                </p>
               </div>
             ))}
           </div>
