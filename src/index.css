@@ -26,7 +26,7 @@ code {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh );
 }
 
 .organizationsBG {
@@ -71,6 +71,22 @@ code {
 
 .EducationCoursesBG {
   background-image: url('/desktop-assets/EducationCourses/EducationCourses-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 750px;
+}
+
+.WaterSolutionsBG {
+  background-image: url('/desktop-assets/WaterSolutions/WaterSolutions-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 750px;
+}
+
+.AdvocacyOfPaulMannBG {
+  background-image: url('/desktop-assets/AdvocacyOfPaulMann/AdvocacyOfPaulMann-bg.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

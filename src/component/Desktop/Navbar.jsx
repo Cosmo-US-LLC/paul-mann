@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="pb-[3rem]">
+    
       <div className="fixed top-0 w-[100%] z-[99]">
         <nav className="bg-white h-[48px] flex-shrink-0 shadow-sm">
           <div className="max-w-[1440px] w-full h-full mx-auto ">
@@ -59,7 +59,7 @@ function Navbar() {
           </div>
         </nav>
       </div>
-    </div>
+    
   );
 }
 
