@@ -45,3 +45,34 @@ code {
   min-height: 750px;
 }
 
+.whoWeServeBG {
+  background-image: url('/desktop-assets/WhoWeServe/who-we-serve-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 750px;
+}
+
+.EndToEndSolutionsBG {
+  background-image: url('/desktop-assets/EndToEndSolutions/end-to-end-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 1395px;
+}
+
+.WaterCycleRestorationBG {
+  background-image: url('/desktop-assets/WaterCycleRestoration/WaterCycleRestoration-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 750px;
+}
+
+.EducationCoursesBG {
+  background-image: url('/desktop-assets/EducationCourses/EducationCourses-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 750px;
+}
