@@ -1,9 +1,18 @@
 import React from "react";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
 const WaterSolutionsMob = () => {
   const solutions = [
     {
-      title: <p>Greywater <br /> Recycling</p>,
+      title: (
+        <p>
+          Greywater <br /> Recycling
+        </p>
+      ),
       description:
         "Reduce potable water use by up to 45% by processing greywater into germ-free recycled water for toilet flushing, laundry, irrigation and more.",
       icon: "/desktop-assets/WaterSolutions/company1.webp",
@@ -33,20 +42,26 @@ const WaterSolutionsMob = () => {
       icon: "/desktop-assets/WaterSolutions/company5.webp",
     },
     {
-      title: <p>Water <br/> Production & <br/> Purification</p>,
-      description:
-        "Systems to generate new water & purify for household use.",
+      title: (
+        <p>
+          Water <br /> Production & <br /> Purification
+        </p>
+      ),
+      description: "Systems to generate new water & purify for household use.",
       icon: "/desktop-assets/WaterSolutions/company6.webp",
     },
   ];
 
   return (
     <div className="WaterSolutionsBG">
-      <div className="w-[90%] mx-auto">
+      <div className="w-[90%] py-[30px] mx-auto">
         <div className="gap-[20px] mx-auto flex flex-col justify-center text-white">
-          <h1 className="text-[20px] leading-[53px] capitalize font-[700] ">
-            Making Water Go Farther
+          <h1 className="text-[20px] text-center leading-[140%] capitalize font-[700] ">
+            Making Water <br /> Go Farther
           </h1>
+          <div className="flex justify-center max-w-[158px] mx-auto">
+            <img src="/mobile-assets/Making/logo.webp" alt="" />
+          </div>
           <p className="text-[14px] leading-[21px] font-[700] ">
             Water Champions is a leading design and engineering consulting firm
             for water reuse and efficiency solutions, and it offers a
@@ -58,7 +73,7 @@ const WaterSolutionsMob = () => {
             focus on practical impact, Water Champions leads the way in making
             water go farther while creating resilient, water-smart futures.
           </p>
-          <div className="flex flex-wrap items-start w-full gap-6">
+          {/* <div className="flex flex-wrap items-start w-full gap-6">
             {solutions.map((solution, index) => (
               <div
                 key={index}
@@ -81,10 +96,60 @@ const WaterSolutionsMob = () => {
                 </div>
               </div>
             ))}
+          </div> */}
+          <div className="relative w-[98%] mx-auto">
+            <div className="max-w-[300px] flex space-x-3 mx-auto">
+              <button className="swiper-button-prev-water  !w-[30px] !h-[30px]  absolute z-10 !left-[-4%] !top-[49%]  ">
+                <img
+                  className="w-[30px] h-[30px] "
+                  src={"/mobile-assets/End-to-End/awr.png"}
+                  alt=""
+                />
+              </button>
+              <button className="swiper-button-next-water rotate-[180deg] !w-[30px] !h-[30px]  absolute z-10 !right-[-4%] !top-[49%] ">
+                <img
+                  className="w-[30px] h-[30px]"
+                  src={"/mobile-assets/End-to-End/awr.png"}
+                  alt=""
+                />
+              </button>
+            </div>
+            <Swiper
+              slidesPerView={1}
+              navigation={{
+                nextEl: ".swiper-button-next-water",
+                prevEl: ".swiper-button-prev-water",
+              }}
+              modules={[Navigation]}
+              loop={false}
+              className="mySwiper relative "
+            >
+              {solutions.map((solution, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex flex-row items-center  bg-transparent p-6 rounded-2xl shadow-lg text-left border border-gray-300  h-[196px]">
+                    <div className="w-[30%]">
+                      <img
+                        src={solution.icon}
+                        alt={`${solution.title} icon`}
+                        className="object-cover w-[69px] h-32 border border-blue-500 rounded-md"
+                      />
+                    </div>
+                    <div className="w-[70%] flex flex-col gap-2">
+                      <h2 className="text-[25px] font-[600] leading-[24px] text-white ">
+                        {solution.title}
+                      </h2>
+                      <p className="text-[16px] font-[400] leading-[18px] text-white">
+                        {solution.description}
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
           <div className="flex justify-center mb-2">
-            <button className="px-6 py-3 border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
-              The Solution
+            <button className="px-6 py-3 border border-white text-[12px] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+            water champions
             </button>
           </div>
         </div>

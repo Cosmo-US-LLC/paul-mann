@@ -8,6 +8,7 @@ import WhoWeServeMob from './WhoWeServeMob'
 import EndToEndMob from './EndToEndMob'
 import WaterCycleMob from './WaterCycleMob'
 import WaterSolutionsMob from './WaterSolutionsMob'
+import EducationCoursesMob from './EducationCoursesMob'
 
 function HomeMobile() {
   return (
@@ -21,6 +22,7 @@ function HomeMobile() {
         <EndToEndMob />
         <WaterCycleMob />
         <WaterSolutionsMob />
+        <EducationCoursesMob />
     </div>
   )
 }
