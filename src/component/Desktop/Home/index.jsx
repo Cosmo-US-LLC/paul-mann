@@ -9,6 +9,8 @@ import WaterCycleRestoration from "./WaterCycleRestoration";
 import WaterSolutions from "./WaterSolutions";
 import EducationCourses from "./EducationCourses";
 import AdvocacyOfPaulMann from "./AdvocacyOfPaulMann";
+import FounderOfOrganizations from "./FounderOfOrganizations";
+import FounderHighlight from "./FounderHighlight";
 
 function HomeDesktop() {
   return (

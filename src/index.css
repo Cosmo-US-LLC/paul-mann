@@ -92,3 +92,11 @@ code {
   background-repeat: no-repeat;
   min-height: 750px;
 }
+
+.aboutFounderSectionBG {
+  position: relative;
+  background: url('/desktop-assets/About/founder-bg-s.webp') no-repeat center center;
+  background-size: cover;
+  height: calc(100vh - 50px);
+  min-height: 676px;
+}
