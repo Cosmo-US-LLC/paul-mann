@@ -147,18 +147,18 @@ function PodcastsEveryDesktop() {
           </div>
         </div>
 
-        {/* Podcast Cards */}
+       
         <div className="space-y-12">
           {podcastData.map((podcast, index) => (
             <div key={index} className="flex items-start gap-8 pb-8 border-b border-gray-300">
-              {/* Podcast Image */}
+             
               <div className="relative">
                 <img
                   src={podcast.image}
                   className="w-[200px] h-[200px] object-cover"
                   alt={`Podcast ${index + 1}`}
                 />
-                {/* Episode Display */}
+               
                 <div
                   className="absolute inset-y-0 right-[-40px] flex items-center justify-center text-black font-bold uppercase text-[14px]"
                   style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
