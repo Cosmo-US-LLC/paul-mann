@@ -9,40 +9,56 @@ body {
 
 code {
   font-family: "K2D", serif !important;
+}
+.font-HiJack {
+  font-family: "Hi Jack", sans-serif;
+}
+.font-Lato {
+  font-family: "Lato", sans-serif;
+}
+.font-Inter {
+  font-family: "Lato", sans-serif;
+}
 
+.truncate {
+  overflow: hidden; /* Hide overflow */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-overflow: ellipsis; /* Show ellipsis when text is too long */
 }
-.font-HiJack{
-  font-family: 'Hi Jack', sans-serif;                                           
+.testimonial-swiper .swiper-button-next,
+.testimonial-swiper .swiper-button-prev {
+  color: black;
+  opacity: 0.7;
+  font-size: 1.5rem;
 }
-.font-Lato{
-  font-family: 'Lato', sans-serif;                                           
-}
-.font-Inter{
-  font-family: 'Lato', sans-serif;                                           
+
+.testimonial-swiper .swiper-button-next:hover,
+.testimonial-swiper .swiper-button-prev:hover {
+  opacity: 1;
 }
 
 .heroBG {
-  background-image: url('/desktop-assets/hero/hero-bg.webp');
+  background-image: url("/desktop-assets/hero/hero-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh );
+  min-height: calc(100vh);
 }
 .heroBGmob {
-  background-image: url('/mobile-assets/hero/hero-bg.webp');
+  background-image: url("/mobile-assets/hero/hero-bg.webp");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.bgavd{
-  background-image: url('/mobile-assets/Advocated/avd-bg.png');
+.bgavd {
+  background-image: url("/mobile-assets/Advocated/avd-bg.png");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .organizationsBG {
-  background-image: url('/desktop-assets/organization/organizations-bg.webp');
+  background-image: url("/desktop-assets/organization/organizations-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,7 +66,7 @@ code {
 }
 
 .journeyOfLeadingBG {
-  background-image: url('/desktop-assets/journey/journey-bg.webp');
+  background-image: url("/desktop-assets/journey/journey-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -58,7 +74,7 @@ code {
 }
 
 .whoWeServeBG {
-  background-image: url('/desktop-assets/WhoWeServe/who-we-serve-bg.webp');
+  background-image: url("/desktop-assets/WhoWeServe/who-we-serve-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -66,36 +82,35 @@ code {
 }
 
 .EndToEndSolutionsBG {
-  background-image: url('/desktop-assets/EndToEndSolutions/end-to-end-bg.webp');
+  background-image: url("/desktop-assets/EndToEndSolutions/end-to-end-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 1395px;
 }
 .EndToEndSolutionsBGmob {
-  background-image: url('/desktop-assets/EndToEndSolutions/end-to-end-bg.webp');
+  background-image: url("/desktop-assets/EndToEndSolutions/end-to-end-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-
 .WaterCycleRestorationBG {
-  background-image: url('/desktop-assets/WaterCycleRestoration/WaterCycleRestoration-bg.webp');
+  background-image: url("/desktop-assets/WaterCycleRestoration/WaterCycleRestoration-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 750px;
 }
 .WaterCycleRestorationBGmob {
-  background-image: url('/desktop-assets/WaterCycleRestoration/WaterCycleRestoration-bg.webp');
+  background-image: url("/desktop-assets/WaterCycleRestoration/WaterCycleRestoration-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .EducationCoursesBG {
-  background-image: url('/desktop-assets/EducationCourses/EducationCourses-bg.webp');
+  background-image: url("/desktop-assets/EducationCourses/EducationCourses-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -103,7 +118,7 @@ code {
 }
 
 .WaterSolutionsBG {
-  background-image: url('/desktop-assets/WaterSolutions/WaterSolutions-bg.webp');
+  background-image: url("/desktop-assets/WaterSolutions/WaterSolutions-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -111,7 +126,7 @@ code {
 }
 
 .AdvocacyOfPaulMannBG {
-  background-image: url('/desktop-assets/AdvocacyOfPaulMann/AdvocacyOfPaulMann-bg.webp');
+  background-image: url("/desktop-assets/AdvocacyOfPaulMann/AdvocacyOfPaulMann-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -120,17 +135,20 @@ code {
 
 .aboutFounderSectionBG {
   position: relative;
-  background: url('/desktop-assets/About/founder-bg-s.webp') no-repeat center center;
+  background: url("/desktop-assets/About/founder-bg-s.webp") no-repeat center
+    center;
   background-size: cover;
   height: calc(100vh - 50px);
   min-height: 676px;
 }
-.swiper-button-prev-glimpse.swiper-button-disabled, .swiper-button-next-glimpse.swiper-button-disabled {
+.swiper-button-prev-glimpse.swiper-button-disabled,
+.swiper-button-next-glimpse.swiper-button-disabled {
   opacity: 0.35 !important;
   cursor: auto !important;
   pointer-events: none !important;
 }
-.swiper-button-prev-Coverage.swiper-button-disabled, .swiper-button-next-Coverage.swiper-button-disabled {
+.swiper-button-prev-Coverage.swiper-button-disabled,
+.swiper-button-next-Coverage.swiper-button-disabled {
   opacity: 0.35 !important;
   cursor: auto !important;
   pointer-events: none !important;
