@@ -45,12 +45,14 @@ function FooterMobile() {
                     Podcast
                   </p>
                 </Link>
-                <a
-                  href="#Press"
-                  className="block text-[11px] font-[700] leading-[13px]"
-                >
-                  Press
-                </a>
+                <Link to="/glimpse" >
+                <p
+                className="text-[11px]  block font-[700] leading-[13px]"
+              >
+                Press
+              </p>
+              </Link>
+                
               </div>
               <div className="w-[50%] flex flex-col justify-center space-y-[10px]  blockrelative z-10 uppercase">
                 <a

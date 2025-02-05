@@ -1,4 +1,7 @@
 import React, {useEffect} from "react";
+import GlimpseIntoMob from "./GlimpseInto.";
+import PressCoveragemob from "./PressCoverage";
+import MediaPressMob from "./MediaPress";
 
 function GlimpseMobile() {
     useEffect(() => {
@@ -6,7 +9,9 @@ function GlimpseMobile() {
     }, []);
   return (
     <div className="">
-        GlimpseMobile
+        <GlimpseIntoMob />
+        <PressCoveragemob />
+         <MediaPressMob />
     </div>
   );
 }

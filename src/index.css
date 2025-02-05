@@ -125,3 +125,13 @@ code {
   height: calc(100vh - 50px);
   min-height: 676px;
 }
+.swiper-button-prev-glimpse.swiper-button-disabled, .swiper-button-next-glimpse.swiper-button-disabled {
+  opacity: 0.35 !important;
+  cursor: auto !important;
+  pointer-events: none !important;
+}
+.swiper-button-prev-Coverage.swiper-button-disabled, .swiper-button-next-Coverage.swiper-button-disabled {
+  opacity: 0.35 !important;
+  cursor: auto !important;
+  pointer-events: none !important;
+}
