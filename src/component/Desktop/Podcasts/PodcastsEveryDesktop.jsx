@@ -1,5 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import SuggestTopicForm from "../../ui/SuggestTopicForm"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
+import SuggestTopicForm from "../../ui/SuggestTopicForm";
 
 const podcastData = [
   {
@@ -191,14 +196,14 @@ function PodcastsEveryDesktop() {
     <div className="max-w-[1440px] w-full h-full py-16 mx-auto">
       <div className="max-w-[1200px]   mx-auto flex flex-col justify-center">
         <div className="mb-8 text-center">
-          <h3 className="text-[24px] font-bold uppercase leading-[1.5]">
+          <h3 className="text-[24px] font-bold font-[Roboto] uppercase leading-[1.5]">
             Podcasts Every *Insert Day
           </h3>
         </div>
 
         {/* Platform Buttons */}
         <div className="flex justify-center gap-8 mb-8">
-          <button className="flex items-center justify-center text-sm font-medium border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
+          <button className="flex items-center justify-center text-sm font-medium font-[RFDewi-Light] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
               className="mr-2"
@@ -206,7 +211,7 @@ function PodcastsEveryDesktop() {
             />
             Spotify
           </button>
-          <button className="flex items-center justify-center text-sm font-medium border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
+          <button className="flex items-center justify-center text-sm font-medium font-[RFDewi-Light] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
               className="mr-2"
@@ -214,7 +219,7 @@ function PodcastsEveryDesktop() {
             />
             Apple
           </button>
-          <button className="flex items-center justify-center text-sm font-medium border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
+          <button className="flex items-center justify-center text-sm font-medium font-[RFDewi-Light] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
               className="mr-2"
@@ -222,7 +227,7 @@ function PodcastsEveryDesktop() {
             />
             Amazon
           </button>
-          <button className="flex items-center justify-center text-sm font-medium border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
+          <button className="flex items-center justify-center text-sm font-medium font-[RFDewi-Light] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
               className="mr-2"
@@ -234,19 +239,19 @@ function PodcastsEveryDesktop() {
 
         <div className="flex items-center justify-between pb-2 mb-12">
           <div className="flex gap-6">
-            <button className="text-[14px] font-medium uppercase cursor-pointer border-b-2 border-black pb-1">
+            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer border-b-2 border-black pb-1">
               Featured Episodes
             </button>
-            <button className="text-[14px] font-medium uppercase cursor-pointer text-gray-600 hover:text-black">
+            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black">
               Rain Water
             </button>
-            <button className="text-[14px] font-medium uppercase cursor-pointer text-gray-600 hover:text-black">
+            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black">
               Project Design
             </button>
-            <button className="text-[14px] font-medium uppercase cursor-pointer text-gray-600 hover:text-black">
+            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black">
               Implementation
             </button>
-            <button className="text-[14px] font-medium uppercase cursor-pointer text-gray-600 hover:text-black">
+            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black">
               On Work
             </button>
           </div>
@@ -254,7 +259,7 @@ function PodcastsEveryDesktop() {
           {/* Search Bar */}
           <div className="flex items-center border-b border-black w-[300px]">
             <input
-              className="w-full px-2 py-1 outline-none text-[14px] placeholder:uppercase"
+              className="w-full px-2 py-1 font-[Roboto] outline-none text-[14px] placeholder:uppercase"
               placeholder="Search"
               type="text"
               aria-label="Search podcasts"
@@ -268,22 +273,20 @@ function PodcastsEveryDesktop() {
         </div>
 
         <div ref={listContainerRef} className="space-y-12">
-         
           {displayedPodcasts.map((podcast, index) => (
             <div
               key={index}
               className="flex items-start gap-8 pb-8 border-b border-gray-300"
             >
-              
               <div className="relative w-[336px]">
                 <img
                   src={podcast.image}
                   className="object-cover "
                   alt={`Podcast ${index + 1}`}
                 />
-                
+
                 <div
-                  className="absolute inset-y-0 right-[-40px] flex items-center justify-center text-black font-bold uppercase text-[14px]"
+                  className="absolute inset-y-0 right-[-40px] flex items-center justify-center text-black font-bold uppercase text-[14px] font-[Roboto]"
                   style={{
                     writingMode: "vertical-rl",
                     transform: "rotate(180deg)",
@@ -294,13 +297,13 @@ function PodcastsEveryDesktop() {
               </div>
 
               <div className="flex-1 text-left w-[600px] flex flex-col px-12 py-12">
-                <p className="text-[14px] font-medium uppercase text-gray-600 mb-2">
+                <p className="text-[14px] font-medium  font-[Roboto]uppercase text-gray-600 mb-2">
                   {podcast.date}
                 </p>
-                <h5 className="text-[18px] font-bold leading-[1.4] mb-4 truncate">
+                <h5 className="text-[18px] font-bold font-[Roboto] leading-[1.4] mb-4 truncate">
                   {podcast.title}
                 </h5>
-                <p className="text-[14px] font-semibold uppercase cursor-pointer underline">
+                <p className="text-[14px] font-semibold font-[Roboto] uppercase cursor-pointer underline">
                   Read More
                 </p>
               </div>
@@ -308,7 +311,7 @@ function PodcastsEveryDesktop() {
               <div className="flex flex-col gap-4 text-right">
                 <div className="flex flex-col items-end gap-6">
                   <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium">Watch</p>
+                    <p className="text-[14px] font-medium font-[Roboto]">Watch</p>
                     <img
                       src="/mobile-assets/Podcasts/pd-card-icn (1).svg"
                       className="w-6 h-6"
@@ -316,7 +319,7 @@ function PodcastsEveryDesktop() {
                     />
                   </div>
                   <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium">Listen</p>
+                    <p className="text-[14px] font-medium font-[Roboto]">Listen</p>
                     <img
                       src="/mobile-assets/Podcasts/pd-card-icn (2).svg"
                       className="w-6 h-6"
@@ -324,7 +327,7 @@ function PodcastsEveryDesktop() {
                     />
                   </div>
                   <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium">24</p>
+                    <p className="text-[14px] font-medium font-[Roboto]">24</p>
                     <img
                       src="/mobile-assets/Podcasts/pd-card-icn (3).svg"
                       className="w-6 h-6"
@@ -332,7 +335,7 @@ function PodcastsEveryDesktop() {
                     />
                   </div>
                   <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium">155</p>
+                    <p className="text-[14px] font-medium font-[Roboto]">155</p>
                     <img
                       src="/mobile-assets/Podcasts/pd-card-icn (4).svg"
                       className="w-6 h-6"
@@ -340,7 +343,7 @@ function PodcastsEveryDesktop() {
                     />
                   </div>
                   <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium">Share</p>
+                    <p className="text-[14px] font-medium font-[Roboto]">Share</p>
                     <img
                       src="/mobile-assets/Podcasts/pd-card-icn (5).svg"
                       className="w-6 h-6"
@@ -358,7 +361,7 @@ function PodcastsEveryDesktop() {
           <button
             onClick={handlePreviousPage}
             disabled={currentPage === 1}
-            className={`text-[14px] font-medium ${
+            className={`text-[14px] font-medium font-[Roboto] ${
               currentPage === 1
                 ? "text-gray-400 cursor-not-allowed"
                 : "hover:text-black"
@@ -366,16 +369,16 @@ function PodcastsEveryDesktop() {
           >
             <span>&lt;</span> Previous
           </button>
-          <p className="text-[14px] font-medium">
+          <p className="text-[14px] font-medium font-[Roboto]">
             {currentPage}/{podcastData.length}{" "}
           </p>
           <button
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
-            className={`text-[14px] font-medium ${
+            className={`text-[14px] font-medium font-[Roboto] ${
               currentPage === totalPages
                 ? "text-gray-400 cursor-not-allowed"
-                : "hover:text-black"
+                : "hover:text-black "
             }`}
           >
             Next
@@ -383,7 +386,110 @@ function PodcastsEveryDesktop() {
           </button>
         </div>
 
-        <SuggestTopicForm/>
+        <div className="relative pt-[4rem]">
+          <div className="max-w-[300px] flex space-x-3 mx-auto">
+            <button className="swiper-button-prev-3  !w-[30px] !h-[30px]  absolute z-10 !left-[-2%] !top-[40%]  ">
+              <img
+                className="w-[30px] h-[30px] "
+                src={"/mobile-assets/Podcasts/Button - Previous slide.svg"}
+                alt=""
+              />
+            </button>
+            <button className="swiper-button-next-3 rotate-[180deg] !w-[30px] !h-[30px]  absolute z-10 !right-[-2%] !top-[40%] ">
+              <img
+                className="w-[30px] h-[30px]"
+                src={"/mobile-assets/Podcasts/Button - Previous slide.svg"}
+                alt=""
+              />
+            </button>
+          </div>
+          <Swiper
+            slidesPerView={4}
+            navigation={{
+              nextEl: ".swiper-button-next-3",
+              prevEl: ".swiper-button-prev-3",
+            }}
+            modules={[Navigation]}
+            loop={false}
+            className="mySwiper relative "
+          >
+            <SwiperSlide>
+              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
+                <div>
+                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
+                    “Love this podcast!”
+                  </p>
+                </div>
+                <div>
+                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                    By SHU12323
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
+                <div>
+                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
+                    “Amazing and life changing podcast”
+                  </p>
+                </div>
+                <div>
+                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                    By ChrisAlan83
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
+                <div>
+                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
+                    “Jay has a special energy that draws people towards him, and
+                    a talent at taking people on a journey””
+                  </p>
+                </div>
+                <div>
+                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                    By ChrisAlan83
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
+                <div>
+                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
+                    “Thank you Paul Mann for your spiritual wisdom and insight.
+                    ”
+                  </p>
+                </div>
+                <div>
+                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                  By PearlJelly9
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
+                <div>
+                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
+                    “Thank you Paul Mann for your spiritual wisdom and insight.
+                    ”
+                  </p>
+                </div>
+                <div>
+                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                  By PearlJelly9
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+
+        <SuggestTopicForm />
       </div>
     </div>
   );
