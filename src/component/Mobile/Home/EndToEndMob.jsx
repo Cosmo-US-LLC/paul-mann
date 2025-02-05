@@ -56,7 +56,7 @@ function EndToEndMob() {
       <div className=" w-[90%] mx-auto py-[30px]  overflow-hidden">
         <div className="flex flex-col text-white justify-center space-y-[30px]  ">
           <div className="">
-            <h2 className="text-[20px] font-[500] leading-[140%]">
+            <h2 className="text-[20px] font-[RFDewi-bold] font-[500] leading-[140%]">
               End-to-End Solutions for <br /> Water Management
             </h2>
           </div>
@@ -102,7 +102,7 @@ function EndToEndMob() {
                       <h4 className="text-[23.297px] font-[500] leading-[142.857%]">
                         {solution.title}
                       </h4>
-                      <p className="text-[14.977px] font-[400] leading-[26px]">
+                      <p className="font-[Roboto] text-[14.977px] font-[400] leading-[26px]">
                         {solution.description}
                       </p>
                     </div>

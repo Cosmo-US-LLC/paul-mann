@@ -13,7 +13,7 @@ const AdvocacyMob = () => {
         >
           <div className="flex items-center p-[16px]">
             <img src="/mobile-assets/Advocated/icns (1).svg" alt="" />
-            <div className=" px-3 py-1 text-[14px] font-[700] text-white bg-transparent rounded-lg top-4 left-4 leading-[107.143%]">
+            <div className=" pl-3 py-1 text-[14px] font-[700] text-white bg-transparent rounded-lg top-4 left-4 leading-[107.143%] font-[RFDewi-bold]">
               Advocated for Water Conservation <br /> on CBS Evening News
             </div>
           </div>
@@ -37,18 +37,18 @@ const AdvocacyMob = () => {
             />
           </div>
           <div className="flex items-center justify-between space-x-3">
-            <span className="text-[27.877px] font-[900] text-[#073B63]">
+            <span className="font-[RFDewi-bold] text-[27.877px] font-[900] text-[#073B63]">
               1,000+
             </span>
             <div className="w-[2px] h-[29px] bg-[#073B63]"></div>
-            <p className="text-[12.39px] font-[700] text-[#073B63] leading-[114%]">
+            <p className="text-[12.39px] font-[Roboto] font-[700] text-[#073B63] leading-[114%]">
               LinkedIn <br /> Followers
             </p>
           </div>
         </div>
 
         <div className="flex justify-center items-center px-[20px] py-[12px] space-x-2 bg-[#D9D9D9] shadow-lg rounded-[8.978px]">
-          <p className="text-[12.431px] font-[700] text-[#073B63]">
+          <p className="text-[12.431px] font-[RFDewi-bold] font-[700] text-[#073B63]">
             Featured In:
           </p>
           <div>

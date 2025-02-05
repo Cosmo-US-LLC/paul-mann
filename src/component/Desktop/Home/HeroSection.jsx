@@ -14,14 +14,14 @@ function HeroSection() {
       <div className="max-w-[1440px] w-full h-full mx-auto">
         <div className="max-w-[1200px] h-[750px] gap-10 mx-auto flex flex-col justify-center text-white">
           <div className="relative z-10 flex flex-col justify-end h-full gap-10 py-10 text-white">
-            <h1 className="w-[857px] text-[26px] font-[700]">
+            <h1 className="w-[857px] font-[RFDewi-bold] text-[26px] font-[700]">
               Paul Is A Seasoned Industry Expert Specializing In The <br />{" "}
               Design And Implementation Of Innovative Water Reuse And <br />{" "}
               Efficiency Solutions That Make Water Go Farther
             </h1>
 
             <div className="flex gap-10">
-              <p className="text-[16px] font-[500] leading-[24px] uppercase">
+              <p className="text-[16px] font-[Roboto] font-[500] leading-[24px] uppercase">
                 follow Paul :
               </p>
               <div className="flex gap-8">

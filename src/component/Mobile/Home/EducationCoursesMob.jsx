@@ -28,13 +28,13 @@ const EducationCoursesMob = () => {
     <div className="EducationCoursesBG">
       <div className="w-[90%] py-[30px] mx-auto">
         <div className="space-y-[40px] mx-auto flex flex-col justify-center text-white">
-          <h1 className="text-[20px] text-center font-[700] leading-[140%] capitalize">
+          <h1 className="text-[20px] font-[RFDewi-bold] text-center font-[700] leading-[140%] capitalize">
             Creating Change <br /> Through Education
           </h1>
-          <div className="flex justify-center max-w-[292.999px] mx-auto">
+          <div className="flex  justify-center max-w-[292.999px] mx-auto">
             <img src="/mobile-assets/Creating/group_7.webp" alt="" />
           </div>
-          <p className="text-[16px] font-[400] leading-[21px] ">
+          <p className="text-[16px] font-[Roboto] font-[400] leading-[21px] ">
             Renova Academy is an educational platform dedicated to driving
             global change through water literacy and training. Designed for
             architects, builders, sustainability professionals, and community
@@ -49,12 +49,12 @@ const EducationCoursesMob = () => {
             {courses.map((course, index) => (
               <div
                 key={index}
-                className="relative px-10 py-4 bg-[#ffffff29] bg-opacity-60 rounded-xl overflow-hidden shadow-lg w-[511px] h-[170px]"
+                className="relative px-4 space-y-[10px] py-4 bg-[#ffffff29] bg-opacity-60 rounded-xl overflow-hidden shadow-lg  h-[170px]"
               >
-                <h2 className="w-[345px] text-[25.072px] font-[700] leading-[96%] text-[#00D4F1]">
+                <h2 className=" font-[RFDewi-bold] text-[25.072px] font-[700] leading-[96%] text-[#00D4F1]">
                   {course.title}
                 </h2>
-                <p className="w-[345px] text-[14.04px] font-[400] leading-[117.404%]">{course.description}</p>
+                <p className=" font-[Roboto] text-[14.04px] font-[400] leading-[117.404%]">{course.description}</p>
               </div>
             ))}
           </div>

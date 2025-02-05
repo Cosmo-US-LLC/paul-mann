@@ -20,30 +20,30 @@ const FounderHighlightMobile = () => {
      
       <div className="flex flex-col items-center gap-4 py-6 px-2 w-full max-w-[400px]">
         <div className="">
-          <h2 className="text-[32px] font-semibold uppercase">FOUNDER</h2>
-          <p className="text-[12px] font-medium uppercase mt-2">
+          <h2 className="text-[32px] font-semibold font-[RFDewi-Light] uppercase">FOUNDER</h2>
+          <p className="text-[12px] font-medium font-[Roboto] uppercase mt-2">
             Water Champions and Renova Academy
           </p>
         </div>
 
         <div className="flex flex-col gap-6">
           <div className="">
-            <h2 className="text-[28px] font-semibold uppercase">1.1K+</h2>
-            <p className="text-[12px] font-medium uppercase mt-1">
+            <h2 className="text-[28px] font-semibold font-[RFDewi-Light] uppercase">1.1K+</h2>
+            <p className="text-[12px] font-medium font-[Roboto] uppercase mt-1">
               Followers Across Social Media
             </p>
           </div>
 
           <div className="">
-            <h2 className="text-[28px] font-semibold uppercase">5K+</h2>
-            <p className="text-[12px] font-medium uppercase mt-1">
+            <h2 className="text-[28px] font-semibold font-[RFDewi-Light] uppercase">5K+</h2>
+            <p className="text-[12px] font-medium font-[Roboto] uppercase mt-1">
               Impressions Across Media Platforms
             </p>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
-          <p className="text-[14px] font-medium uppercase">Follow Paul:</p>
+          <p className="text-[14px] font-medium font-[Roboto] uppercase">Follow Paul:</p>
           <div className="flex justify-center gap-6">
             <a href="#" className="hover:text-gray-300">
               <FaTwitter size={24} />

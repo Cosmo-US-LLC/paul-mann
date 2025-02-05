@@ -6,11 +6,11 @@ function Organizations() {
         <div className="max-w-[1200px] h-[750px] mx-auto flex flex-col justify-center  ">
           <div className="flex flex-row w-[100%]   justify-around ">
             <div className="flex flex-col w-[50%] max-w-[438px] justify-center">
-              <p class=" text-[#00D4F1] font-[700] text-[45px] leading-[53px] capitalize">
+              <p class=" text-[#00D4F1] font-[RFDewi-bold] font-[700] text-[45px] leading-[53px] capitalize">
                 Founder of <br/> 2 Organizations
               </p>
 
-              <p class=" text-white text-[16px] leading-[23.24px] font-[400]">
+              <p class=" text-white text-[16px] font-[Roboto] leading-[23.24px] font-[400]">
                 Dedicated to water conservation through technology and
                 education.
               </p>
@@ -32,11 +32,11 @@ function Organizations() {
               />
             </div>
             <div className="flex flex-col w-[50%] max-w-[438px] justify-center">
-              <p class=" text-[#00D4F1] font-[700] text-[45px] leading-[53px] capitalize">
+              <p class=" text-[#00D4F1] font-[RFDewi-bold] font-[700] text-[45px] leading-[53px] capitalize">
                 50-70% farther
               </p>
 
-              <p class=" text-white text-[16px] leading-[23.24px] font-[400]">
+              <p class=" text-white text-[16px] font-[Roboto] leading-[23.24px] font-[400]">
                 An industry expert skilled in designing and implementing
                 innovative water reuse and efficiency solutions that make water
                 go
@@ -45,11 +45,11 @@ function Organizations() {
           </div>
           <div className="flex flex-row w-[100%]   justify-around ">
             <div className="flex flex-col w-[50%] max-w-[438px] justify-center">
-              <p class=" text-[#00D4F1] font-[700] text-[45px] leading-[53px] capitalize">
+              <p class=" text-[#00D4F1] font-[RFDewi-bold] font-[700] text-[45px] leading-[53px] capitalize">
                 Passionate about sustainability,
               </p>
 
-              <p class=" text-white text-[16px] leading-[23.24px] font-[400]">
+              <p class=" text-white text-[16px] font-[Roboto] leading-[23.24px] font-[400]">
                 Paul is committed to providing practical solutions that help
                 reduce water usage.
               </p>

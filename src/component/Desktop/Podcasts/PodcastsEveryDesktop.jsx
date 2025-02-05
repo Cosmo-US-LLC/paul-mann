@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import SuggestTopicForm from "../../ui/SuggestTopicForm"
-import TestimonialCarousel from "../../ui/TestimonialCarousel";
 
 const podcastData = [
   {
@@ -268,23 +267,21 @@ function PodcastsEveryDesktop() {
           </div>
         </div>
 
-        {/* Podcast Cards */}
         <div ref={listContainerRef} className="space-y-12">
-          {" "}
-          {/* Ref added here */}
+         
           {displayedPodcasts.map((podcast, index) => (
             <div
               key={index}
               className="flex items-start gap-8 pb-8 border-b border-gray-300"
             >
-              {/* Podcast Image */}
+              
               <div className="relative w-[336px]">
                 <img
                   src={podcast.image}
                   className="object-cover "
                   alt={`Podcast ${index + 1}`}
                 />
-                {/* Episode Display */}
+                
                 <div
                   className="absolute inset-y-0 right-[-40px] flex items-center justify-center text-black font-bold uppercase text-[14px]"
                   style={{
@@ -296,7 +293,6 @@ function PodcastsEveryDesktop() {
                 </div>
               </div>
 
-              {/* Podcast Info */}
               <div className="flex-1 text-left w-[600px] flex flex-col px-12 py-12">
                 <p className="text-[14px] font-medium uppercase text-gray-600 mb-2">
                   {podcast.date}
@@ -309,7 +305,6 @@ function PodcastsEveryDesktop() {
                 </p>
               </div>
 
-              {/* Episode Info and Actions */}
               <div className="flex flex-col gap-4 text-right">
                 <div className="flex flex-col items-end gap-6">
                   <div className="flex items-center gap-2">

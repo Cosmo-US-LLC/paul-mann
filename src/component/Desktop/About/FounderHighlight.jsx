@@ -15,27 +15,27 @@ const FounderHighlight = () => {
           <div className="relative z-10 flex items-end justify-center w-full h-full ">
             <div className="flex w-full gap-8 ">
               <div className="flex flex-col gap-2">
-                <h2 className="text-[46px] font-[400] uppercase ">FOUNDER</h2>
-                <p className="text-[12px] font-[500] uppercase ">
+                <h2 className="text-[46px] font-[400] font-[RFDewi-Light] uppercase ">FOUNDER</h2>
+                <p className="text-[12px] font-[Roboto]  font-[500] uppercase ">
                   Water Champions and Renova Academy
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="text-[46px] font-[400] uppercase">1.1K+</h2>
-                <p className="text-[12px] font-[500] uppercase">
+                <h2 className="text-[46px] font-[400] font-[RFDewi-Light] uppercase">1.1K+</h2>
+                <p className="text-[12px] font-[Roboto]  font-[500] uppercase">
                   Followers Across Social Media
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="text-[46px] font-[400] uppercase ">5K+</h2>
-                <p className="text-[12px] font-[500] uppercase ">
+                <h2 className="text-[46px]  font-[400] font-[RFDewi-Light] uppercase ">5K+</h2>
+                <p className="text-[12px] font-[Roboto]  font-[500] uppercase ">
                   Impressions Across Media Platforms
                 </p>
               </div>
             </div>
 
             <div className="flex flex-col gap-4">
-              <p className="text-[16px] font-[500] leading-[24px] uppercase">
+              <p className="text-[16px] font-[Roboto]  font-[500] leading-[24px] uppercase">
                 follow Paul :
               </p>
               <div className="flex gap-8">
