@@ -5,8 +5,8 @@ const FounderOfOrganizations = () => {
     <div className="max-w-[1440px] w-full h-full mx-auto">
       <div className="max-w-[1200px] h-[750px] gap-12 mx-auto flex flex-col justify-center items-center text-black">
         <h2 className="">
-          <span className="  text-[16px] font-[900] uppercase leading-[24px] text-center text-[#073B63]">FOUNDER OF 2 ORGANIZATIONS</span>{" "}
-          <span className="text-[16px] font-[400] leading-[24px] text-center text-[#000]">
+          <span className="  text-[16px] font-[Roboto]  font-[900] uppercase leading-[24px] text-center text-[#073B63]">FOUNDER OF 2 ORGANIZATIONS</span>{" "}
+          <span className="text-[16px] font-[Roboto]  font-[400] leading-[24px] text-center text-[#000]">
             dedicated to water conservation through technology and education.
           </span>
         </h2>
@@ -26,7 +26,7 @@ const FounderOfOrganizations = () => {
 
  
         <div className="w-[1022px] space-y-6 text-block">
-          <p className="text-[16px] font-[400] leading-[23px]">
+          <p className="text-[16px] font-[400] font-[Roboto] leading-[23px]">
             Paul is a seasoned industry expert specializing in the design and
             implementation of innovative water reuse and efficiency solutions
             that make water usage go 50-70% farther. With a deep passion for
@@ -37,7 +37,7 @@ const FounderOfOrganizations = () => {
             global water crisis and ensuring a balanced future for our
             ecosystems.
           </p>
-          <p className="text-[16px] font-[400] leading-[23px]">
+          <p className="text-[16px] font-[400] font-[Roboto]  leading-[23px]">
             As the founder of two groundbreaking organizations, Water Champions
             and Renova Academy, Paul combines technology and education to
             advance water conservation efforts. Water Champions focuses on
@@ -46,7 +46,7 @@ const FounderOfOrganizations = () => {
             other hand, serves as an online platform aimed at educating
             communities on water reuse, conservation, and sustainable practices.
           </p>
-          <p className="text-[16px] font-[400] leading-[23px]">
+          <p className="text-[16px] font-[400] font-[Roboto]  leading-[23px]">
             Paul's vision extends beyond immediate solutions, seeking to drive a
             global shift in water usage habits. He strives to make water
             conservation and reuse a top priority by empowering individuals,

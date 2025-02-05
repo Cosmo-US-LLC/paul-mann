@@ -26,10 +26,10 @@ const cardData = [
           <div className="mx-auto flex flex-col justify-center">
             <div className="relative flex flex-col items-center justify-center gap-8 text-white">
               <div className="flex flex-col items-center space-y-[10px] text-center">
-                <h2 className=" text-[20px] font-[700] leading-[53px] capitalize">
+                <h2 className="font-[RFDewi-bold] text-[20px] font-[700] leading-[53px] capitalize">
                   Who We Serve
                 </h2>
-                <p className="text-[15px] leading-[21.24px] font-[400]">
+                <p className="text-[15px] font-[Roboto] leading-[21.24px] font-[400]">
                   At Water Champions, we provide expert water management solutions
                   for a variety of clients:
                 </p>
@@ -50,7 +50,7 @@ const cardData = [
                       <h4 className=" text-[24.165px] font-[500] leading-[40px]">
                         {card.title}
                       </h4>
-                      <p className="text-[14.314px] font-[400] leading-[156.761%]">
+                      <p className="font-[Roboto] text-[14.314px] font-[400] leading-[156.761%]">
                         {card.description}
                       </p>
                     </div>

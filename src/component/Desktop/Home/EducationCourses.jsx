@@ -5,22 +5,22 @@ const EducationCourses = () => {
     {
       title: "Greywater Recycling Technology Course",
       description:
-        "Learn how to recycle greywater effectively to reduce water usage in homes and businesses.",
+        "Learn how to sell, design or install innovative systems that recycle greywater into germ-free, clear water used for irrigation, flushing toilets and more.",
     },
     {
       title: "Rainwater Harvesting Systems Course",
       description:
-        "Discover techniques to collect, store, and utilize rainwater for irrigation and other uses.",
+        "For architects, installers, and consultants it covers the installation of rainwater harvesting systems to conserve and optimize water use.",
     },
     {
       title: "Water-Efficient Fixtures Installation Course",
       description:
-        "Purchase, configure, and maintain eco-friendly water fixtures for optimal use.",
+        "Plumbers, contractors, and installers can upgrade properties with water-saving fixtures, creating measurable reductions in water usage.",
     },
     {
       title: "Permaculture Installation Course",
       description:
-        "Learn sustainable agricultural practices to improve soil water retention and biodiversity.",
+        "Offered to sustainability professionals and landscape designers for installing permaculture systems that reduce water needs by 30%.",
     },
   ];
 
@@ -34,10 +34,10 @@ const EducationCourses = () => {
             alt="Founder Highlight with water conservation system"
           />
 
-          <h1 className="text-[45px] font-[700] leading-[53px] capitalize">
+          <h1 className="text-[45px] font-[700] leading-[53px] font-[RFDewi-Light] capitalize">
             Creating Change <br /> Through Education
           </h1>
-          <p className="text-[16px] font-[400] leading-[21px] ">
+          <p className="text-[14px] font-[400] leading-[21px] font-[RFDewi-Light]">
             Renova Academy is an educational platform dedicated to driving
             global change through water literacy and training. Designed for
             architects, builders, sustainability professionals, and community
@@ -52,21 +52,23 @@ const EducationCourses = () => {
             {courses.map((course, index) => (
               <div
                 key={index}
-                className="relative px-10 py-4 bg-[#ffffff29] bg-opacity-60 rounded-xl overflow-hidden shadow-lg w-[511px] h-[170px]"
+                className="relative flex flex-col gap-4 px-10 py-4 bg-[#ffffff29] bg-opacity-60 rounded-xl overflow-hidden shadow-lg w-[511px] h-[170px]"
               >
-                <h2 className="w-[345px] text-[25px] font-[700] text-[#00D4F1]">
+                <h2 className="w-[345px] text-[25px] font-[700] text-[#00D4F1] leading-[24px] font-[RFDewi-Light]">
                   {course.title}
                 </h2>
-                <p className="w-[345px] text-[14px] font-[400] leading-[16px]">
+                <p className="w-[345px] text-[14px] font-[400] leading-[16px] font-[RFDewi-Light]">
                   {course.description}
                 </p>
               </div>
             ))}
           </div>
           <div className="flex justify-center ">
-            <button className="px-6 py-3 border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
-              The Solution
-            </button>
+            <a href="https://www.renovaacademy.com" rel="noopener noreferrer">
+              <button className="px-6 py-3 border tracking-[0.9px] font-[RFDewi-Light] border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+                Renova Academy
+              </button>
+            </a>
           </div>
         </div>
       </div>

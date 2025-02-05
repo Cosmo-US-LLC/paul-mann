@@ -35,9 +35,9 @@ const solutionsData = [
     return (
       <div className="WaterCycleRestorationBGmob">
         <div className="w-[90%] py-[30px] mx-auto">
-          <div className="gap-10 mx-auto flex flex-col justify-center text-white">
+          <div className="flex flex-col justify-center gap-10 mx-auto text-white">
             <div className="">
-              <h2 className="text-[20px] font-[700] leading-[140%] capitalize">
+              <h2 className="text-[20px]  font-[RFDewi-Light] font-[700] leading-[140%] capitalize">
                 How We Can Restore <br /> The Flow Of The Water Cycle
               </h2>
             </div>
@@ -53,17 +53,17 @@ const solutionsData = [
                     alt={solution.title}
                     className="w-12 h-12"
                   />
-                  <h4 className="text-[18px] font-[600]">{solution.title}</h4>
-                  <p className="text-[15px] font-[400] leading-[125%]">{solution.description}</p>
+                  <h4 className="text-[18px] font-[RFDewi-Light] font-[600] leading-[17px] tracking-[0.9px]">{solution.title}</h4>
+                  <p className="text-[15px] font-[400] font-[RFDewi-Light] leading-[125%]">{solution.description}</p>
                 </div>
               ))}
             </div>
   
-            <div className="flex justify-center ">
-              <button className="px-6 py-3 border border-white text-white uppercase text-[12px]  hover:bg-white hover:text-[#073B63] transition">
+            {/* <div className="flex justify-center ">
+              <button className="font-[Roboto] px-6 py-3 border border-white text-white uppercase text-[12px]  hover:bg-white hover:text-[#073B63] transition">
                 The Solution
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

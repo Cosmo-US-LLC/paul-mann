@@ -66,45 +66,48 @@ function NavbarMobile() {
         {isOpen && (
           <div
             ref={menuRef}
-            className="absolute top-12 left-0 w-[100%] bg-white shadow-lg p-4"
+            className="absolute top-12 z-[999] left-0 w-[100%] bg-white shadow-lg p-4"
           >
             <div className="flex flex-col space-y-4">
               <Link to="/about">
                 <p
                   onClick={() => setIsOpen(false)}
-                  className="text-black px-2 text-[14px] hover:text-gray-900"
+                  className="text-black font-[Roboto] px-2 text-[14px] hover:text-gray-900"
                 >
                   About
                 </p>
               </Link>
-              <a
-                href="#Podcast"
+
+              <Link to="/podcast" onClick={() => setIsOpen(false)}>
+                <p className="text-black font-[Roboto] px-2 text-[14px] hover:text-gray-900">
+                  Podcast
+                </p>
+              </Link>
+              <Link to="/glimpse" onClick={() => setIsOpen(false)}>
+                <p
                 onClick={() => setIsOpen(false)}
-                className="text-black px-2 text-[14px] hover:text-gray-900"
-              >
-                Podcast
-              </a>
-              <a
-                href="#Press"
-                onClick={() => setIsOpen(false)}
-                className="text-black px-2 text-[14px] hover:text-gray-900"
+                className="text-black font-[Roboto] px-2 text-[14px] hover:text-gray-900"
               >
                 Press
-              </a>
+              </p>
+              </Link>
               <a
-                href="#Coaching"
+                href="https://www.renovaacademy.com/"
                 onClick={() => setIsOpen(false)}
-                className="flex flex-col justify-center px-2 text-black text-[14px] font-medium   capitalize   flex-shrink-0 hover:text-gray-900"
+                className="flex flex-col justify-center px-2 text-black font-[Roboto] text-[14px]   capitalize   flex-shrink-0 hover:text-gray-900"
               >
                 Coaching
               </a>
-              <a
-                href="#Connect"
-                onClick={() => setIsOpen(false)}
-                className="flex flex-col justify-center px-2 text-black text-[14px] font-medium   capitalize  flex-shrink-0 hover:text-gray-900"
+              <Link to="/contact-us"
+              onClick={() => setIsOpen(false)}
+              >
+              <p
+                className="flex flex-col justify-center px-2 text-black font-[Roboto] text-[14px]   capitalize  flex-shrink-0 hover:text-gray-900"
               >
                 Connect
-              </a>
+              </p>
+              </Link>
+              
             </div>
           </div>
         )}

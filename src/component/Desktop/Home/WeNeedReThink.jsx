@@ -22,16 +22,16 @@ function WeNeedReThink() {
       <div className="max-w-[1440px] h-[750px] w-full  mx-auto  text-white">
         <div className="max-w-[1200px] gap-8 h-full mx-auto flex flex-col justify-center items-center">
           <div className=" w-[718px] flex flex-col items-center justify-center text-center gap-6">
-            <h2 className=" text-[45px] font-700 leading-[53px] capitalize">
+            <h2 className=" text-[45px] font-[700] leading-[53px] capitalize font-[RFDewi-Light]">
               We Need To Rethink Our Relationship With Water
             </h2>
-            <p className="  text-[16px] leading-[21.24px] font-[400]">
+            <p className=" w-[670px] text-[16px] leading-[21.24px] font-[400] font-[RFDewi-Light]">
               The lakes are shrinking. The rivers are disappearing. Crops are
               withering in fields, and drinking water is becoming toxic. This
               isn't the distant future—it's happening now.
             </p>
 
-            <p className="text-[16px] leading-[21.24px] font-[400]">
+            <p className=" w-[670px] text-[16px] leading-[21.24px] font-[400] font-[RFDewi-Light]">
               With water demand set to exceed supply by 40% by 2030, we are
               heading toward an era of mass starvation, disease, and violent
               conflict. If we do nothing, entire regions will turn to dust. The
@@ -50,8 +50,8 @@ function WeNeedReThink() {
                   alt={`Icon ${index + 1}`}
                   className="w-12 h-12 mb-4"
                 />
-                <h4 className="mb-2 text-xl font-bold">{card.title}</h4>
-                <p className="text-sm">{card.description}</p>
+                <h4 className="mb-2 text-[30px] font-[700] font-[RFDewi-Light]">{card.title}</h4>
+                <p className="text-[16px] font-[400] leading-[23px] font-[RFDewi-Light]">{card.description}</p>
               </div>
             ))}
           </div>
