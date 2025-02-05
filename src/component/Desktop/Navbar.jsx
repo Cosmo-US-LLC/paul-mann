@@ -46,7 +46,7 @@ function Navbar() {
               </a>
               <div className="flex space-x-8 md:flex">
                 <a
-                  href="#Coaching"
+                  href="https://www.renovaacademy.com/"
                   onClick={(e) => handleScroll(e, "Coaching", 90)}
                   className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] capitalize   flex-shrink-0 hover:text-gray-900"
                 >

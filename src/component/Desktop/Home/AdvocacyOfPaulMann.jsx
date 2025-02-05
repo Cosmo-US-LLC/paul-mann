@@ -15,8 +15,8 @@ const AdvocacyOfPaulMann = () => {
 
             {/* Top Caption */}
             <div className="absolute top-0 left-0 right-0 flex items-center px-4 py-2 text-white bg-gray-700 bg-opacity-75">
-              <img src="/desktop-assets/AdvocacyOfPaulMann/cbs-header-logo.webp" alt="CBS Logo" className="h-12 mr-6" />
-              <p className="text-[20px] font-[700] w-[381px] h-[58px]">
+              <img src="/desktop-assets/AdvocacyOfPaulMann/cbs-header-logo.webp" alt="CBS Logo" className="mr-4 h-14" />
+              <p className="text-[19px] font-[700] w-[381px] h-[58px] font-[RFDewi-Light]">
                 Advocated for Water Conservation on CBS Evening News
               </p>
             </div>
@@ -36,39 +36,41 @@ const AdvocacyOfPaulMann = () => {
                 className="h-12 pr-2"
               />
               <div className="flex flex-row pr-12">
-                <span className="text-[45px] font-[900] text-[#073B63]">
+                <span className="text-[45px] font-[600] leading-[52px] text-[#073B63] font-[RFDewi-Light]">
                   1,000+
                 </span>
               </div>
               <div className="flex flex-row pl-3 border-l-2 border-gray-800">
-                <p className="text-[20px] font-[700] text-[#073B63]">
+                <p className="text-[20px] font-[800] text-[#073B63] font-[RFDewi-Light]">
                   LinkedIn <br /> Followers
                 </p>
               </div>
             </div>
 
             <div className="flex items-center w-full max-w-[435px] justify-between gap-4 p-6 space-x-4 bg-[#D9D9D9] shadow-lg rounded-lg">
-              <p className="text-[18px] font-[700] text-[#073B63]">
+              <p className="text-[18px] font-[700] text-[#073B63] font-[RFDewi-Light]">
                 Featured In:
               </p>
               <div className="flex gap-8">
                 <img
                   src="/desktop-assets/AdvocacyOfPaulMann/cbs-logo.webp"
                   alt="CBS Logo"
-                  className="h-12"
+                  className="h-16"
                 />
                 <img
                   src="/desktop-assets/AdvocacyOfPaulMann/smart-business-logo.webp"
                   alt="Smart Business Logo"
-                  className="h-12"
+                  className="h-16"
                 />
               </div>
             </div>
           </div>
           <div className="flex justify-center ">
-            <button className="px-6 py-3 border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
-              The Solution
+          <a href="https://www.renovaacademy.com" rel="noopener noreferrer">
+            <button className="px-6 py-3 border font-[RFDewi-Light] tracking-[0.9px] border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+              The Press
             </button>
+          </a>
           </div>
         </div>
       </div>

@@ -65,7 +65,8 @@ code {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh);
+  /* min-height: calc(100vh); */
+min-height: 750px;
 }
 .heroBGmob {
   background-image: url("/mobile-assets/hero/hero-bg.webp");

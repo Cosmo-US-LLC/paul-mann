@@ -24,7 +24,7 @@ function FooterMobile() {
                   className="cursor-pointer object-cover max-w-[164px]"
                 />
               </div>
-              <p className="text-[14px] font-[Roboto] font-[300] leading-[23px] capitalize w-[400px]">
+              <p className="text-[14px] font-[Roboto] font-[300] leading-[23px] capitalize w-[350px]">
                 Paul is a seasoned industry expert specializing in the design
                 and implementation of innovative water reuse and efficiency
                 solutions that make water go farther.
@@ -51,7 +51,7 @@ function FooterMobile() {
               </div>
               <div className="w-[50%] flex flex-col justify-center space-y-[10px]  block font-[Roboto]relative z-10 uppercase">
                 <a
-                  href="#Coaching"
+                  href="https://www.renovaacademy.com/"
                   className="text-[11px] block font-[Roboto] font-[700] leading-[13px]"
                   onClick={(e) => handleScroll(e, "FaqD", 90)}
                 >

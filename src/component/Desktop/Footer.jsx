@@ -41,14 +41,14 @@ function Footer() {
                 Press
               </a>
               <a
-                href="#Coaching"
+                href="https://www.renovaacademy.com/"
                 className="text-[11px] font-[Roboto] font-[700] leading-[13px]"
                 onClick={(e) => handleScroll(e, "FaqD", 90)}
               >
                 Coaching
               </a>
               <a
-                href="#Connect"
+                href="/contact-us"
                 className="text-[11px] font-[Roboto] font-[700] leading-[13px]"
                 onClick={(e) => handleScroll(e, "FaqD", 90)}
               >
@@ -96,27 +96,33 @@ function Footer() {
                   SUBSCRIBE
                 </button>
               </div>
-              <div className="flex gap-6 ">
-                <p className="font-bold font-[Roboto]">FOLLOW PAUL:</p>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <FaTwitter size={24} />
+              <div className="flex items-center gap-10">
+              <p className="text-[16px] font-[Roboto] font-[500] leading-[24px] uppercase">
+                follow Paul :
+              </p>
+              <div className="flex gap-8">
+              <a href="#" className="text-black hover:text-gray-300">
+                <img className="object-cover h-6 "  src={'/desktop-assets/footer/logo6.svg'} alt="" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <FaFacebook size={24} />
+                <a href="#" className="text-black hover:text-gray-300">
+                <img className="object-cover h-6 "  src={'/desktop-assets/footer/logo1.svg'} alt="" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <FaInstagram size={24} />
+                
+                <a href="#" className="hover:text-gray-300">
+                <img className="object-cover h-6" src={'/desktop-assets/footer/logo2.svg'} alt="" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <FaLinkedin size={24} />
+
+                <a href="https://www.linkedin.com/in/pauldmann/" className="hover:text-gray-300">
+                <img className="object-cover h-6" src={'/desktop-assets/footer/logo3.svg'} alt="" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <FaYoutube size={24} />
+                <a href="#" className="hover:text-gray-300">
+                <img className="object-cover h-6" src={'/desktop-assets/footer/logo4.svg'} alt="" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <FaPinterest size={24} />
+                <a href="#" className="hover:text-gray-300">
+                <img className="object-cover h-6" src={'/desktop-assets/footer/logo5.svg'} alt="" />
                 </a>
               </div>
+            </div>
             </div>
           </div>
 

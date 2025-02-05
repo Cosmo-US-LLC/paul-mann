@@ -92,7 +92,7 @@ function NavbarMobile() {
               </p>
               </Link>
               <a
-                href="#Coaching"
+                href="https://www.renovaacademy.com/"
                 onClick={() => setIsOpen(false)}
                 className="flex flex-col justify-center px-2 text-black font-[Roboto] text-[14px]   capitalize   flex-shrink-0 hover:text-gray-900"
               >
