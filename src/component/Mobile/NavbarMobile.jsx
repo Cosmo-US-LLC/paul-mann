@@ -77,13 +77,16 @@ function NavbarMobile() {
                   About
                 </p>
               </Link>
-              <a
-                href="#Podcast"
-                onClick={() => setIsOpen(false)}
-                className="text-black px-2 text-[14px] hover:text-gray-900"
-              >
-                Podcast
-              </a>
+             
+              <Link to="/podcast"
+               onClick={() => setIsOpen(false)}
+              > 
+              <p
+              className="text-black px-2 text-[14px] hover:text-gray-900"
+            >
+              Podcast
+            </p>
+                              </Link>
               <a
                 href="#Press"
                 onClick={() => setIsOpen(false)}

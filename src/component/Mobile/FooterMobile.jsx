@@ -11,61 +11,65 @@ function FooterMobile() {
   return (
     <footer className="bg-[#F3F3F3] overflow-hidden relative w-full">
       <div className="mx-auto w-[90%] mx-auto py-[30px]">
-      <div className="mx-auto ">
-        <div className="relative">
-          <div className="w-[38%] gap-6 flex flex-col relative z-10">
-            <div
-              className="relative z-10 flex w-full "
-              onClick={handleLogoClick}
-            >
-              <img
-                src="/desktop-assets/footer/footer-logo.webp"
-                alt="fual-mann-logo"
-                className="cursor-pointer object-cover max-w-[164px]"
-              />
+        <div className="mx-auto ">
+          <div className="relative">
+            <div className="w-[38%] gap-6 flex flex-col relative z-10">
+              <div
+                className="relative z-10 flex w-full "
+                onClick={handleLogoClick}
+              >
+                <img
+                  src="/desktop-assets/footer/footer-logo.webp"
+                  alt="fual-mann-logo"
+                  className="cursor-pointer object-cover max-w-[164px]"
+                />
+              </div>
+              <p className="text-[14px] font-[300] leading-[23px] capitalize w-[400px]">
+                Paul is a seasoned industry expert specializing in the design
+                and implementation of innovative water reuse and efficiency
+                solutions that make water go farther.
+              </p>
             </div>
-            <p className="text-[14px] font-[300] leading-[23px] capitalize w-[400px]">
-              Paul is a seasoned industry expert specializing in the design and
-              implementation of innovative water reuse and efficiency solutions
-              that make water go farther.
-            </p>
-          </div>
-        <div className="flex justify-between py-[20px]">
-        <div className="w-[50%] flex flex-col justify-center space-y-[10px]   relative z-10 uppercase">
-            <Link to="/about">
-            <p className="block  text-[11px] font-[700] leading-[13px]">
-              About
-            </p>
-            </Link>
-            <a
-              href="#Podcast"
-              className="text-[11px]  block font-[700] leading-[13px]"
-            >
-              Podcast
-            </a>
-            <a href="#Press" className="block text-[11px] font-[700] leading-[13px]">
-              Press
-            </a>
-          </div>
-          <div className="w-[50%] flex flex-col justify-center space-y-[10px]  blockrelative z-10 uppercase">
-            <a
-              href="#Coaching"
-              className="text-[11px] block font-[700] leading-[13px]"
-              onClick={(e) => handleScroll(e, "FaqD", 90)}
-            >
-              Coaching
-            </a>
-            <a
-              href="#Connect"
-              className="text-[11px] block font-[700] leading-[13px]"
-              onClick={(e) => handleScroll(e, "FaqD", 90)}
-            >
-              Connect
-            </a>
-          </div>
-        </div>
-          <div className="w-[100%] flex flex-col space-y-[10px] relative z-10">
-           
+            <div className="flex justify-between py-[20px]">
+              <div className="w-[50%] flex flex-col justify-center space-y-[10px]   relative z-10 uppercase">
+                <Link to="/about">
+                  <p className="block  text-[11px] font-[700] leading-[13px]">
+                    About
+                  </p>
+                </Link>
+
+                <Link to="/podcast">
+                  <p
+                    className="text-[11px]  block font-[700] leading-[13px]"
+                  >
+                    Podcast
+                  </p>
+                </Link>
+                <a
+                  href="#Press"
+                  className="block text-[11px] font-[700] leading-[13px]"
+                >
+                  Press
+                </a>
+              </div>
+              <div className="w-[50%] flex flex-col justify-center space-y-[10px]  blockrelative z-10 uppercase">
+                <a
+                  href="#Coaching"
+                  className="text-[11px] block font-[700] leading-[13px]"
+                  onClick={(e) => handleScroll(e, "FaqD", 90)}
+                >
+                  Coaching
+                </a>
+                <a
+                  href="#Connect"
+                  className="text-[11px] block font-[700] leading-[13px]"
+                  onClick={(e) => handleScroll(e, "FaqD", 90)}
+                >
+                  Connect
+                </a>
+              </div>
+            </div>
+            <div className="w-[100%] flex flex-col space-y-[10px] relative z-10">
               <div className="">
                 <h2 className="text-[14px] font-[600] text-black leading-[24px] uppercase font-roboto">
                   SIGN UP FOR OUR NEWSLETTER
@@ -89,17 +93,22 @@ function FooterMobile() {
                   SUBSCRIBE
                 </button>
               </div>
-          
+            </div>
           </div>
-        </div>
 
-        <div className="flex justify-start space-y-[28px] pt-[20px] items-center ">
-          <div className="text-[10px] font-[500] test-[#000] flex leading-[22px] gap-6 uppercase">
-            <a href="#Paul-Mann" className="text-[10.656px] font-[500]">© Paul Mann</a>
-            <a href="#Privacy-Policy" className="text-[10.656px] font-[500]">Privacy Policy</a>
-            <a href="#Terms" className="text-[10.656px] font-[500]">Terms</a>
+          <div className="flex justify-start space-y-[28px] pt-[20px] items-center ">
+            <div className="text-[10px] font-[500] test-[#000] flex leading-[22px] gap-6 uppercase">
+              <a href="#Paul-Mann" className="text-[10.656px] font-[500]">
+                © Paul Mann
+              </a>
+              <a href="#Privacy-Policy" className="text-[10.656px] font-[500]">
+                Privacy Policy
+              </a>
+              <a href="#Terms" className="text-[10.656px] font-[500]">
+                Terms
+              </a>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </footer>

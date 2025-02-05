@@ -9,7 +9,6 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
 function Footer() {
   const handleLogoClick = () => {
     window.scrollTo({
@@ -18,7 +17,6 @@ function Footer() {
     });
   };
 
-
   return (
     <footer className="bg-[#F3F3F3] overflow-hidden relative w-full">
       <div className="max-w-[1440px]   mx-auto ">
@@ -26,18 +24,16 @@ function Footer() {
           <div className="relative h-[90%] flex flex-row w-full   py-12 ">
             <div className="w-[13%] flex  flex-col gap-3 justify-start items-start relative z-10 uppercase">
               <Link to="/about">
+                <p className="text-[11px] font-[700] leading-[13px]">About</p>
+              </Link>
+
+              <Link to="/podcast">
                 <p
                   className="text-[11px] font-[700] leading-[13px]"
                 >
-                  About
+                  Podcast
                 </p>
               </Link>
-              <a
-                href="#Podcast"
-                className="text-[11px] font-[700] leading-[13px]"
-              >
-                Podcast
-              </a>
               <a
                 href="#Press"
                 className="text-[11px] font-[700] leading-[13px]"

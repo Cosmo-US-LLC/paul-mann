@@ -17,12 +17,14 @@ function Navbar() {
                   About
                 </p>
               </Link>
-                <a
-                  href="#Podcast"
+               
+                <Link to="/podcast">
+                <p
                   className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] uppercase    hover:text-gray-900"
                 >
                   Podcast
-                </a>
+                </p>
+              </Link>
                 <a
                   href="#Press"
                   className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] uppercase     hover:text-gray-900"
