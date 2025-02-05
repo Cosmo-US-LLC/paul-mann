@@ -53,7 +53,7 @@ function Navbar() {
                   Coaching
                 </a>
                 <a
-                  href="#Connect"
+                  href="/contact-us"
                   onClick={(e) => handleScroll(e, "Connect", 90)}
                   className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] capitalize  flex-shrink-0 hover:text-gray-900"
                 >
