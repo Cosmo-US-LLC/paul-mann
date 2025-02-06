@@ -2,34 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'RFDewi-bold';
-  src: url('/fonts/RFDewiExtended-Bold.woff') format('woff'),
-       url('/fonts/RFDewiExtended-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
+  font-family: "RFDewi-bold";
+  src: url("/fonts/RFDewiExtended-Bold.woff") format("woff"),
+    url("/fonts/RFDewiExtended-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'RFDewi-Semibold';
-  src: url('/fonts/RFDewiExtended-Semibold.woff') format('woff'),
-       url('/fonts/RFDewiExtended-Semibold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
+  font-family: "RFDewi-Semibold";
+  src: url("/fonts/RFDewiExtended-Semibold.woff") format("woff"),
+    url("/fonts/RFDewiExtended-Semibold.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'RFDewi-Regular';
-  src: url('/fonts/RFDewiExtended-Regular.woff') format('woff'),
-       url('/fonts/RFDewiExtended-Regular.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
+  font-family: "RFDewi-Regular";
+  src: url("/fonts/RFDewiExtended-Regular.woff") format("woff"),
+    url("/fonts/RFDewiExtended-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'RFDewi-Light';
-  src: url('/fonts/RFDewiExtended-Light.woff') format('woff'),
-       url('/fonts/RFDewiExtended-Light.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+  font-family: "RFDewi-Light";
+  src: url("/fonts/RFDewiExtended-Light.woff") format("woff"),
+    url("/fonts/RFDewiExtended-Light.ttf") format("truetype");
 }
 
 body {
@@ -58,7 +49,6 @@ code {
 .testimonial-swiper .swiper-button-next:hover,
 .testimonial-swiper .swiper-button-prev:hover {
   opacity: 1;
-
 }
 .heroBG {
   background-image: url("/desktop-assets/hero/hero-bg.webp");
@@ -66,7 +56,7 @@ code {
   background-size: cover;
   background-repeat: no-repeat;
   /* min-height: calc(100vh); */
-min-height: 750px;
+  min-height: 750px;
 }
 .heroBGmob {
   background-image: url("/mobile-assets/hero/hero-bg.webp");
@@ -102,7 +92,7 @@ min-height: 750px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 750px;
+  min-height: 705px;
 }
 
 .EndToEndSolutionsBG {
@@ -110,7 +100,7 @@ min-height: 750px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 1395px;
+  min-height: 1150px;
 }
 .EndToEndSolutionsBGmob {
   background-image: url("/desktop-assets/EndToEndSolutions/end-to-end-bg.webp");

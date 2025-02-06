@@ -26,7 +26,7 @@ function Navbar() {
                 </p>
               </Link>
                 <a
-                  href="#Press"
+                  href="/glimpse"
                   className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] uppercase     hover:text-gray-900"
                 >
                   Press

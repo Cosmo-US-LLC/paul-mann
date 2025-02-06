@@ -24,7 +24,7 @@ function FooterMobile() {
                   className="cursor-pointer object-cover max-w-[164px]"
                 />
               </div>
-              <p className="text-[14px] font-[Roboto] font-[300] leading-[23px] capitalize w-[350px]">
+              <p className="text-[14px] font-[Roboto] font-[300] leading-[23px] w-[350px]">
                 Paul is a seasoned industry expert specializing in the design
                 and implementation of innovative water reuse and efficiency
                 solutions that make water go farther.

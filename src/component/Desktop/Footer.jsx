@@ -1,12 +1,4 @@
 import React from "react";
-import {
-  FaTwitter,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaYoutube,
-  FaPinterest,
-} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -24,32 +16,32 @@ function Footer() {
           <div className="relative h-[90%] flex flex-row w-full   py-12 ">
             <div className="w-[13%] flex  flex-col gap-3 justify-start items-start relative z-10 uppercase">
               <Link to="/about">
-                <p className="text-[11px] font-[700] leading-[13px]">About</p>
+                <p className="text-[14px] font-[700] leading-[13px]">About</p>
               </Link>
 
               <Link to="/podcast">
                 <p
-                  className="text-[11px] font-[Roboto] font-[700] leading-[13px]"
+                  className="text-[14px] font-[Roboto] font-[700] leading-[13px]"
                 >
                   Podcast
                 </p>
               </Link>
               <a
                 href="#Press"
-                className="text-[11px] font-[Roboto] font-[700] leading-[13px]"
+                className="text-[14px] font-[Roboto] font-[700] leading-[13px]"
               >
                 Press
               </a>
               <a
                 href="https://www.renovaacademy.com/"
-                className="text-[11px] font-[Roboto] font-[700] leading-[13px]"
+                className="text-[14px] font-[Roboto] font-[700] leading-[13px]"
                 onClick={(e) => handleScroll(e, "FaqD", 90)}
               >
                 Coaching
               </a>
               <a
                 href="/contact"
-                className="text-[11px] font-[Roboto] font-[700] leading-[13px]"
+                className="text-[14px] font-[Roboto] font-[700] leading-[13px]"
                 onClick={(e) => handleScroll(e, "FaqD", 90)}
               >
                 Connect
@@ -66,7 +58,7 @@ function Footer() {
                   className="cursor-pointer w-[246px] h-[97px]"
                 />
               </div>
-              <p className="text-[13px] font-[Roboto] font-[300] leading-[23px] capitalize w-[400px]">
+              <p className="text-[14px] font-[Roboto] font-[300] leading-[23px] w-[400px]">
                 Paul is a seasoned industry expert specializing in the design
                 and implementation of innovative water reuse and efficiency
                 solutions that make water go farther.
@@ -74,10 +66,10 @@ function Footer() {
             </div>
             <div className="w-[50%] flex flex-col gap-6 pl-16 relative z-10">
               <div className="">
-                <h2 className="text-[14px] font-[Roboto] font-[600] text-black leading-[24px] uppercase font-roboto">
+                <h2 className="text-[14px] font-[Roboto] font-[600] text-black leading-[24px] uppercase ">
                   SIGN UP FOR OUR NEWSLETTER
                 </h2>
-                <p className="text-black font-[Roboto] font-light text-[14px] leading-[23.24px] font-roboto">
+                <p className="text-black font-[Roboto] font-[300] text-[14px] leading-[23.24px]">
                   Stay updated on the latest news and exclusive promotions!
                 </p>
               </div>
@@ -100,26 +92,26 @@ function Footer() {
               <p className="text-[16px] font-[Roboto] font-[500] leading-[24px] uppercase">
                 follow Paul :
               </p>
-              <div className="flex gap-8">
+              <div className="flex gap-6">
               <a href="#" className="text-black hover:text-gray-300">
-                <img className="object-cover h-6 "  src={'/desktop-assets/footer/logo6.svg'} alt="" />
+                <img className="object-cover h-5 "  src={'/desktop-assets/footer/logo6.svg'} alt="" />
                 </a>
                 <a href="#" className="text-black hover:text-gray-300">
-                <img className="object-cover h-6 "  src={'/desktop-assets/footer/logo1.svg'} alt="" />
+                <img className="object-cover h-5 "  src={'/desktop-assets/footer/logo1.svg'} alt="" />
                 </a>
                 
                 <a href="#" className="hover:text-gray-300">
-                <img className="object-cover h-6" src={'/desktop-assets/footer/logo2.svg'} alt="" />
+                <img className="object-cover h-5" src={'/desktop-assets/footer/logo2.svg'} alt="" />
                 </a>
 
                 <a href="https://www.linkedin.com/in/pauldmann/" className="hover:text-gray-300">
-                <img className="object-cover h-6" src={'/desktop-assets/footer/logo3.svg'} alt="" />
+                <img className="object-cover h-5" src={'/desktop-assets/footer/logo3.svg'} alt="" />
                 </a>
                 <a href="#" className="hover:text-gray-300">
-                <img className="object-cover h-6" src={'/desktop-assets/footer/logo4.svg'} alt="" />
+                <img className="object-cover h-5" src={'/desktop-assets/footer/logo4.svg'} alt="" />
                 </a>
                 <a href="#" className="hover:text-gray-300">
-                <img className="object-cover h-6" src={'/desktop-assets/footer/logo5.svg'} alt="" />
+                <img className="object-cover h-5" src={'/desktop-assets/footer/logo5.svg'} alt="" />
                 </a>
               </div>
             </div>
@@ -127,10 +119,10 @@ function Footer() {
           </div>
 
           <div className="flex justify-center items-center h-[10%]">
-            <div className="text-[10px] font-[500] test-[#000] flex leading-[22px] gap-6 uppercase">
-              <a href="#Paul-Mann" className="font-[Roboto]">© Paul Mann</a>
-              <a href="#Privacy-Policy" className="font-[Roboto]">Privacy Policy</a>
-              <a href="#Terms" className="font-[Roboto]">Terms</a>
+            <div className="flex gap-6 uppercase">
+              <a href="#Paul-Mann" className="font-[Roboto] text-[14px] font-[500] test-[#000]   leading-[22px]">© Paul Mann</a>
+              <a href="#Privacy-Policy" className="font-[Roboto] text-[14px] font-[500] test-[#000]   leading-[22px]">Privacy Policy</a>
+              <a href="#Terms" className="font-[Roboto] text-[14px] font-[500] test-[#000]   leading-[22px]">Terms</a>
             </div>
           </div>
         </div>
