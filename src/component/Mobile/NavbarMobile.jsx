@@ -98,7 +98,7 @@ function NavbarMobile() {
               >
                 Coaching
               </a>
-              <Link to="/contact-us"
+              <Link to="/contact"
               onClick={() => setIsOpen(false)}
               >
               <p
