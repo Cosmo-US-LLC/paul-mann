@@ -19,10 +19,10 @@ import GlimpseMobile from "./component/Mobile/Glimpse";
 function App() {
   return (
     <Router>
-      <div className="2xl:block xl:block lg:block md:block sm:hidden hidden">
+      <div className="hidden 2xl:block xl:block lg:block md:block sm:hidden">
         <Navbar />
       </div>
-      <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
+      <div className="block 2xl:hidden xl:hidden lg:hidden md:hidden sm:block">
         <NavbarMobile />
       </div>
 
@@ -31,10 +31,10 @@ function App() {
           path="/"
           element={
             <>
-              <div className="2xl:block xl:block lg:block md:block sm:hidden hidden">
+              <div className="hidden 2xl:block xl:block lg:block md:block sm:hidden">
                 <HomeDesktop />
               </div>
-              <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
+              <div className="block 2xl:hidden xl:hidden lg:hidden md:hidden sm:block">
                 <HomeMobile />
               </div>
             </>
@@ -44,10 +44,10 @@ function App() {
           path="/about"
           element={
             <>
-              <div className="2xl:block xl:block lg:block md:block sm:hidden hidden">
+              <div className="hidden 2xl:block xl:block lg:block md:block sm:hidden">
                 <AboutDesktop />
               </div>
-              <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
+              <div className="block 2xl:hidden xl:hidden lg:hidden md:hidden sm:block">
                 <AboutMobile />
               </div>
             </>
@@ -57,23 +57,23 @@ function App() {
           path="/podcast"
           element={
             <>
-              <div className="2xl:block xl:block lg:block md:block sm:hidden hidden">
+              <div className="hidden 2xl:block xl:block lg:block md:block sm:hidden">
                 <PodcastsDesktop />
               </div>
-              <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
+              <div className="block 2xl:hidden xl:hidden lg:hidden md:hidden sm:block">
                 <PodcastsMobile />
               </div>
             </>
           }
         />
           <Route
-          path="/contact-us"
+          path="/contact"
           element={
             <>
-              <div className="2xl:block xl:block lg:block md:block sm:hidden hidden">
+              <div className="hidden 2xl:block xl:block lg:block md:block sm:hidden">
                 <ContactUsDesktop />
               </div>
-              <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
+              <div className="block 2xl:hidden xl:hidden lg:hidden md:hidden sm:block">
                 <ContactUsMobile />
               </div>
             </>
@@ -83,10 +83,10 @@ function App() {
           path="/glimpse"
           element={
             <>
-              <div className="2xl:block xl:block lg:block md:block sm:hidden hidden">
+              <div className="hidden 2xl:block xl:block lg:block md:block sm:hidden">
                 <GlimpseDesktop />
               </div>
-              <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
+              <div className="block 2xl:hidden xl:hidden lg:hidden md:hidden sm:block">
                 <GlimpseMobile />
               </div>
             </>
@@ -94,10 +94,10 @@ function App() {
         />
       </Routes>
 
-      <div className="2xl:block xl:block lg:block md:block sm:hidden hidden">
+      <div className="hidden 2xl:block xl:block lg:block md:block sm:hidden">
         <Footer />
       </div>
-      <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:block block">
+      <div className="block 2xl:hidden xl:hidden lg:hidden md:hidden sm:block">
         <FooterMobile />
       </div>
     </Router>

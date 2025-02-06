@@ -57,7 +57,7 @@ function FooterMobile() {
                 >
                   Coaching
                 </a>
-                <Link to="/contact-us">
+                <Link to="/contact">
                   <p className="text-[11px] block font-[Roboto] font-[700] leading-[13px]">
                     Connect
                   </p>

@@ -48,7 +48,7 @@ function Footer() {
                 Coaching
               </a>
               <a
-                href="/contact-us"
+                href="/contact"
                 className="text-[11px] font-[Roboto] font-[700] leading-[13px]"
                 onClick={(e) => handleScroll(e, "FaqD", 90)}
               >
