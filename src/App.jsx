@@ -67,19 +67,6 @@ function App() {
           }
         />
         <Route
-          path="/contact-2"
-          element={
-            <>
-            <div className="hidden 2xl:block xl:block lg:block md:block sm:hidden">
-              <ContactUsDesktop />
-            </div>
-            <div className="block 2xl:hidden xl:hidden lg:hidden md:hidden sm:block">
-              <ContactUsMobile />
-            </div>
-            </>
-          }
-        />
-        <Route
           path="/contact"
           element={
             <>
