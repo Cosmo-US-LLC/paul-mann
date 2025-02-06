@@ -66,7 +66,7 @@ const AdvocacyOfPaulMann = () => {
             </div>
           </div>
           <div className="flex justify-center ">
-          <a href="https://www.renovaacademy.com" rel="noopener noreferrer">
+          <a href="/glimpse" rel="noopener noreferrer">
             <button className="px-6 py-3 border font-[RFDewi-Light] tracking-[0.9px] border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
               The Press
             </button>

@@ -48,10 +48,10 @@ const solutionsData = [
 function EndToEndSolutions() {
   return (
     <div className="EndToEndSolutionsBG">
-      <div className="max-w-[1440px] w-full h-full mx-auto   overflow-hidden">
-        <div className="max-w-[1200px] h-[1387px] mx-auto flex flex-col text-white justify-center gap-12  ">
+      <div className="max-w-[1440px] w-full h-full mx-auto overflow-hidden">
+        <div className="max-w-[1200px] min-h-[1150px] h-full mx-auto flex flex-col text-white justify-center gap-12  ">
           <div className="max-w-[644px]">
-            <h2 className="text-[48px] font-[500] leading-[58px]">
+            <h2 className="text-[45px] font-[700] font-[RFDewi-Regular] leading-[53px] capitalize">
               End-to-End Solutions for Water Management
             </h2>
           </div>
@@ -60,18 +60,18 @@ function EndToEndSolutions() {
             {solutionsData.map((solution, index) => (
               <div
                 key={index}
-                className="flex flex-col p-4 bg-[#ffffff29] bg-opacity-60 rounded-xl overflow-hidden shadow-lg w-[387px] h-[470px]"
+                className="flex flex-col p-4 bg-[#ffffff39] bg-opacity-60 rounded-xl overflow-hidden shadow-lg w-[387px] "
               >
                 <img
                   src={solution.image}
                   alt={solution.title}
                   className="w-full h-[232px] object-cover rounded-lg"
                 />
-                <div className="flex flex-col gap-4 py-6">
-                  <h4 className="text-[28px] font-[500] leading-[40px]">
+                <div className="flex flex-col gap-4 pt-6">
+                  <h4 className="text-[25px] font-[600] leading-[30px] font-[RFDewi-Regular]">
                     {solution.title}
                   </h4>
-                  <p className="text-[18px] font-[400] leading-[26px]">
+                  <p className="text-[16px] font-[400] leading-[18px] font-[Roboto] tracking-[0.9px]">
                     {solution.description}
                   </p>
                 </div>

@@ -37,7 +37,7 @@ const solutionsData = [
         <div className="w-[90%] py-[30px] mx-auto">
           <div className="flex flex-col justify-center gap-10 mx-auto text-white">
             <div className="">
-              <h2 className="text-[20px]  font-[RFDewi-Light] font-[700] leading-[140%] capitalize">
+              <h2 className="text-[20px] tracking-[0.9px] font-[RFDewi-Regular] font-[700] leading-[140%] capitalize">
                 How We Can Restore <br /> The Flow Of The Water Cycle
               </h2>
             </div>
@@ -53,8 +53,8 @@ const solutionsData = [
                     alt={solution.title}
                     className="w-12 h-12"
                   />
-                  <h4 className="text-[18px] font-[RFDewi-Light] font-[600] leading-[17px] tracking-[0.9px]">{solution.title}</h4>
-                  <p className="text-[15px] font-[400] font-[RFDewi-Light] leading-[125%]">{solution.description}</p>
+                  <h4 className="text-[18px] font-[RFDewi-Regular] font-[600] leading-[17px] tracking-[0.9px]">{solution.title}</h4>
+                  <p className="text-[15px] font-[400] font-[Roboto] leading-[125%]">{solution.description}</p>
                 </div>
               ))}
             </div>

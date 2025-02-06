@@ -37,7 +37,7 @@ const EducationCourses = () => {
           <h1 className="text-[45px] font-[700] leading-[53px] font-[RFDewi-Light] capitalize">
             Creating Change <br /> Through Education
           </h1>
-          <p className="text-[14px] font-[400] leading-[21px] font-[RFDewi-Light]">
+          <p className="text-[16px] font-[400] leading-[21px] font-[Roboto]">
             Renova Academy is an educational platform dedicated to driving
             global change through water literacy and training. Designed for
             architects, builders, sustainability professionals, and community
@@ -52,12 +52,12 @@ const EducationCourses = () => {
             {courses.map((course, index) => (
               <div
                 key={index}
-                className="relative flex flex-col gap-4 px-10 py-4 bg-[#ffffff29] bg-opacity-60 rounded-xl overflow-hidden shadow-lg w-[511px] h-[170px]"
+                className="relative flex flex-col gap-4 px-10 py-4 bg-[#ffffff29] border border-[#ffffff7A] bg-opacity-60 rounded-xl overflow-hidden shadow-lg w-[511px] h-[170px]"
               >
                 <h2 className="w-[345px] text-[25px] font-[700] text-[#00D4F1] leading-[24px] font-[RFDewi-Light]">
                   {course.title}
                 </h2>
-                <p className="w-[345px] text-[14px] font-[400] leading-[16px] font-[RFDewi-Light]">
+                <p className="w-[345px] text-[16px] font-[400] leading-[18px] font-[Roboto]">
                   {course.description}
                 </p>
               </div>

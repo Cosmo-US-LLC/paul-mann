@@ -59,7 +59,7 @@ const WaterSolutions = () => {
           <h1 className="w-[640] text-[45px] leading-[53px] capitalize font-[700] font-[RFDewi-Light]">
             Making Water Go Farther
           </h1>
-          <p className="text-[16px] leading-[21px] font-[400] font-[RFDewi-Light]">
+          <p className="text-[16px] leading-[21px] font-[400] font-[Roboto]">
             Water Champions is a leading design and engineering consulting firm
             for water reuse and efficiency solutions, and it offers a
             comprehensive range of services, including greywater
@@ -87,7 +87,7 @@ const WaterSolutions = () => {
                   <h2 className="text-[25px] font-[600] leading-[24px] text-white font-[RFDewi-Light]">
                     {solution.title}
                   </h2>
-                  <p className="text-[16px] font-[400] leading-[18px] text-white font-['RFDewi-Light]">
+                  <p className="text-[16px] font-[400] leading-[18px] text-white font-['Roboto]">
                     {solution.description}
                   </p>
                 </div>
@@ -95,7 +95,7 @@ const WaterSolutions = () => {
             ))}
           </div>
           <div className="flex justify-center mb-2">
-            <a href="https://www.renovaacademy.com" rel="noopener noreferrer">
+            <a href="https://waterchampions.com/" rel="noopener noreferrer">
               <button className="px-6 py-3 tracking-[0.9px] font-[RFDewi-Light] border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
                 water champions
               </button>

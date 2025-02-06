@@ -105,7 +105,7 @@ function JourneyOfLeading() {
             </div>
           </div>
           <div className="w-[100%] flex justify-center items-center">
-            <a href="https://www.renovaacademy.com" rel="noopener noreferrer">
+            <a href="/podcast" rel="noopener noreferrer">
               <button className="px-6 py-3 tracking-[0.9px] font-[RFDewi-Light] border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
                 Purpose
               </button>

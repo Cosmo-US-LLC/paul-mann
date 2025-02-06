@@ -56,13 +56,13 @@ const WaterSolutionsMob = () => {
     <div className="WaterSolutionsBG">
       <div className="w-[90%] py-[30px] mx-auto">
         <div className="gap-[20px] mx-auto flex flex-col justify-center text-white">
-          <h1 className="text-[20px] font-[RFDewi-Light] text-center leading-[140%] capitalize font-[600] ">
+          <h1 className="text-[20px] font-[RFDewi-Light] text-center leading-[140%] capitalize font-[700] ">
             Making Water <br /> Go Farther
           </h1>
           <div className="flex justify-center max-w-[158px] mx-auto">
             <img src="/mobile-assets/Making/logo.webp" alt="" />
           </div>
-          <p className="text-[14px] font-[RFDewi-Light] leading-[20px] font-[400] ">
+          <p className="text-[15px] font-[Roboto] leading-[20px] font-[400] ">
             Water Champions is a leading design and engineering consulting firm
             for water reuse and efficiency solutions, and it offers a
             comprehensive range of services, including greywater
@@ -138,7 +138,7 @@ const WaterSolutionsMob = () => {
                       <h2 className="text-[25px] font-[RFDewi-Light] font-[600] leading-[24px] text-white ">
                         {solution.title}
                       </h2>
-                      <p className="w-[225px] text-[16px] font-[RFDewi-Light] font-[400] leading-[18px] text-white">
+                      <p className="w-[225px] text-[16px] font-[Roboto] font-[400] leading-[18px] text-white">
                         {solution.description}
                       </p>
                     </div>
@@ -148,7 +148,7 @@ const WaterSolutionsMob = () => {
             </Swiper>
           </div>
           <div className="flex justify-center mb-2">
-          <a href="https://www.renovaacademy.com" rel="noopener noreferrer">
+          <a href="https://waterchampions.com/" rel="noopener noreferrer">
             <button className="font-[RFDewi-Light] tracking-[0.9px] px-6 py-3 border border-white text-[14px] font-[500] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
             water champions
             </button>
