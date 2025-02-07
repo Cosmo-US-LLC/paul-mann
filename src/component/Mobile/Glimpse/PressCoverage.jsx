@@ -22,14 +22,14 @@ function PressCoveragemob() {
           >
             <SwiperSlide>
               <div className="space-y-[33px]">
-                <h3 className="text-[28px] text-start font-[700] leading-[125%] capitalize">
+                <h3 className="text-[28px] font-[RFDewiExtended] text-start font-[700] leading-[125%] capitalize">
                   Press Coverage & Features
                 </h3>
-                <h4 className="text-[18px] !mt-[17px] text-start font-[700] leading-[150%] capitalize">
+                <h4 className="text-[18px] !mt-[17px] font-[RFDewiExtended] text-start font-[700] leading-[150%] capitalize">
                   Innovating Water Solutions: <br /> Paul Mann on the Future of
                   Water Reuse
                 </h4>
-                <p className="text-[14px] !mt-[17px] font-[400] ">
+                <p className="text-[14px] font-[Roboto] !mt-[17px] font-[400] ">
                   Paul Mann shares his groundbreaking approach to water reuse,
                   detailing how sustainable technologies can reduce water
                   consumption by 70%.
@@ -42,14 +42,14 @@ function PressCoveragemob() {
             </SwiperSlide>
             <SwiperSlide>
               <div className="space-y-[33px]">
-                <h3 className="text-[28px] text-start font-[700] leading-[125%] capitalize">
+                <h3 className="text-[28px] font-[RFDewiExtended] text-start font-[700] leading-[125%] capitalize">
                   Press Coverage & Features
                 </h3>
-                <h4 className="text-[18px] !mt-[17px] text-start font-[700] leading-[150%] capitalize">
+                <h4 className="text-[18px] !mt-[17px] font-[RFDewiExtended] text-start font-[700] leading-[150%] capitalize">
                   Innovating Water Solutions: <br /> Paul Mann on the Future of
                   Water Reuse
                 </h4>
-                <p className="text-[14px] !mt-[17px] font-[400] ">
+                <p className="text-[14px] !mt-[17px] font-[Roboto] font-[400] ">
                   Paul Mann shares his groundbreaking approach to water reuse,
                   detailing how sustainable technologies can reduce water
                   consumption by 70%.

@@ -6,7 +6,7 @@ const ContactForm = () => {
       <div className="max-w-[1200px] h-[750px] mx-auto flex flex-col justify-center">
         <div className="flex flex-col items-start justify-between gap-10 mb-8 bg-white md:flex-row ">
           <div className="w-full space-y-5 md:w-1/2">
-            <h2 className="text-[45px] font-[RFDewi-bold] font-[700] capitalize leading-[53px]">
+            <h2 className="text-[45px] font-[RFDewiExtended] font-[700] capitalize leading-[53px]">
               Still Have Questions?
             </h2>
             <p className="text-[#000] font-[Roboto] font-[400] text-[16px] leading-[23px] w-[330px]">
@@ -24,17 +24,17 @@ const ContactForm = () => {
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full py-6  font-[Roboto] border-b-2 border-gray-400 outline-none focus:border-black"
+                className="w-full py-6  font-[Roboto] text-[14px] font-[400] leading-[14px] border-b-2 border-gray-400 outline-none focus:border-black"
               />
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full  py-6 font-[Roboto] border-b-2 border-gray-400 outline-none focus:border-black"
+                className="w-full  py-6 font-[Roboto] text-[14px] font-[400] border-b-2 border-gray-400 outline-none focus:border-black"
               />
               <textarea
                 placeholder="Your Message"
-                rows="4"
-                className="w-full  py-6 font-[Roboto] border-b-2 border-gray-400 outline-none focus:border-black"
+                rows="5"
+                className="w-full  py-6 font-[Roboto] text-[14px] font-[400] border-b-2 border-gray-400 outline-none focus:border-black"
               />
             </form>
           </div>

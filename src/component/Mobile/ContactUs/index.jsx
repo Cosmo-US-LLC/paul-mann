@@ -6,10 +6,10 @@ function ContactUsMobile() {
     }, []);
   return (
     <div className="w-[90%] mx-auto py-[30px]">
-    <div className=" mx-auto flex flex-col justify-center">
+    <div className="flex flex-col justify-center mx-auto ">
       <div className="flex flex-col items-start justify-between gap-10 bg-white md:flex-row ">
         <div className="w-full space-y-5 md:w-1/2">
-          <h2 className="text-[28px] font-[RFDewi-bold] font-[700] text-center capitalize leading-[128.571%]">
+          <h2 className="text-[28px] font-[RFDewiExtended] font-[700] text-center capitalize leading-[128.571%]">
             Still Have <br /> Questions?
           </h2>
           <div className="!mt-[14px]">
@@ -17,7 +17,7 @@ function ContactUsMobile() {
             Email us:{" "}
             <a
               href="mailto:info@waterchampion.com"
-              className="text-blue-500 font-[Roboto] underline"
+              className="text-black font-[Roboto] "
             >
               info@waterchampion.com
             </a>
@@ -46,7 +46,7 @@ function ContactUsMobile() {
             />
             <button
               type="submit"
-              className="w-[123.53px] h-[50px] mt-4 font-semibold text-[#073B63] text-[12px] hover:bg-[#073B63] hover:text-[#FFF] font-[800] font-[Roboto] border border-[#073B63] bg-white shadow-inner"
+              className="w-[123.53px] h-[50px] mt-4   text-[#073B63] text-[12px] hover:bg-[#073B63] hover:text-[#FFF] font-[800] font-[Roboto] border border-[#073B63] bg-white shadow-inner"
             
             >
               SEND

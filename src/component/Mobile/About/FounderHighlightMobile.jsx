@@ -19,7 +19,7 @@ const FounderHighlightMobile = () => {
       <div className="flex flex-col gap-4 px-8 py-8 ">
         <div className="flex flex-col gap-6">
           <div className="">
-            <h2 className="text-[32px] font-semibold font-[RFDewi-Light] uppercase">
+            <h2 className="text-[32px] font-semibold font-[RFDewiExtended] uppercase">
               FOUNDER
             </h2>
             <p className="text-[14px] font-[500] font-[Roboto] uppercase mt-2">
@@ -27,7 +27,7 @@ const FounderHighlightMobile = () => {
             </p>
           </div>
           <div className="">
-            <h2 className="text-[33px] font-[400] font-[RFDewi-Light] uppercase">
+            <h2 className="text-[33px] font-[400] font-[RFDewiExtended] uppercase">
               1.1K+
             </h2>
             <p className="text-[14px] font-[500] font-[Roboto] uppercase mt-1">
@@ -36,7 +36,7 @@ const FounderHighlightMobile = () => {
           </div>
 
           <div className="">
-            <h2 className="text-[33px] font-[400] font-[RFDewi-Light] uppercase">
+            <h2 className="text-[33px] font-[400] font-[RFDewiExtended] uppercase">
               5K+
             </h2>
             <p className="text-[14px] font-[500] font-[Roboto] uppercase mt-1">

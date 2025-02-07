@@ -32,10 +32,10 @@ function GlimpseIntoMob() {
   return (
     <div className="w-[90%] mx-auto pt-[30px] pb-[50px] space-y-[26px]">
       <div className="space-y-[15px]">
-        <h3 className="text-[28px] text-center font-[700] leading-[128.571%] capitalize">
+        <h3 className="text-[28px] text-center font-[700] font-[RFDewiExtended] leading-[128.571%] capitalize">
           A glimpse into <br /> our work
         </h3>
-        <p className="text-[14px] text-center font-[400] ">
+        <p className="text-[14px] font-[Roboto] text-center font-[400] ">
           Some of the creative works we ve Done
         </p>
       </div>

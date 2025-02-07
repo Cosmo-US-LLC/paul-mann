@@ -196,14 +196,14 @@ function PodcastsEveryDesktop() {
     <div className="max-w-[1440px] w-full h-full py-16 mx-auto">
       <div className="max-w-[1200px]   mx-auto flex flex-col justify-center">
         <div className="mb-8 text-center">
-          <h3 className="text-[24px] font-bold font-[Roboto] uppercase leading-[1.5]">
+          <h3 className="text-[24px] font-bold font-[RFDewiExtended] uppercase leading-[1.5]">
             Podcasts Every *Insert Day
           </h3>
         </div>
 
         {/* Platform Buttons */}
         <div className="flex justify-center gap-8 mb-8">
-          <button className="flex items-center justify-center text-sm font-medium font-[RFDewi-Light] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
+          <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
               className="mr-2"
@@ -211,7 +211,7 @@ function PodcastsEveryDesktop() {
             />
             Spotify
           </button>
-          <button className="flex items-center justify-center text-sm font-medium font-[RFDewi-Light] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
+          <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
               className="mr-2"
@@ -219,7 +219,7 @@ function PodcastsEveryDesktop() {
             />
             Apple
           </button>
-          <button className="flex items-center justify-center text-sm font-medium font-[RFDewi-Light] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
+          <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
               className="mr-2"
@@ -227,7 +227,7 @@ function PodcastsEveryDesktop() {
             />
             Amazon
           </button>
-          <button className="flex items-center justify-center text-sm font-medium font-[RFDewi-Light] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
+          <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
               className="mr-2"
@@ -297,10 +297,10 @@ function PodcastsEveryDesktop() {
               </div>
 
               <div className="flex-1 text-left w-[600px] flex flex-col px-12 py-12">
-                <p className="text-[14px] font-medium  font-[Roboto]uppercase text-gray-600 mb-2">
+                <p className="text-[14px] font-medium  font-[Roboto] uppercase text-gray-600 mb-2">
                   {podcast.date}
                 </p>
-                <h5 className="text-[18px] font-bold font-[Roboto] leading-[1.4] mb-4 truncate">
+                <h5 className="text-[18px] font-bold font-[RFDewiExtended] leading-[1.4] mb-4 truncate">
                   {podcast.title}
                 </h5>
                 <p className="text-[14px] font-semibold font-[Roboto] uppercase cursor-pointer underline">
@@ -411,7 +411,7 @@ function PodcastsEveryDesktop() {
             }}
             modules={[Navigation]}
             loop={false}
-            className="mySwiper relative "
+            className="relative mySwiper "
           >
             <SwiperSlide>
               <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
@@ -421,7 +421,7 @@ function PodcastsEveryDesktop() {
                   </p>
                 </div>
                 <div>
-                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
                     By SHU12323
                   </p>
                 </div>
@@ -435,7 +435,7 @@ function PodcastsEveryDesktop() {
                   </p>
                 </div>
                 <div>
-                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
                     By ChrisAlan83
                   </p>
                 </div>
@@ -450,7 +450,7 @@ function PodcastsEveryDesktop() {
                   </p>
                 </div>
                 <div>
-                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
                     By ChrisAlan83
                   </p>
                 </div>
@@ -465,7 +465,7 @@ function PodcastsEveryDesktop() {
                   </p>
                 </div>
                 <div>
-                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
                   By PearlJelly9
                   </p>
                 </div>
@@ -480,7 +480,7 @@ function PodcastsEveryDesktop() {
                   </p>
                 </div>
                 <div>
-                  <p className="uppercase text-[12px] text-[#000] opacity-[0.6]">
+                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
                   By PearlJelly9
                   </p>
                 </div>

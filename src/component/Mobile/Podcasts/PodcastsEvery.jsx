@@ -170,11 +170,11 @@ function PodcastsEvery() {
   };
 
   return (
-    <section className="flex flex-col items-center  py-12">
+    <section className="flex flex-col items-center py-12">
       <div className="w-[90%]">
         <div>
           <div className="pb-[10px]">
-            <h3 className="text-[14px] font-[RFDewi-Regular] font-[500] text-[#000] text-center uppercase leading-[171.429%]" >
+            <h3 className="text-[14px] font-[Roboto] font-[500] text-[#000] text-center uppercase leading-[171.429%]" >
               {" "}
               Podcasts every *insert day
             </h3>
@@ -184,7 +184,7 @@ function PodcastsEvery() {
           <button className="flex justify-center items-center font-[Roboto] text-[6.152px] font-[400] border border-[#000] w-[77px] h-[27px] leading-[106.667%] uppercase">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
-              className="mr-2 object-cover"
+              className="object-cover mr-2"
               alt=""
             />
             Spotify
@@ -192,7 +192,7 @@ function PodcastsEvery() {
           <button className="flex justify-center items-center font-[Roboto] text-[6.152px] font-[400] border border-[#000] w-[77px] h-[27px] leading-[106.667%] uppercase">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
-              className="mr-2 object-cover"
+              className="object-cover mr-2"
               alt=""
             />
             Apple
@@ -200,7 +200,7 @@ function PodcastsEvery() {
           <button className="flex justify-center items-center font-[Roboto] text-[6.152px] font-[400] border border-[#000] w-[77px] h-[27px] leading-[106.667%] uppercase">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
-              className="mr-2 object-cover"
+              className="object-cover mr-2"
               alt=""
             />
             amazon
@@ -208,7 +208,7 @@ function PodcastsEvery() {
           <button className="flex justify-center items-center font-[Roboto] text-[6.152px] font-[400] border border-[#000] w-[77px] h-[27px] leading-[106.667%] uppercase">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
-              className="mr-2 object-cover"
+              className="object-cover mr-2"
               alt=""
             />
             Youtube
@@ -216,7 +216,7 @@ function PodcastsEvery() {
         </div>
         <div className="pt-[17px] pb-[29px] flex justify-between items-center">
           <div className="w-[50%]">
-            <div className="flex items-center space-x-2 mt-1">
+            <div className="flex items-center mt-1 space-x-2">
               <h4 className="text-[12px] font-[Roboto] font-[500]">Featured Episodes</h4>
               <img
                 src="/mobile-assets/Podcasts/Arrow 2 (Stroke).svg"
@@ -324,7 +324,7 @@ function PodcastsEvery() {
             </div>
           ))}
         </div>
-     <div className="flex justify-center items-center space-x-4 pt-8">
+     <div className="flex items-center justify-center pt-8 space-x-4">
      <div className="w-[80px]">
   {currentPage > 1 && (
     <button
