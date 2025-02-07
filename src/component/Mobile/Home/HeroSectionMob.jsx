@@ -11,8 +11,8 @@ import {
       <div className="heroBGmob min-h-[650px] flex items-end">
         <div className="max-w-[1440px] w-full h-full mx-auto pb-[30px]">
           <div className="max-w-[1200px] gap-8 flex justify-center items-end w-full h-full mx-auto ">
-            <div className="relative z-10 flex flex-col items-center justify-end h-full px-4  text-white">
-              <h1 className="text-[20px] font-[RFDewi-bold] max-w-[350px] w-[100%] font-[700]">
+            <div className="relative z-10 flex flex-col items-center justify-end h-full px-4 text-white">
+              <h1 className="text-[20px] font-[RFDewiExtended] max-w-[350px] w-[100%] font-[700]">
                 Paul Is A Seasoned Industry Expert Specializing In The Design And
                 Implementation Of Innovative Water Reuse And Efficiency Solutions
                 That Make Water Go Farther

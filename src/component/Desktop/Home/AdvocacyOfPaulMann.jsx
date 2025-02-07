@@ -16,7 +16,7 @@ const AdvocacyOfPaulMann = () => {
             {/* Top Caption */}
             <div className="absolute top-0 left-0 right-0 flex items-center px-4 py-2 text-white bg-gray-700 bg-opacity-75">
               <img src="/desktop-assets/AdvocacyOfPaulMann/cbs-header-logo.webp" alt="CBS Logo" className="mr-4 h-14" />
-              <p className="text-[19px] font-[700] w-[381px] h-[58px] font-[RFDewi-Light]">
+              <p className="text-[19px] font-[700] w-[381px] h-[58px] font-[RFDewiExtended]">
                 Advocated for Water Conservation on CBS Evening News
               </p>
             </div>
@@ -36,19 +36,19 @@ const AdvocacyOfPaulMann = () => {
                 className="h-12 pr-2"
               />
               <div className="flex flex-row pr-12">
-                <span className="text-[45px] font-[600] leading-[52px] text-[#073B63] font-[RFDewi-Light]">
+                <span className="text-[45px] font-[600] leading-[52px] text-[#073B63] font-[RFDewiExtended]">
                   1,000+
                 </span>
               </div>
               <div className="flex flex-row pl-3 border-l-2 border-gray-800">
-                <p className="text-[20px] font-[800] text-[#073B63] font-[RFDewi-Light]">
+                <p className="text-[20px] font-[800] text-[#073B63] font-[RFDewiExtended]">
                   LinkedIn <br /> Followers
                 </p>
               </div>
             </div>
 
             <div className="flex items-center w-full max-w-[435px] justify-between gap-4 p-6 space-x-4 bg-[#D9D9D9] shadow-lg rounded-lg">
-              <p className="text-[18px] font-[700] text-[#073B63] font-[RFDewi-Light]">
+              <p className="text-[18px] font-[700] text-[#073B63] font-[RFDewiExtended]">
                 Featured In:
               </p>
               <div className="flex gap-8">
@@ -67,7 +67,7 @@ const AdvocacyOfPaulMann = () => {
           </div>
           <div className="flex justify-center ">
           <a href="/glimpse" rel="noopener noreferrer">
-            <button className="px-6 py-3 border font-[RFDewi-Light] tracking-[0.9px] border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+            <button className="px-6 py-3 border font-[RFDewiExtended] tracking-[0.9px] border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
               The Press
             </button>
           </a>

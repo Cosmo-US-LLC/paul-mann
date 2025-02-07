@@ -6,7 +6,7 @@ function JourneyOfLeadingMob() {
       <div className="max-w-[1440px] w-[90%] py-[24px] h-full mx-auto  ">
         <div className="max-w-[1200px] gap-8  mx-auto space-y-[30px]">
           <div className="">
-            <p class=" text-white text-[24px] font-[RFDewi-Regular] leading-[118%]  font-[700] capitalize">
+            <p class=" text-white text-[24px] font-[RFDewiExtended] leading-[118%]  font-[700] capitalize">
               Paul Mann’s Journey of <br /> Leading Water <br /> Conservation
               Efforts
             </p>
@@ -21,7 +21,7 @@ function JourneyOfLeadingMob() {
                 />
               </div>
 
-              <h4 className="mb-2 text-[18px] font-[RFDewi-Regular] font-[800]">
+              <h4 className="mb-2 text-[18px] font-[RFDewiExtended] font-[800]">
                 Leading Change
               </h4>
 
@@ -39,7 +39,7 @@ function JourneyOfLeadingMob() {
                 />
               </div>
 
-              <h4 className="mb-2 text-[18px] font-[RFDewi-Regular] font-[800] text-[#073B63]">
+              <h4 className="mb-2 text-[18px] font-[RFDewiExtended] font-[800] text-[#073B63]">
                 Inc. 5000®
               </h4>
 
@@ -57,7 +57,7 @@ function JourneyOfLeadingMob() {
                 />
               </div>
 
-              <h4 className="mb-2 text-[18px] font-[RFDewi-Regular] font-[800]">
+              <h4 className="mb-2 text-[18px] font-[RFDewiExtended] font-[800]">
                 Leadership for the Future
               </h4>
 
@@ -75,7 +75,7 @@ function JourneyOfLeadingMob() {
                 />
               </div>
 
-              <h4 className="mb-2 text-[18px] font-[RFDewi-Regular] text-[#073B63] font-bold">
+              <h4 className="mb-2 text-[18px] font-[RFDewiExtended] text-[#073B63] font-bold">
                 Earth 2050 - California
               </h4>
 
@@ -113,7 +113,7 @@ function JourneyOfLeadingMob() {
           </div>
           <div className="flex justify-center mb-2">
           <a href="/podcast" rel="noopener noreferrer">
-            <button className="font-[RFDewi-Light] tracking-[0.9px] px-6 py-3 border border-white text-[14px] font-[500] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+            <button className="font-[RFDewiExtended] tracking-[0.9px] px-6 py-3 border border-white text-[14px] font-[500] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
             Purpose
             </button>
             </a>

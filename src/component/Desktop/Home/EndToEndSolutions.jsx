@@ -51,7 +51,7 @@ function EndToEndSolutions() {
       <div className="max-w-[1440px] w-full h-full mx-auto overflow-hidden">
         <div className="max-w-[1200px] min-h-[1150px] h-full mx-auto flex flex-col text-white justify-center gap-12  ">
           <div className="max-w-[644px]">
-            <h2 className="text-[45px] font-[700] font-[RFDewi-Regular] leading-[53px] capitalize">
+            <h2 className="text-[45px] font-[700] font-[RFDewiExtended] leading-[53px] capitalize">
               End-to-End Solutions for Water Management
             </h2>
           </div>
@@ -68,7 +68,7 @@ function EndToEndSolutions() {
                   className="w-full h-[232px] object-cover rounded-lg"
                 />
                 <div className="flex flex-col gap-4 pt-6">
-                  <h4 className="text-[25px] font-[600] leading-[30px] font-[RFDewi-Regular]">
+                  <h4 className="text-[25px] font-[600] leading-[30px] font-[RFDewiExtended]">
                     {solution.title}
                   </h4>
                   <p className="text-[16px] font-[400] leading-[18px] font-[Roboto] tracking-[0.9px]">

@@ -56,7 +56,7 @@ const WaterSolutions = () => {
             src="/desktop-assets/WaterSolutions/water-solution-company-logo.webp"
             alt="Founder Highlight with water conservation system"
           />
-          <h1 className="w-[640] text-[45px] leading-[53px] capitalize font-[700] font-[RFDewi-Light]">
+          <h1 className="w-[640] text-[45px] leading-[53px] capitalize font-[700] font-[RFDewiExtended]">
             Making Water Go Farther
           </h1>
           <p className="text-[16px] leading-[21px] font-[400] font-[Roboto]">
@@ -84,7 +84,7 @@ const WaterSolutions = () => {
                   />
                 </div>
                 <div className="w-[70%] flex flex-col gap-2">
-                  <h2 className="text-[25px] font-[600] leading-[24px] text-white font-[RFDewi-Light]">
+                  <h2 className="text-[25px] font-[600] leading-[24px] text-white font-[RFDewiExtended]">
                     {solution.title}
                   </h2>
                   <p className="text-[16px] font-[400] leading-[18px] text-white font-['Roboto]">

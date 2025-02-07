@@ -56,7 +56,7 @@ const WaterSolutionsMob = () => {
     <div className="WaterSolutionsBG">
       <div className="w-[90%] py-[30px] mx-auto">
         <div className="gap-[20px] mx-auto flex flex-col justify-center text-white">
-          <h1 className="text-[20px] font-[RFDewi-Light] text-center leading-[140%] capitalize font-[700] ">
+          <h1 className="text-[20px] font-[RFDewiExtended] text-center leading-[140%] capitalize font-[700] ">
             Making Water <br /> Go Farther
           </h1>
           <div className="flex justify-center max-w-[158px] mx-auto">
@@ -135,7 +135,7 @@ const WaterSolutionsMob = () => {
                       />
                     </div>
                     <div className="w-[70%] flex flex-col gap-2">
-                      <h2 className="text-[25px] font-[RFDewi-Light] font-[600] leading-[24px] text-white ">
+                      <h2 className="text-[25px] font-[RFDewiExtended] font-[600] leading-[24px] text-white ">
                         {solution.title}
                       </h2>
                       <p className="w-[225px] text-[16px] font-[Roboto] font-[400] leading-[18px] text-white">
@@ -149,7 +149,7 @@ const WaterSolutionsMob = () => {
           </div>
           <div className="flex justify-center mb-2">
           <a href="https://waterchampions.com/" rel="noopener noreferrer">
-            <button className="font-[RFDewi-Light] tracking-[0.9px] px-6 py-3 border border-white text-[14px] font-[500] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+            <button className="font-[Roboto] tracking-[0.9px] px-6 py-3 border border-white text-[14px] font-[500] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
             water champions
             </button>
             </a>
