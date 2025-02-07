@@ -37,7 +37,7 @@ function WaterCycleRestoration() {
       <div className="max-w-[1440px] w-full h-full mx-auto">
         <div className="max-w-[1200px] h-[750px] gap-10 mx-auto flex flex-col justify-center text-white">
           <div className="max-w-[838px]">
-            <h2 className="text-[45px] font-[700] leading-[53px] capitalize font-[RFDewi-Light]">
+            <h2 className="text-[45px] font-[700] leading-[53px] capitalize font-[RFDewiExtended]">
               How We Can Restore <br /> The Flow Of The Water Cycle
             </h2>
           </div>
@@ -53,8 +53,8 @@ function WaterCycleRestoration() {
                   alt={solution.title}
                   className="w-12 h-12 mb-4"
                 />
-                <h4 className="mb-2 tracking-[0.9px] text-[25px] font-[600] leading-[24px] font-[RFDewi-Light]">{solution.title}</h4>
-                <p className="text-[16px] font-[400] leading-[20px] font-[RFDewi-Light]">{solution.description}</p>
+                <h4 className="mb-2 tracking-[0.9px] text-[25px] font-[600] leading-[24px] font-[RFDewiExtended]">{solution.title}</h4>
+                <p className="text-[16px] font-[400] leading-[20px] font-[Roboto]">{solution.description}</p>
               </div>
             ))}
           </div>

@@ -21,8 +21,8 @@ const cardsData = [
       <div className="bg-[#073B63]">
         <div className=" w-[90%]  mx-auto  text-white">
           <div className="gap-8 py-[30px] mx-auto flex flex-col justify-center items-center">
-            <div className="flex flex-col items-center justify-center text-center gap-6">
-              <h2 className=" text-[20px] font-[RFDewi-bold] font-[700] leading-[140%] capitalize">
+            <div className="flex flex-col items-center justify-center gap-6 text-center">
+              <h2 className=" text-[20px] font-[RFDewiExtended] font-[700] leading-[140%] capitalize">
                 We Need To Rethink Our <br /> Relationship With Water
               </h2>
               <p className="  text-[15px] font-[Roboto] text-center leading-[21.24px] font-[400]">
@@ -50,7 +50,7 @@ const cardsData = [
                     alt={`Icon ${index + 1}`}
                     className="w-12 h-12 mb-4"
                   />
-                  <h4 className="mb-2 text-[20px] font-[Roboto] font-[500]">{card.title}</h4>
+                  <h4 className="mb-2 text-[20px] font-[RFDewiExtended] font-[500]">{card.title}</h4>
                   <p className="text-[14.47px] font-[Roboto] font-[400] max-w-[290px] mx-auto">{card.description}</p>
                 </div>
               ))}

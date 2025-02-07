@@ -6,7 +6,7 @@ function OrganizationsMob() {
         <div className="max-w-[1200px] mx-auto flex flex-col space-y-[24px] justify-center  ">
           <div className="w-[100%] space-y-[15px] ">
             <div className="flex flex-col w-[100%] space-y-[10px] justify-center">
-              <p class=" text-[#00D4F1] font-[700] font-[RFDewi-bold] text-[24px] leading-[114%] capitalize">
+              <p class=" text-[#00D4F1] font-[700] font-[RFDewiExtended] text-[24px] leading-[114%] capitalize">
                 Founder of <br/> 2 Organizations
               </p>
 
@@ -30,7 +30,7 @@ function OrganizationsMob() {
                 innovative water reuse and efficiency solutions that make water
                 go
               </p>
-              <p class=" text-[#00D4F1] font-[RFDewi-bold] font-[700] text-[24px] leading-[114%] capitalize">
+              <p class=" text-[#00D4F1] font-[RFDewiExtended] font-[700] text-[24px] leading-[114%] capitalize">
                 50-70% farther
               </p>
 
@@ -47,7 +47,7 @@ function OrganizationsMob() {
           </div>
           <div className="w-[100%] space-y-[15px]">
             <div className="flex flex-col w-[100%] space-y-[10px] justify-center">
-              <p class=" text-[#00D4F1] font-[RFDewi-bold] font-[700] text-[24px] leading-[114%] capitalize">
+              <p class=" text-[#00D4F1] font-[RFDewiExtended] font-[700] text-[24px] leading-[114%] capitalize">
                 Passionate about <br /> sustainability,
               </p>
 
@@ -66,7 +66,7 @@ function OrganizationsMob() {
           </div>
           <div className="flex justify-center mb-2">
           <a href="/about" rel="noopener noreferrer">
-            <button className="font-[RFDewi-Light] tracking-[0.9px] px-6 py-3 border border-white text-[14px] font-[500] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+            <button className="font-[Roboto] tracking-[0.9px] px-6 py-3 border border-white text-[14px] font-[500] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
             About
             </button>
             </a>

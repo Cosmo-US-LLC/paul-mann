@@ -26,7 +26,7 @@ function WhoWeServe() {
         <div className="max-w-[1200px] h-[705px] mx-auto flex flex-col justify-center">
           <div className="relative flex flex-col items-center justify-center gap-8 text-white">
             <div className="flex flex-col items-center gap-4 text-center">
-              <h2 className="w-[624px] tracking-[0.9px] text-[45px] font-[700] leading-[53px] font-[RFDewi-Regular] capitalize">
+              <h2 className="w-[624px] tracking-[0.9px] text-[45px] font-[700] leading-[53px] font-[RFDewiExtended] capitalize">
                 Who We Serve
               </h2>
               <p className="text-[18px] tracking-[0.9px] leading-[26px] font-[400] font-[Roboto]">
@@ -47,7 +47,7 @@ function WhoWeServe() {
                     className="w-full h-[232px] object-cover rounded-lg"
                   />
                   <div className="flex flex-col gap-4 pt-5">
-                    <h4 className=" text-[25px] font-[600] leading-[30px] font-[RFDewi-Regular]">
+                    <h4 className=" text-[25px] font-[600] leading-[30px] font-[RFDewiExtended]">
                       {card.title}
                     </h4>
                     <p className="text-[16px] leading-[18px] font-[400] font-[Roboto]">

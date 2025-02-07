@@ -34,7 +34,7 @@ const EducationCourses = () => {
             alt="Founder Highlight with water conservation system"
           />
 
-          <h1 className="text-[45px] font-[700] leading-[53px] font-[RFDewi-Light] capitalize">
+          <h1 className="text-[45px] font-[700] leading-[53px] font-[RFDewiExtended] capitalize">
             Creating Change <br /> Through Education
           </h1>
           <p className="text-[16px] font-[400] leading-[21px] font-[Roboto]">
@@ -65,7 +65,7 @@ const EducationCourses = () => {
           </div>
           <div className="flex justify-center ">
             <a href="https://www.renovaacademy.com" rel="noopener noreferrer">
-              <button className="px-6 py-3 border tracking-[0.9px] font-[RFDewi-Light] border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+              <button className="px-6 py-3 border tracking-[0.9px] font-[Roboto] border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
                 Renova Academy
               </button>
             </a>

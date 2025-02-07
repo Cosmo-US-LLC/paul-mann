@@ -26,7 +26,7 @@ const cardData = [
           <div className="flex flex-col justify-center mx-auto">
             <div className="relative flex flex-col items-center justify-center gap-8 text-white">
               <div className="flex flex-col items-center space-y-[10px] text-center">
-                <h2 className="font-[RFDewi-Regular] tracking-[0.9px] text-[20px] font-[700] leading-[28px] capitalize">
+                <h2 className="font-[RFDewiExtended] tracking-[0.9px] text-[20px] font-[700] leading-[28px] capitalize">
                   Who We Serve
                 </h2>
                 <p className="text-[15px] font-[Roboto] leading-[20px] font-[400]">
@@ -47,7 +47,7 @@ const cardData = [
                       className="w-full h-[223px] object-cover rounded-lg relative z-10"
                     />
                     <div className="flex flex-col space-y-[10px] pb-2 pt-4">
-                      <h4 className=" text-[24.165px] font-[500] leading-[34px] relative z-10">
+                      <h4 className=" text-[24.165px] font-[RFDewiExtended] font-[500] leading-[34px] relative z-10">
                         {card.title}
                       </h4>
                       <p className="font-[Roboto] text-[14.314px] font-[400] leading-[156.761%] relative z-10">

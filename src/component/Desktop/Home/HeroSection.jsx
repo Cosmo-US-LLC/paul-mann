@@ -12,7 +12,7 @@ function HeroSection() {
       <div className="max-w-[1440px] w-full h-full mx-auto">
         <div className="max-w-[1200px] h-[750px] gap-10 mx-auto flex flex-col justify-center text-white">
           <div className="relative z-10 flex flex-col justify-end h-full gap-10 py-10 text-white">
-            <h1 className="w-[857px] font-[RFDewi-Regular] text-[26px] font-[700] tracking-[0.4px] leading-normal">
+            <h1 className="w-[857px] font-[RFDewiExtended] text-[26px] font-[700] tracking-[0.4px] leading-normal">
               Paul is a seasoned industry expert specializing in the <br /> design and
               implementation of innovative water reuse and <br /> efficiency solutions
               that make water go farther
