@@ -12,7 +12,7 @@ function Navbar() {
               
                 <Link to="/about">
                 <p
-                  className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] uppercase     hover:text-gray-900"
+                  className="flex flex-col justify-center text-center text-black font-[RFDewiExtended] font-[800] text-[16.222px] leading-[98.144px] uppercase     hover:text-gray-900"
                 >
                   About
                 </p>
@@ -20,14 +20,14 @@ function Navbar() {
                
                 <Link to="/podcast">
                 <p
-                  className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] uppercase    hover:text-gray-900"
+                  className="flex flex-col justify-center text-center text-black font-[RFDewiExtended] font-[800] text-[16.222px] leading-[98.144px] uppercase    hover:text-gray-900"
                 >
                   Podcast
                 </p>
               </Link>
                 <a
                   href="/glimpse"
-                  className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] uppercase     hover:text-gray-900"
+                  className="flex flex-col justify-center text-center text-black font-[RFDewiExtended] font-[800] text-[16.222px] leading-[98.144px] uppercase     hover:text-gray-900"
                 >
                   Press
                 </a>
@@ -48,14 +48,14 @@ function Navbar() {
                 <a
                   href="https://www.renovaacademy.com/"
                   onClick={(e) => handleScroll(e, "Coaching", 90)}
-                  className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] capitalize   flex-shrink-0 hover:text-gray-900"
+                  className="flex flex-col justify-center text-center text-black font-[RFDewiExtended] font-[800] text-[16.222px] leading-[98.144px] capitalize   flex-shrink-0 hover:text-gray-900"
                 >
                   Coaching
                 </a>
                 <a
                   href="/contact"
                   onClick={(e) => handleScroll(e, "Connect", 90)}
-                  className="flex flex-col justify-center text-center text-black font-medium text-[16.222px] leading-[98.144px] capitalize  flex-shrink-0 hover:text-gray-900"
+                  className="flex flex-col justify-center text-center text-black font-[RFDewiExtended] font-[800] text-[16.222px] leading-[98.144px] capitalize  flex-shrink-0 hover:text-gray-900"
                 >
                   Connect
                 </a>

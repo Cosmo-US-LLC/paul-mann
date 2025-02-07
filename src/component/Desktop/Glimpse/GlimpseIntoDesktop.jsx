@@ -38,14 +38,14 @@ function GlimpseIntoDesktop() {
       <div className="max-w-[1200px] pt-14   mx-auto flex flex-col  justify-center relative">
     <div className="flex flex-col gap-12 py-6">
       <div className="flex flex-col justify-center gap-4">
-        <h3 className="text-[45px] text-center font-[700] font-[RFDewi-Light] leading-[128.571%] capitalize">
+        <h3 className="text-[45px] text-center font-[700] font-[RFDewiExtended] leading-[128.571%] capitalize">
           A glimpse into   our work
         </h3>
-        <p className="text-[16px] text-center leading-[23px] font-[400] font-[RFDewi-Light] ">
+        <p className="text-[16px] text-center leading-[23px] font-[400] font-[Roboto] ">
           Some of the creative works we ve Done
         </p>
       </div>
-  
+     
         <div className="relative">
        
           <Swiper

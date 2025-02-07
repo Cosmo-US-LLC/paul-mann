@@ -33,18 +33,18 @@ function FooterMobile() {
             <div className="flex justify-between py-[20px]">
               <div className="w-[50%] flex flex-col justify-center space-y-[10px]   relative z-10 uppercase">
                 <Link to="/about">
-                  <p className="block font-[Roboto]  text-[11px] font-[700] leading-[13px]">
+                  <p className="block font-[RFDewiExtended]  text-[11px] font-[700] leading-[13px]">
                     About
                   </p>
                 </Link>
 
                 <Link to="/podcast">
-                  <p className="text-[11px]  block font-[Roboto] font-[700] leading-[13px]">
+                  <p className="text-[11px]  block font-[RFDewiExtended] font-[700] leading-[13px]">
                     Podcast
                   </p>
                 </Link>
                 <Link to="/glimpse">
-                  <p className="text-[11px]  block font-[Roboto] font-[700] leading-[13px]">
+                  <p className="text-[11px]  block font-[RFDewiExtended] font-[700] leading-[13px]">
                     Press
                   </p>
                 </Link>
@@ -52,13 +52,13 @@ function FooterMobile() {
               <div className="w-[50%] flex flex-col justify-center space-y-[10px]  block font-[Roboto]relative z-10 uppercase">
                 <a
                   href="https://www.renovaacademy.com/"
-                  className="text-[11px] block font-[Roboto] font-[700] leading-[13px]"
+                  className="text-[11px] block font-[RFDewiExtended] font-[700] leading-[13px]"
                   onClick={(e) => handleScroll(e, "FaqD", 90)}
                 >
                   Coaching
                 </a>
                 <Link to="/contact">
-                  <p className="text-[11px] block font-[Roboto] font-[700] leading-[13px]">
+                  <p className="text-[11px] block font-[RFDewiExtended] font-[700] leading-[13px]">
                     Connect
                   </p>
                 </Link>
@@ -66,7 +66,7 @@ function FooterMobile() {
             </div>
             <div className="w-[100%] flex flex-col space-y-[10px] relative z-10">
               <div className="">
-                <h2 className="text-[14px] font-[Roboto] font-[600] text-black leading-[24px] uppercase font-roboto">
+                <h2 className="text-[14px] font-[RFDewiExtended] font-[600] text-black leading-[24px] uppercase font-roboto">
                   SIGN UP FOR OUR NEWSLETTER
                 </h2>
                 <p className="text-black font-[Roboto] font-light text-[14px] leading-[23.24px] font-roboto">
@@ -84,7 +84,7 @@ function FooterMobile() {
                   placeholder="EMAIL"
                   className="w-[100%] text-[12px] p-3 h-[50px] outline-none placeholder:text-white placeholder:font-[700]  bg-[#073B63] text-[#FFFFFF]"
                 />
-                <button className="block font-[Roboto] px-[24px] h-[50px] text-[12px] leading-[12px] uppercase tracking-[0.6px] text-center bg-[#FFF] text-[#073B63] hover:bg-[#073B63] hover:text-[#FFF] font-[900] font-[Roboto]  border border-[#073B63]">
+                <button className="block font-[Roboto] px-[24px] h-[50px] text-[12px] leading-[12px] uppercase tracking-[0.6px] text-center bg-[#FFF] text-[#073B63] hover:bg-[#073B63] hover:text-[#FFF] font-[900]    border border-[#073B63]">
                   SUBSCRIBE
                 </button>
               </div>

@@ -16,32 +16,32 @@ function Footer() {
           <div className="relative h-[90%] flex flex-row w-full   py-12 ">
             <div className="w-[13%] flex  flex-col gap-3 justify-start items-start relative z-10 uppercase">
               <Link to="/about">
-                <p className="text-[14px] font-[700] leading-[13px]">About</p>
+                <p className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]">About</p>
               </Link>
 
               <Link to="/podcast">
                 <p
-                  className="text-[14px] font-[Roboto] font-[700] leading-[13px]"
+                  className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]"
                 >
                   Podcast
                 </p>
               </Link>
               <a
                 href="#Press"
-                className="text-[14px] font-[Roboto] font-[700] leading-[13px]"
+                className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]"
               >
                 Press
               </a>
               <a
                 href="https://www.renovaacademy.com/"
-                className="text-[14px] font-[Roboto] font-[700] leading-[13px]"
+                className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]"
                 onClick={(e) => handleScroll(e, "FaqD", 90)}
               >
                 Coaching
               </a>
               <a
                 href="/contact"
-                className="text-[14px] font-[Roboto] font-[700] leading-[13px]"
+                className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]"
                 onClick={(e) => handleScroll(e, "FaqD", 90)}
               >
                 Connect
@@ -66,7 +66,7 @@ function Footer() {
             </div>
             <div className="w-[50%] flex flex-col gap-6 pl-16 relative z-10">
               <div className="">
-                <h2 className="text-[14px] font-[Roboto] font-[600] text-black leading-[24px] uppercase ">
+                <h2 className="text-[14px] font-[RFDewiExtended] font-[600] text-black leading-[24px] uppercase ">
                   SIGN UP FOR OUR NEWSLETTER
                 </h2>
                 <p className="text-black font-[Roboto] font-[300] text-[14px] leading-[23.24px]">
@@ -84,7 +84,7 @@ function Footer() {
                   placeholder="EMAIL"
                   className="w-1/3 p-3 border-2 font-[Roboto] bg-[#073B63] text-[#FFFFFF]"
                 />
-                <button className="px-6 py-3 text-[12px] leading-[12px] uppercase tracking-[0.6px] text-center bg-[#FFF] text-black font-[Roboto] hover:bg-[#073B63] hover:text-[#FFF] font-[900] font-[Inter] border border-black">
+                <button className="px-6 py-3 text-[12px] leading-[12px] uppercase tracking-[0.6px] text-center bg-[#FFF] text-black font-[Roboto] hover:bg-[#073B63] hover:text-[#FFF] font-[900]   border border-black">
                   SUBSCRIBE
                 </button>
               </div>

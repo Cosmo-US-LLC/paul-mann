@@ -32,10 +32,10 @@ function MediaPressMob() {
   return (
     <div className="w-[90%] mx-auto pt-[30px] pb-[30px] space-y-[34px]">
       <div className="space-y-[15px]">
-        <h3 className="text-[28px]  font-[700] leading-[128.571%] capitalize">
+        <h3 className="text-[28px]  font-[700] font-[RFDewiExtended] leading-[128.571%] capitalize">
         Media & Press <br /> Inquiries
         </h3>
-        <p className="text-[14px]  font-[400] ">
+        <p className="text-[14px] font-[Roboto] font-[400] ">
         Interested in featuring Paul Mann in your publication, news segment, or podcast? We welcome media opportunities and collaborations! <br /><br />
         Fill out the form below, and our team will get back to you promptly.
 <br /><br />
@@ -44,14 +44,14 @@ For urgent requests, email us directly at <br /> <span className="font-[700]">pr
         </p>
       </div>
       <div className="px-[21px] pt-[21px] pb-[35px] rounded-[6.178px] bg-[#027496]">
-        <h3 className="text-center text-[18px] font-[800] text-[#fff] capitalize">Contact Form</h3>
+        <h3 className="text-center text-[18px] font-[800] font-[RFDewiExtended] text-[#fff] capitalize">Contact Form</h3>
         <div className="space-y-[20px]">
-            <input type="text" placeholder="Your Name"  className="w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
-            <input type="text" placeholder="Your Organization/Publication"  className="w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
-            <input type="email" placeholder="Email"  className="w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
-            <input type="number" placeholder="Phone (Optional)"  className="w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
-            <input type="text" placeholder="Details of Inquiry"  className="w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
-            <input type="text" placeholder="Deadline (if any)"  className="w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
+            <input type="text" placeholder="Your Name"  className="font-[400] text-[14px] leading-[14px] w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
+            <input type="text" placeholder="Your Organization/Publication"  className="font-[400] text-[14px] leading-[14px] w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
+            <input type="email" placeholder="Email"  className=" font-[400] text-[14px] leading-[14px] w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
+            <input type="number" placeholder="Phone (Optional)"  className=" font-[400] text-[14px] leading-[14px] w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
+            <input type="text" placeholder="Details of Inquiry"  className="font-[400] text-[14px] leading-[14px] w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
+            <input type="text" placeholder="Deadline (if any)"  className="font-[400] text-[14px] leading-[14px] w-[100%] px-1 py-[10px] placeholder:opacity-[0.9] border-b border-[#fff] outline-none bg-[#027496] text-[#fff]" name="" id="" />
         </div>
       </div>
       <div>
