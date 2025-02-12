@@ -24,9 +24,9 @@ function JourneyOfLeading() {
                 Leading Change
               </h4>
 
-              <p className="text-[14px] font-[300] font-[Roboto] leading-6 ">
-                Provides water conservation education and solutions through
-                Renova Academy and Water Champions
+              <p className="text-[14px] font-[300] font-[Roboto] leading-[18px] ">
+                Provides water conservation <br /> education and solutions <br /> through
+                Renova Academy and <br /> Water Champions
               </p>
             </div>
             <div className="flex flex-col   p-6 bg-[#FFF] text-black rounded-2xl shadow-lg w-[276px] h-[234px] max-w-full">
@@ -42,9 +42,9 @@ function JourneyOfLeading() {
                 Inc. 5000®
               </h4>
 
-              <p className="text-[14px] font-[300] font-[Roboto] leading-6 ">
-                Paul Mann’s entrepreneurial <br /> vision earned him the honor
-                of making the prestigious <br /> Inc. 5000® List
+              <p className="text-[14px] font-[300] font-[Roboto] leading-[18px] ">
+                Paul Mann’s entrepreneurial <br />  vision earned him the honor
+                of <br /> making the prestigious   Inc. <br /> 5000® List
               </p>
             </div>
             <div className="flex flex-col p-6 bg-[#073B63] text-white rounded-2xl shadow-lg w-[276px] h-[234px]  max-w-full">
@@ -60,9 +60,9 @@ function JourneyOfLeading() {
                 Leadership for the Future
               </h4>
 
-              <p className="text-[14px] font-[300] font-[Roboto] leading-6 ">
-                Educated industry <br /> professionals on water <br />{" "}
-                conservation <br /> and sustainability
+              <p className="text-[14px] font-[300] font-[Roboto] leading-[18px] ">
+                Educated industry <br />  professionals on water <br />
+                conservation and sustainability
               </p>
             </div>
             <div className="flex flex-col   p-6 bg-[#FFF] text-black rounded-2xl shadow-lg w-[276px] h-[234px] max-w-full">
@@ -78,8 +78,8 @@ function JourneyOfLeading() {
                 Earth 2050 - California
               </h4>
 
-              <p className="text-[14px] font-[300]leading-6 font-[Roboto]">
-                Keynote speaker at <br /> Environmental Festival in Mill Valley
+              <p className="text-[14px] font-[300]leading-6 font-[Roboto] leading-[18px]">
+                Keynote speaker at <br /> Environmental Festival in Mill <br /> Valley
               </p>
             </div>
           </div>
@@ -105,11 +105,16 @@ function JourneyOfLeading() {
             </div>
           </div>
           <div className="w-[100%] flex justify-center items-center">
-            <a href="/podcast" rel="noopener noreferrer">
+          
+              <div className="px-6 py-3 tracking-[0.9px] font-[RFDewiExtended] border border-white text-white uppercase   ">
+                Purpose
+              </div>
+            
+            {/* <a href="/podcast" rel="noopener noreferrer">
               <button className="px-6 py-3 tracking-[0.9px] font-[RFDewiExtended] border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
                 Purpose
               </button>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

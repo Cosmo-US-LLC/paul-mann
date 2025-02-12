@@ -16,13 +16,13 @@ function Footer() {
           <div className="relative h-[90%] flex flex-row w-full   py-12 ">
             <div className="w-[13%] flex  flex-col gap-3 justify-start items-start relative z-10 uppercase">
               <Link to="/about">
-                <p className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]">About</p>
+                <p className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]">
+                  About
+                </p>
               </Link>
 
               <Link to="/podcast">
-                <p
-                  className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]"
-                >
+                <p className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]">
                   Podcast
                 </p>
               </Link>
@@ -34,6 +34,8 @@ function Footer() {
               </a>
               <a
                 href="https://www.renovaacademy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]"
                 onClick={(e) => handleScroll(e, "FaqD", 90)}
               >
@@ -48,9 +50,11 @@ function Footer() {
               </a>
             </div>
             <div className="w-[38%] gap-6 flex flex-col relative z-10">
+            <a href="/" className="relative flex flex-col items-center">
               <div
                 className="relative z-10 flex w-full "
-                onClick={handleLogoClick}
+                // onClick={handleLogoClick}
+                onClick={() => location.reload()}
               >
                 <img
                   src="/desktop-assets/footer/footer-logo.webp"
@@ -58,6 +62,7 @@ function Footer() {
                   className="cursor-pointer w-[246px] h-[97px]"
                 />
               </div>
+              </a>
               <p className="text-[14px] font-[Roboto] font-[300] leading-[23px] w-[400px]">
                 Paul is a seasoned industry expert specializing in the design
                 and implementation of innovative water reuse and efficiency
@@ -89,40 +94,82 @@ function Footer() {
                 </button>
               </div>
               <div className="flex items-center gap-10">
-              <p className="text-[16px] font-[Roboto] font-[500] leading-[24px] uppercase">
-                follow Paul :
-              </p>
-              <div className="flex gap-6">
-              <a href="#" className="text-black hover:text-gray-300">
-                <img className="object-cover h-5 "  src={'/desktop-assets/footer/logo6.svg'} alt="" />
-                </a>
-                <a href="#" className="text-black hover:text-gray-300">
-                <img className="object-cover h-5 "  src={'/desktop-assets/footer/logo1.svg'} alt="" />
-                </a>
-                
-                <a href="#" className="hover:text-gray-300">
-                <img className="object-cover h-5" src={'/desktop-assets/footer/logo2.svg'} alt="" />
-                </a>
+                <p className="text-[16px] font-[Roboto] font-[500] leading-[24px] uppercase">
+                  follow Paul :
+                </p>
+                <div className="flex gap-6">
+                  <a href="#" className="text-black hover:text-gray-300">
+                    <img
+                      className="object-cover h-5 "
+                      src={"/desktop-assets/footer/logo6.svg"}
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" className="text-black hover:text-gray-300">
+                    <img
+                      className="object-cover h-5 "
+                      src={"/desktop-assets/footer/logo1.svg"}
+                      alt=""
+                    />
+                  </a>
 
-                <a href="https://www.linkedin.com/in/pauldmann/" className="hover:text-gray-300">
-                <img className="object-cover h-5" src={'/desktop-assets/footer/logo3.svg'} alt="" />
-                </a>
-                <a href="#" className="hover:text-gray-300">
-                <img className="object-cover h-5" src={'/desktop-assets/footer/logo4.svg'} alt="" />
-                </a>
-                <a href="#" className="hover:text-gray-300">
-                <img className="object-cover h-5" src={'/desktop-assets/footer/logo5.svg'} alt="" />
-                </a>
+                  <a href="#" className="hover:text-gray-300">
+                    <img
+                      className="object-cover h-5"
+                      src={"/desktop-assets/footer/logo2.svg"}
+                      alt=""
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/pauldmann/"
+                    className="hover:text-gray-300"
+                  >
+                    <img
+                      className="object-cover h-5"
+                      src={"/desktop-assets/footer/logo3.svg"}
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" className="hover:text-gray-300">
+                    <img
+                      className="object-cover h-5"
+                      src={"/desktop-assets/footer/logo4.svg"}
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" className="hover:text-gray-300">
+                    <img
+                      className="object-cover h-5"
+                      src={"/desktop-assets/footer/logo5.svg"}
+                      alt=""
+                    />
+                  </a>
+                </div>
               </div>
-            </div>
             </div>
           </div>
 
           <div className="flex justify-center items-center h-[10%]">
             <div className="flex gap-6 uppercase">
-              <a href="#Paul-Mann" className="font-[Roboto] text-[14px] font-[500] test-[#000]   leading-[22px]">© Paul Mann</a>
-              <a href="#Privacy-Policy" className="font-[Roboto] text-[14px] font-[500] test-[#000]   leading-[22px]">Privacy Policy</a>
-              <a href="#Terms" className="font-[Roboto] text-[14px] font-[500] test-[#000]   leading-[22px]">Terms</a>
+              <a
+                href="#Paul-Mann"
+                className="font-[Roboto] text-[14px] font-[500] test-[#000]   leading-[22px]"
+              >
+                © Paul Mann
+              </a>
+              <a
+                href="#Privacy-Policy"
+                className="font-[Roboto] text-[14px] font-[500] test-[#000]   leading-[22px]"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#Terms"
+                className="font-[Roboto] text-[14px] font-[500] test-[#000]   leading-[22px]"
+              >
+                Terms
+              </a>
             </div>
           </div>
         </div>

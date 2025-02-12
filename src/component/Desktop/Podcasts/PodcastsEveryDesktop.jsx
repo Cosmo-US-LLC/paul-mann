@@ -197,7 +197,7 @@ function PodcastsEveryDesktop() {
       <div className="max-w-[1200px]   mx-auto flex flex-col justify-center">
         <div className="mb-8 text-center">
           <h3 className="text-[24px] font-bold font-[RFDewiExtended] uppercase leading-[1.5]">
-            Podcasts Every *Insert Day
+          New Podcast Every Week
           </h3>
         </div>
 

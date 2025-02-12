@@ -14,9 +14,11 @@ function FooterMobile() {
         <div className="mx-auto ">
           <div className="relative">
             <div className="w-[38%] gap-6 flex flex-col relative z-10">
+            <a href="/" className="relative flex flex-col items-center">
               <div
                 className="relative z-10 flex w-full "
-                onClick={handleLogoClick}
+                // onClick={handleLogoClick}
+                onClick={() => location.reload()}
               >
                 <img
                   src="/desktop-assets/footer/footer-logo.webp"
@@ -24,6 +26,7 @@ function FooterMobile() {
                   className="cursor-pointer object-cover max-w-[164px]"
                 />
               </div>
+              </a>
               <p className="text-[14px] font-[Roboto] font-[300] leading-[23px] w-[350px]">
                 Paul is a seasoned industry expert specializing in the design
                 and implementation of innovative water reuse and efficiency
@@ -52,6 +55,8 @@ function FooterMobile() {
               <div className="w-[50%] flex flex-col justify-center space-y-[10px]  block font-[Roboto]relative z-10 uppercase">
                 <a
                   href="https://www.renovaacademy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[11px] block font-[RFDewiExtended] font-[700] leading-[13px]"
                   onClick={(e) => handleScroll(e, "FaqD", 90)}
                 >
@@ -93,13 +98,22 @@ function FooterMobile() {
 
           <div className="flex justify-start space-y-[28px] pt-[20px] items-center ">
             <div className="text-[10px] font-[500] test-[#000] flex leading-[22px] gap-6 uppercase">
-              <a href="#Paul-Mann" className="text-[10.656px] font-[Roboto] font-[500]">
+              <a
+                href="#Paul-Mann"
+                className="text-[10.656px] font-[Roboto] font-[500]"
+              >
                 © Paul Mann
               </a>
-              <a href="#Privacy-Policy" className="text-[10.656px] font-[Roboto] font-[500]">
+              <a
+                href="#Privacy-Policy"
+                className="text-[10.656px] font-[Roboto] font-[500]"
+              >
                 Privacy Policy
               </a>
-              <a href="#Terms" className="text-[10.656px] font-[Roboto] font-[500]">
+              <a
+                href="#Terms"
+                className="text-[10.656px] font-[Roboto] font-[500]"
+              >
                 Terms
               </a>
             </div>
