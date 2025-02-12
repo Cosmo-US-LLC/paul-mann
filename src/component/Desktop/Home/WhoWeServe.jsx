@@ -1,6 +1,6 @@
 const cardData = [
   {
-    image: "/desktop-assets/WhoWeServe/card-img1.webp",
+    image: "/desktop-assets/WhoWeServe/card-img1.jpg",
     title: "Residential",
     description:
       "Homeowners looking to optimize water usage, improve efficiency, and reduce costs.",
