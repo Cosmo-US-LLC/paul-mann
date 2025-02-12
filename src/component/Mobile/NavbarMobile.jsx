@@ -44,6 +44,7 @@ function NavbarMobile() {
   return (
     <div className="bg-[#fff]">
       <div className="flex justify-between h-[48px] items-center px-[20px]">
+      <a href="/" className="relative flex flex-col items-center">
         <div
           className="relative flex flex-col items-center cursor-pointer"
           onClick={() => location.reload()}
@@ -54,6 +55,7 @@ function NavbarMobile() {
             className="cursor-pointer object-cover w-[186.138px]"
           />
         </div>
+        </a>
         <div className="w-[100px] flex justify-end items-center">
           <img
             ref={menuRef}
@@ -85,29 +87,26 @@ function NavbarMobile() {
               </Link>
               <Link to="/glimpse" onClick={() => setIsOpen(false)}>
                 <p
-                onClick={() => setIsOpen(false)}
-                className="text-black font-[RFDewiExtended] px-2 text-[14px] hover:text-gray-900"
-              >
-                Press
-              </p>
+                  onClick={() => setIsOpen(false)}
+                  className="text-black font-[RFDewiExtended] px-2 text-[14px] hover:text-gray-900"
+                >
+                  Press
+                </p>
               </Link>
               <a
                 href="https://www.renovaacademy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="flex flex-col justify-center px-2 text-black font-[RFDewiExtended] text-[14px]   capitalize   flex-shrink-0 hover:text-gray-900"
               >
                 Coaching
               </a>
-              <Link to="/contact"
-              onClick={() => setIsOpen(false)}
-              >
-              <p
-                className="flex flex-col justify-center px-2 text-black font-[RFDewiExtended] text-[14px]   capitalize  flex-shrink-0 hover:text-gray-900"
-              >
-                Connect
-              </p>
+              <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <p className="flex flex-col justify-center px-2 text-black font-[RFDewiExtended] text-[14px]   capitalize  flex-shrink-0 hover:text-gray-900">
+                  Connect
+                </p>
               </Link>
-              
             </div>
           </div>
         )}

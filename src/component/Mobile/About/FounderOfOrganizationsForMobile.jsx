@@ -2,7 +2,7 @@ import React from "react";
 
 const FounderOfOrganizationsForMobile = () => {
   return (
-    <div className="w-full h-full px-4 py-10">
+    <div className="w-full px-4 py-10">
       <div className="flex flex-col items-center w-full text-black">
         <div className="mb-4 w-[340px]">
           <span className="block text-[16px] font-[900] font-[RFDewiExtended]   uppercase leading-[20px] text-[#073B63]">
@@ -44,7 +44,7 @@ const FounderOfOrganizationsForMobile = () => {
             as an online platform aimed at educating communities on water reuse
             and sustainable practices.
           </p>
-          <p className="text-[14px] font-normal font-[Roboto] leading-[2px]">
+          <p className="text-[14px] font-normal font-[Roboto] leading-[23px]">
             Paul's vision extends beyond immediate solutions, seeking to drive a
             global shift in water usage habits. His ultimate goal is to restore
             balance to our planet's water cycle, promote resilience in the face

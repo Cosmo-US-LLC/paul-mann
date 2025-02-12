@@ -175,8 +175,7 @@ function PodcastsEvery() {
         <div>
           <div className="pb-[10px]">
             <h3 className="text-[14px] font-[Roboto] font-[500] text-[#000] text-center uppercase leading-[171.429%]" >
-              {" "}
-              Podcasts every *insert day
+            New Podcast Every Week
             </h3>
           </div>
         </div>

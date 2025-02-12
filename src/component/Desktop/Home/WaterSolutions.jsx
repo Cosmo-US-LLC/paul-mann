@@ -76,12 +76,14 @@ const WaterSolutions = () => {
                 key={index}
                 className="flex flex-row items-center  bg-[#ffffff29] p-6 rounded-2xl shadow-lg text-left border border-gray-300 w-[384px] h-[196px]"
               >
-                <div className="w-[30%]">
+                <div className="w-[30%] ">
+                  <div className="w-[69px] h-32 rounded-lg overflow-hidden">
                   <img
                     src={solution.icon}
                     alt={`${solution.title} icon`}
-                    className="object-cover w-[69px] h-32 border border-blue-500 rounded-md"
+                    className="object-cover w-full h-full"
                   />
+                  </div>
                 </div>
                 <div className="w-[70%] flex flex-col gap-2">
                   <h2 className="text-[25px] font-[600] leading-[24px] text-white font-[RFDewiExtended]">

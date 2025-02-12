@@ -112,11 +112,14 @@ function JourneyOfLeadingMob() {
             </div>
           </div>
           <div className="flex justify-center mb-2">
-          <a href="/podcast" rel="noopener noreferrer">
+          <div className="px-6 py-3 tracking-[0.9px] font-[RFDewiExtended] border border-white text-white uppercase   ">
+                Purpose
+              </div>
+          {/* <a href="/podcast" rel="noopener noreferrer">
             <button className="font-[RFDewiExtended] tracking-[0.9px] px-6 py-3 border border-white text-[14px] font-[500] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
             Purpose
             </button>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

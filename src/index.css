@@ -57,14 +57,14 @@ code {
 }
 .heroBG {
   background-image: url("/desktop-assets/hero/hero-bg.webp");
-  background-position: center;
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   /* min-height: calc(100vh); */
   min-height: 750px;
 }
 .heroBGmob {
-  background-image: url("/mobile-assets/hero/hero-bg.webp");
+  background-image: url("/mobile-assets/hero/hero-bg-1.webp");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;

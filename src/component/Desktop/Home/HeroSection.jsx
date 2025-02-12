@@ -4,15 +4,15 @@ function HeroSection() {
   return (
     <div className="relative">
       <img
-        className="absolute inset-0 object-cover w-full h-full "
-        src={"/desktop-assets/hero/hero-bg.webp"}
+        className="object-cover w-full h-auto pt-6"
+        src={"/desktop-assets/hero/hero-bg-desktop.webp"}
         alt="Hero background"
       />
 
-      <div className="max-w-[1440px] w-full h-full mx-auto">
-        <div className="max-w-[1200px] h-[750px] gap-10 mx-auto flex flex-col justify-center text-white">
-          <div className="relative z-10 flex flex-col justify-end h-full gap-10 py-10 text-white">
-            <h1 className="w-[857px] font-[RFDewiExtended] text-[26px] font-[700] tracking-[0.4px] leading-normal">
+      <div className="absolute left-0 flex items-end justify-start w-full h-full max-h-screen mx-auto bottom-10">
+        <div className="max-w-[1200px] w-full mx-auto gap-10 flex flex-col justify-center items-start text-white">
+          <div className="relative z-10 flex flex-col justify-end h-full gap-10 pb-3 text-white">
+            <h1 className="w-[857px] font-[RFDewiExtended] text-[26px] font-[700] tracking-[0.4px] capitalize leading-normal">
               Paul is a seasoned industry expert specializing in the <br /> design and
               implementation of innovative water reuse and <br /> efficiency solutions
               that make water go farther
