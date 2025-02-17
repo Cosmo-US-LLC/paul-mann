@@ -19,12 +19,12 @@ function Navbar() {
                   Podcast
                 </p>
               </Link> */}
-              <a
+              {/* <a
                 href="/glimpse"
                 className="flex flex-col justify-center text-center text-black font-[RFDewiExtended] font-[800] text-[16.222px] leading-[98.144px] uppercase     hover:text-gray-900"
               >
                 Press
-              </a>
+              </a> */}
             </div>
             <a href="/" className="relative flex flex-col items-center">
               <div

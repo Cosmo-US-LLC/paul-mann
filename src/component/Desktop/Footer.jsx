@@ -26,12 +26,12 @@ function Footer() {
                   Podcast
                 </p>
               </Link> */}
-              <a
+              {/* <a
                 href="#Press"
                 className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]"
               >
                 Press
-              </a>
+              </a> */}
               <a
                 href="https://www.renovaacademy.com/"
                 target="_blank"
