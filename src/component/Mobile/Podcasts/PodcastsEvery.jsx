@@ -204,6 +204,7 @@ function PodcastsEvery() {
             />
             amazon
           </button>
+          <a href="https://www.youtube.com/@IAmPaulMann" className="hover:text-gray-300">
           <button className="flex justify-center items-center font-[Roboto] text-[6.152px] font-[400] border border-[#000] w-[77px] h-[27px] leading-[106.667%] uppercase">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
@@ -212,6 +213,7 @@ function PodcastsEvery() {
             />
             Youtube
           </button>
+          </a>
         </div>
         <div className="pt-[17px] pb-[29px] flex justify-between items-center">
           <div className="w-[50%]">

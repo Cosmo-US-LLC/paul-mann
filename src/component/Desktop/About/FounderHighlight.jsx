@@ -34,12 +34,12 @@ const FounderHighlight = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-row gap-4 w-[300px]">
               <p className="text-[16px] font-[Roboto]  font-[500] leading-[24px] uppercase">
                 follow Paul :
               </p>
               <div className="flex gap-8">
-                <a href="#" className="hover:text-gray-300">
+                {/* <a href="#" className="hover:text-gray-300">
                   <FaTwitter size={24} />
                 </a>
                 <a href="#" className="hover:text-gray-300">
@@ -48,11 +48,11 @@ const FounderHighlight = () => {
 
                 <a href="#" className="hover:text-gray-300">
                   <FaInstagram size={24} />
-                </a>
-                <a href="#" className="hover:text-gray-300">
+                </a> */}
+                <a href="https://www.linkedin.com/in/pauldmann/" className="hover:text-gray-300">
                   <FaLinkedin size={24} />
                 </a>
-                <a href="#" className="hover:text-gray-300">
+                <a href="https://www.youtube.com/@IAmPaulMann" className="hover:text-gray-300">
                   <FaYoutube size={24} />
                 </a>
               </div>

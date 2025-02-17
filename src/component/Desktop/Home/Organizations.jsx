@@ -65,7 +65,7 @@ function Organizations() {
           </div>
           <div className="w-[100%] flex justify-center items-center mt-4 mb-1">
           <a href="/about" rel="noopener noreferrer">
-              <button className="px-6 py-3 tracking-[0.9px] font-[Roboto] border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+              <button className="px-6 py-3 tracking-[0.9px] text-[12px] font-[500] font-[Roboto] border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
               About
               </button>
             </a>

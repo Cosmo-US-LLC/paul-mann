@@ -8,7 +8,7 @@ import {
   
   function HeroSectionMob() {
     return (
-      <div className="heroBGmob min-h-[650px] flex items-end">
+      <div className="heroBGmob min-h-[650px] mt-4 flex items-end">
         <div className="max-w-[1440px] w-full h-full mx-auto pb-[30px]">
           <div className="max-w-[1200px] gap-8 flex justify-center items-end w-full h-full mx-auto ">
             <div className="relative z-10 flex flex-col items-center justify-end h-full px-4 text-white">
@@ -18,9 +18,9 @@ import {
                 That Make Water Go Farther
               </h1>
   
-              <div className="flex justify-between w-[100%] mt-[28px]">
+              <div className="flex items-center gap-6 w-[100%] mt-[28px]">
                 <h3 className="text-[12px] font-[500] leading-[100%] font-[Roboto] uppercase">follow Paul:</h3>
-                <a href="#" className="hover:text-gray-300">
+                {/* <a href="#" className="hover:text-gray-300">
                  <img className="object-cover" src={'/mobile-assets/hero/hero (1).svg'} alt="" />
                 </a>
                 <a href="#" className="hover:text-gray-300">
@@ -30,19 +30,19 @@ import {
                 <a href="#" className="hover:text-gray-300">
                 <img className="object-cover" src={'/mobile-assets/hero/hero (3).svg'} alt="" />
 
-                </a>
-                <a href="#" className="hover:text-gray-300">
+                </a> */}
+                <a href="https://www.linkedin.com/in/pauldmann/" className="hover:text-gray-300">
                 <img className="object-cover" src={'/mobile-assets/hero/hero (4).svg'} alt="" />
 
                 </a>
-                <a href="#" className="hover:text-gray-300">
+                <a href="https://www.youtube.com/@IAmPaulMann" className="hover:text-gray-300">
                 <img className="object-cover" src={'/mobile-assets/hero/hero (5).svg'} alt="" />
 
                 </a>
-                <a href="#" className="hover:text-gray-300">
+                {/* <a href="#" className="hover:text-gray-300">
                 <img className="object-cover" src={'/mobile-assets/hero/hero (6).svg'} alt="" />
 
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

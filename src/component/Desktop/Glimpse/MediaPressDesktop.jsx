@@ -23,7 +23,7 @@ function MediaPressDesktop() {
               <br />
               <br />
               For urgent requests, email us directly at <br />{" "}
-              <span className="font-[700]">press@paulmann.com</span>
+              <span className="font-[700]">press@iampaulmann.com</span>
             </p>
           </div>
           <div className="px-8 py-8 flex flex-col gap-4 rounded-lg bg-[#027496] w-[50%]  ">

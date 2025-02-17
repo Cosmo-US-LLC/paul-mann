@@ -45,12 +45,12 @@ const FounderHighlightMobile = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-4 mt-4">
           <p className="text-[14px] font-medium font-[Roboto] uppercase">
             Follow Paul:
           </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-gray-300">
+            {/* <a href="#" className="hover:text-gray-300">
               <FaTwitter size={24} />
             </a>
             <a href="#" className="hover:text-gray-300">
@@ -58,11 +58,11 @@ const FounderHighlightMobile = () => {
             </a>
             <a href="#" className="hover:text-gray-300">
               <FaInstagram size={24} />
-            </a>
-            <a href="#" className="hover:text-gray-300">
+            </a> */}
+            <a href="https://www.linkedin.com/in/pauldmann/" className="hover:text-gray-300">
               <FaLinkedin size={24} />
             </a>
-            <a href="#" className="hover:text-gray-300">
+            <a href="https://www.youtube.com/@IAmPaulMann" className="hover:text-gray-300">
               <FaYoutube size={24} />
             </a>
           </div>

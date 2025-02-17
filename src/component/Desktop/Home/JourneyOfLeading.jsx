@@ -106,7 +106,7 @@ function JourneyOfLeading() {
           </div>
           <div className="w-[100%] flex justify-center items-center">
           
-              <div className="px-6 py-3 tracking-[0.9px] font-[RFDewiExtended] border border-white text-white uppercase   ">
+              <div className="px-6 py-3 tracking-[0.9px] text-[12px] font-[500] font-[Roboto] border border-white text-white uppercase   ">
                 Purpose
               </div>
             

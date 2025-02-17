@@ -41,11 +41,11 @@ function FooterMobile() {
                   </p>
                 </Link>
 
-                <Link to="/podcast">
+                {/* <Link to="/podcast">
                   <p className="text-[11px]  block font-[RFDewiExtended] font-[700] leading-[13px]">
                     Podcast
                   </p>
-                </Link>
+                </Link> */}
                 <Link to="/glimpse">
                   <p className="text-[11px]  block font-[RFDewiExtended] font-[700] leading-[13px]">
                     Press

@@ -98,7 +98,7 @@ const WaterSolutions = () => {
           </div>
           <div className="flex justify-center mb-2">
             <a href="https://waterchampions.com/" rel="noopener noreferrer">
-              <button className="px-6 py-3 tracking-[0.9px] font-[RFDewi-Light] border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+              <button className="px-6 py-3 tracking-[0.9px] text-[12px] font-[500] font-[Roboto] border border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
                 water champions
               </button>
             </a>
