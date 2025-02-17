@@ -85,14 +85,14 @@ function NavbarMobile() {
                   Podcast
                 </p>
               </Link> */}
-              <Link to="/glimpse" onClick={() => setIsOpen(false)}>
+              {/* <Link to="/glimpse" onClick={() => setIsOpen(false)}>
                 <p
                   onClick={() => setIsOpen(false)}
                   className="text-black font-[RFDewiExtended] px-2 text-[14px] hover:text-gray-900"
                 >
                   Press
                 </p>
-              </Link>
+              </Link> */}
               <a
                 href="https://www.renovaacademy.com/"
                 target="_blank"

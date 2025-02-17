@@ -34,7 +34,7 @@ function FooterMobile() {
               </p>
             </div>
             <div className="flex justify-between py-[20px]">
-              <div className="w-[50%] flex flex-col justify-center space-y-[10px]   relative z-10 uppercase">
+              <div className="w-[50%] flex flex-col space-y-[10px]   relative z-10 uppercase">
                 <Link to="/about">
                   <p className="block font-[RFDewiExtended]  text-[11px] font-[700] leading-[13px]">
                     About
@@ -46,13 +46,13 @@ function FooterMobile() {
                     Podcast
                   </p>
                 </Link> */}
-                <Link to="/glimpse">
+                {/* <Link to="/glimpse">
                   <p className="text-[11px]  block font-[RFDewiExtended] font-[700] leading-[13px]">
                     Press
                   </p>
-                </Link>
+                </Link> */}
               </div>
-              <div className="w-[50%] flex flex-col justify-center space-y-[10px]  block font-[Roboto]relative z-10 uppercase">
+              <div className="w-[50%] flex flex-col justify-center space-y-[10px]    font-[Roboto]relative z-10 uppercase">
                 <a
                   href="https://www.renovaacademy.com/"
                   target="_blank"
