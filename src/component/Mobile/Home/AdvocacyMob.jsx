@@ -69,11 +69,11 @@ const AdvocacyMob = () => {
       </div>
 
       <div className="flex justify-center">
-        <a href="/glimpse" rel="noopener noreferrer">
+        {/* <a href="/glimpse" rel="noopener noreferrer"> */}
           <button className="font-[RFDewi-Light] tracking-[0.9px] px-4 py-3 border border-white text-[14px] font-[500] text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
             Press
           </button>
-        </a>
+        {/* </a> */}
       </div>
     </section>
   );
