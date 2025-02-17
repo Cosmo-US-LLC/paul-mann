@@ -21,11 +21,11 @@ function Footer() {
                 </p>
               </Link>
 
-              <Link to="/podcast">
+              {/* <Link to="/podcast">
                 <p className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]">
                   Podcast
                 </p>
-              </Link>
+              </Link> */}
               <a
                 href="#Press"
                 className="text-[14px] font-[RFDewiExtended] font-[700] leading-[13px]"
@@ -98,28 +98,28 @@ function Footer() {
                   follow Paul :
                 </p>
                 <div className="flex gap-6">
-                  <a href="#" className="text-black hover:text-gray-300">
+                  {/* <a href="#" className="text-black hover:text-gray-300">
                     <img
                       className="object-cover h-5 "
                       src={"/desktop-assets/footer/logo6.svg"}
                       alt=""
                     />
-                  </a>
-                  <a href="#" className="text-black hover:text-gray-300">
+                  </a> */}
+                  {/* <a href="#" className="text-black hover:text-gray-300">
                     <img
                       className="object-cover h-5 "
                       src={"/desktop-assets/footer/logo1.svg"}
                       alt=""
                     />
-                  </a>
+                  </a> */}
 
-                  <a href="#" className="hover:text-gray-300">
+                  {/* <a href="#" className="hover:text-gray-300">
                     <img
                       className="object-cover h-5"
                       src={"/desktop-assets/footer/logo2.svg"}
                       alt=""
                     />
-                  </a>
+                  </a> */}
 
                   <a
                     href="https://www.linkedin.com/in/pauldmann/"
@@ -131,20 +131,20 @@ function Footer() {
                       alt=""
                     />
                   </a>
-                  <a href="#" className="hover:text-gray-300">
+                  <a href="https://www.youtube.com/@IAmPaulMann" className="hover:text-gray-300">
                     <img
                       className="object-cover h-5"
                       src={"/desktop-assets/footer/logo4.svg"}
                       alt=""
                     />
                   </a>
-                  <a href="#" className="hover:text-gray-300">
+                  {/* <a href="#" className="hover:text-gray-300">
                     <img
                       className="object-cover h-5"
                       src={"/desktop-assets/footer/logo5.svg"}
                       alt=""
                     />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

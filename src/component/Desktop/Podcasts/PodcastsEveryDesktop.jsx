@@ -227,6 +227,7 @@ function PodcastsEveryDesktop() {
             />
             Amazon
           </button>
+          <a href="https://www.youtube.com/@IAmPaulMann" className="hover:text-gray-300">
           <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
             <img
               src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
@@ -235,6 +236,7 @@ function PodcastsEveryDesktop() {
             />
             YouTube
           </button>
+          </a>
         </div>
 
         <div className="flex items-center justify-between pb-2 mb-12">

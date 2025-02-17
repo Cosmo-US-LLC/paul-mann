@@ -13,9 +13,9 @@ function HeroSection() {
         <div className="max-w-[1200px] w-full mx-auto gap-10 flex flex-col justify-center items-start text-white">
           <div className="relative z-10 flex flex-col justify-end h-full gap-10 pb-3 text-white">
             <h1 className="w-[857px] font-[RFDewiExtended] text-[26px] font-[700] tracking-[0.4px] capitalize leading-normal">
-              Paul is a seasoned industry expert specializing in the <br /> design and
-              implementation of innovative water reuse and <br /> efficiency solutions
-              that make water go farther
+              Paul is a seasoned industry expert specializing in the <br />{" "}
+              design and implementation of innovative water reuse and <br />{" "}
+              efficiency solutions that make water go farther
             </h1>
 
             <div className="flex items-center gap-10">
@@ -23,27 +23,27 @@ function HeroSection() {
                 follow Paul :
               </p>
               <div className="flex gap-8">
-                <a href="#" className="hover:text-gray-300">
+                {/* <a href="#" className="hover:text-gray-300">
                   <img
                     className="object-cover h-6"
                     src={"/desktop-assets/hero/logo1.svg"}
                     alt="Facebook Logo"
                   />
-                </a>
-                <a href="#" className="hover:text-gray-300">
+                </a> */}
+                {/* <a href="#" className="hover:text-gray-300">
                   <img
                     className="object-cover h-6"
                     src={"/desktop-assets/hero/logo2.svg"}
                     alt="Twitter Logo"
                   />
-                </a>
-                <a href="#" className="hover:text-gray-300">
+                </a> */}
+                {/* <a href="#" className="hover:text-gray-300">
                   <img
                     className="object-cover h-6"
                     src={"/desktop-assets/hero/logo3.svg"}
                     alt="Instagram Logo"
                   />
-                </a>
+                </a> */}
                 <a
                   href="https://www.linkedin.com/in/pauldmann/"
                   className="hover:text-gray-300"
@@ -54,7 +54,10 @@ function HeroSection() {
                     alt="LinkedIn Logo"
                   />
                 </a>
-                <a href="#" className="hover:text-gray-300">
+                <a
+                  href="https://www.youtube.com/@IAmPaulMann"
+                  className="hover:text-gray-300"
+                >
                   <img
                     className="object-cover h-6"
                     src={"/desktop-assets/hero/logo5.svg"}

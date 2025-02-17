@@ -65,7 +65,7 @@ const EducationCourses = () => {
           </div>
           <div className="flex justify-center ">
             <a href="https://www.renovaacademy.com" rel="noopener noreferrer">
-              <button className="px-6 py-3 border tracking-[0.9px] font-[Roboto] border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
+              <button className="px-6 py-3 border tracking-[0.9px] text-[12px] font-[500] font-[Roboto] border-white text-white uppercase   hover:bg-white hover:text-[#073B63] transition">
                 Renova Academy
               </button>
             </a>

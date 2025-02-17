@@ -42,7 +42,7 @@ function NavbarMobile() {
   }, []);
 
   return (
-    <div className="bg-[#fff]">
+    <div className="bg-[#fff] fixed top-0 w-[100%] z-[99]">
       <div className="flex justify-between h-[48px] items-center px-[20px]">
       <a href="/" className="relative flex flex-col items-center">
         <div
@@ -80,11 +80,11 @@ function NavbarMobile() {
                 </p>
               </Link>
 
-              <Link to="/podcast" onClick={() => setIsOpen(false)}>
+              {/* <Link to="/podcast" onClick={() => setIsOpen(false)}>
                 <p className="text-black font-[RFDewiExtended] px-2 text-[14px] hover:text-gray-900">
                   Podcast
                 </p>
-              </Link>
+              </Link> */}
               <Link to="/glimpse" onClick={() => setIsOpen(false)}>
                 <p
                   onClick={() => setIsOpen(false)}

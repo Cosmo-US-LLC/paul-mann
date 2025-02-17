@@ -11,7 +11,7 @@ function GlimpseDesktop() {
     <div className="">
          <GlimpseIntoDesktop />
          <PressCoveragedesktop />
-         <MediaPressDesktop/>
+         {/* <MediaPressDesktop/> */}
     </div>
   );
 }
