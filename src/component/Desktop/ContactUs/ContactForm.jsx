@@ -12,7 +12,7 @@ const ContactForm = () => {
             <p className="text-[#000] font-[Roboto] font-[400] text-[16px] leading-[23px] w-[330px]">
               Email us:{" "}
               <a href="mailto:info@waterchampion.com" className="text-black ">
-              info@waterchampions.com
+              info@iampaulmann.com
               </a>
             </p>
             {/* <p className="text-[#000] font-[Roboto] font-[400] text-[16px] leading-[23px] w-[330px]">
