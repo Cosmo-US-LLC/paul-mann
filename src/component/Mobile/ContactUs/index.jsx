@@ -19,7 +19,7 @@ function ContactUsMobile() {
               href="mailto:info@waterchampion.com"
               className="text-black font-[Roboto] "
             >
-              info@waterchampions.com
+              info@iampaulmann.com
             </a>
           </p>
           {/* <p className="text-[#000] text-center font-[Roboto] font-[400] text-[14px] leading-[23px] ">
