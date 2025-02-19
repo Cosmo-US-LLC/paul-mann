@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import axios from "axios";
 
 function Footer() {
   const handleLogoClick = () => {
@@ -8,6 +10,65 @@ function Footer() {
       behavior: "smooth",
     });
   };
+
+  const [formData, setFormData] = useState({
+    Name: "",
+    Email: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");  
+  const [isError, setIsError] = useState(false);  
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log("Form Data to be submitted:", formData);
+
+    if (!formData.Name || !formData.Email) {
+      setMessage("Please fill in all fields.");
+      setIsError(true);
+      return;
+    }
+
+    setIsLoading(true);
+    setMessage(""); // Clear previous messages
+
+    try {
+      const response = await axios.post(
+        "https://api.sheetbest.com/sheets/f64a041e-df86-44d8-a751-6cbaac589147",
+        [formData]
+      );
+      console.log("Response from Sheet.best:", response.data);
+      setMessage("Subscription successful!");
+      setIsError(false);
+      setFormData({ Name: "", Email: "" });
+    } catch (error) {
+      console.error("Error during subscription:", error);
+      setMessage("Failed to subscribe. Please try again.");
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Automatically hide the message after 5 seconds
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage("");
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
 
   return (
     <footer className="bg-[#F3F3F3] overflow-hidden relative w-full">
@@ -50,18 +111,17 @@ function Footer() {
               </a>
             </div>
             <div className="w-[38%] gap-6 flex flex-col relative z-10">
-            <a href="/" className="relative flex flex-col items-center">
-              <div
-                className="relative z-10 flex w-full "
-                // onClick={handleLogoClick}
-                onClick={() => location.reload()}
-              >
-                <img
-                  src="/desktop-assets/footer/footer-logo.webp"
-                  alt="fual-mann-logo"
-                  className="cursor-pointer w-[246px] h-[97px]"
-                />
-              </div>
+              <a href="/" className="relative flex flex-col items-center">
+                <div
+                  className="relative z-10 flex w-full "
+                  onClick={() => location.reload()}
+                >
+                  <img
+                    src="/desktop-assets/footer/footer-logo.webp"
+                    alt="fual-mann-logo"
+                    className="cursor-pointer w-[246px] h-[97px]"
+                  />
+                </div>
               </a>
               <p className="text-[14px] font-[Roboto] font-[300] leading-[23px] w-[400px]">
                 Paul is a seasoned industry expert specializing in the design
@@ -78,7 +138,48 @@ function Footer() {
                   Stay updated on the latest news and exclusive promotions!
                 </p>
               </div>
-              <div className="flex gap-4">
+              <div className="w-full mx-auto ">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  <div className="flex gap-4">
+                    <input
+                      type="text"
+                      name="Name"
+                      placeholder="NAME"
+                      value={formData.Name}
+                      onChange={handleChange}
+                      required
+                      className="w-1/3 p-3 font-[Roboto] bg-[#073B63] text-[#FFFFFF] placeholder:text-white focus:outline-none focus:border-transparent"
+                    />
+                    <input
+                      type="email"
+                      name="Email"
+                      placeholder="EMAIL"
+                      value={formData.Email}
+                      onChange={handleChange}
+                      required
+                      className="w-1/3 p-3 border-2 font-[Roboto] bg-[#073B63] text-[#FFFFFF] placeholder:text-white focus:outline-none focus:border-transparent"
+                    />
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="px-6 py-3 text-[12px] leading-[12px] uppercase tracking-[0.6px] text-center bg-[#FFF] text-black font-[Roboto] hover:bg-[#073B63] hover:text-[#FFF] font-[900] border border-black"
+                    >
+                      {isLoading ? "SUBSCRIBING..." : "SUBSCRIBE"}
+                    </button>
+                  </div>
+
+                  {message && (
+                    <p
+                      className={` text-[10px] w-[95%] font-[Roboto] rounded-sm text-white px-4 py-2 ${
+                        isError ? "bg-red-500" : "bg-green-500"
+                      }`}
+                    >
+                      {message}
+                    </p>
+                  )}
+                </form>
+              </div>
+              {/* <div className="flex gap-4">
                 <input
                   type="text"
                   placeholder="NAME"
@@ -92,7 +193,7 @@ function Footer() {
                 <button className="px-6 py-3 text-[12px] leading-[12px] uppercase tracking-[0.6px] text-center bg-[#FFF] text-black font-[Roboto] hover:bg-[#073B63] hover:text-[#FFF] font-[900]   border border-black">
                   SUBSCRIBE
                 </button>
-              </div>
+              </div> */}
               <div className="flex items-center gap-10">
                 <p className="text-[16px] font-[Roboto] font-[500] leading-[24px] uppercase">
                   follow Paul :
@@ -131,7 +232,10 @@ function Footer() {
                       alt=""
                     />
                   </a>
-                  <a href="https://www.youtube.com/@IAmPaulMann" className="hover:text-gray-300">
+                  <a
+                    href="https://www.youtube.com/@IAmPaulMann"
+                    className="hover:text-gray-300"
+                  >
                     <img
                       className="object-cover h-5"
                       src={"/desktop-assets/footer/logo4.svg"}
