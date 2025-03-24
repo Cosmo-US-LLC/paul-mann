@@ -12,7 +12,7 @@ function HeroSectionMob() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full pt-10 overflow-hidden ">
       <video
         ref={videoRef}
         className="w-full h-auto"
@@ -26,7 +26,7 @@ function HeroSectionMob() {
 
       <button
         onClick={handleToggleSound}
-        className="absolute bottom-6 left-4 bg-black bg-opacity-60 text-white px-3 py-1.5 rounded-full text-xs shadow-lg z-10"
+        className="absolute bottom-2 left-3 bg-black bg-opacity-60 text-white px-3 py-1.5 rounded-full text-xs shadow-lg z-10"
       >
         {soundOn ? "🔇 Mute" : "🔊 Sound On"}
       </button>
