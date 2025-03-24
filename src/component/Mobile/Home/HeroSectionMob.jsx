@@ -12,20 +12,21 @@ function HeroSectionMob() {
   };
 
   return (
-    <div className="relative w-full h-full mt-4 overflow-hidden">
+    <div className="relative w-full overflow-hidden">
       <video
         ref={videoRef}
-        className="object-cover w-full h-full"
-        src="/video/hero-video.mp4"
+        className="w-full h-auto"
+        src="/video/hero-video.mp4"  // Make sure your file is in /public/video/
         autoPlay
         muted
         loop
         playsInline
+        controls={false}
       />
 
       <button
         onClick={handleToggleSound}
-        className="absolute z-10 px-4 py-2 text-sm text-white bg-black rounded-full shadow-lg bottom-2 left-4 bg-opacity-60"
+        className="absolute bottom-6 left-4 bg-black bg-opacity-60 text-white px-3 py-1.5 rounded-full text-xs shadow-lg z-10"
       >
         {soundOn ? "🔇 Mute" : "🔊 Sound On"}
       </button>
