@@ -39,6 +39,43 @@ code {
   font-family: "Lato", sans-serif;
 }
 
+.tooltip-container:hover .tooltip-text,
+button:hover + .tooltip-text {
+  display: block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text,
+button:hover + .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+.group:hover .group-hover\:flex {
+  display: flex;
+}
+
+.group {
+  position: relative;
+}
+
+.group-hover\:flex {
+  display: none; /* Hide share buttons by default */
+}
+
+
+
+
+
+
 .truncate {
   overflow: hidden; /* Hide overflow */
   white-space: nowrap; /* Prevent text from wrapping */

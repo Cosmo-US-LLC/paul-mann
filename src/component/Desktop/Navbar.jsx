@@ -14,11 +14,11 @@ function Navbar() {
                 </p>
               </Link>
 
-              {/* <Link to="/podcast">
+              <Link to="/podcast">
                 <p className="flex flex-col justify-center text-center text-black font-[RFDewiExtended] font-[800] text-[16.222px] leading-[98.144px] uppercase    hover:text-gray-900">
                   Podcast
                 </p>
-              </Link> */}
+              </Link>
               {/* <a
                 href="/glimpse"
                 className="flex flex-col justify-center text-center text-black font-[RFDewiExtended] font-[800] text-[16.222px] leading-[98.144px] uppercase     hover:text-gray-900"
