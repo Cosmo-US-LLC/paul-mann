@@ -1,6 +1,6 @@
 export default function SuggestTopicForm() {
     return (
-      <div className="flex flex-col items-center justify-center py-16">
+      <div className="flex flex-col items-center justify-center pt-14">
         <div className="w-full max-w-[1000px]">
           <h1 className="mb-4 text-lg font-bold font-[RFDewiExtended] text-gray-800">Suggest a Topic</h1>
           <form className="space-y-4">
