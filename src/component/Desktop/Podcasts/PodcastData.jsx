@@ -1,24 +1,24 @@
 export const podcastData = [
   {
     date: "04.03.2025",
-    youtubeId: "4snXR5Scgvc",  
+    youtubeId: "d8mw9kot9pk",  
     thumbnail: "/mobile-assets/Podcasts/Thumbnail5.png",  
     episode: "EP – 2",
-    title: "How Rainwater Harvesting is the Future | Water Champions Podcast Ep.1 with Rain Brothers",
+    title: "How One County is Leading Rainwater Harvesting | Water Champions Podcast Ep.2 with Noelle Johnson",
     description: "In this episode, Noelle Johnson discusses California's rainwater harvesting program and its implications for water sustainability in the state. Learn how this program is helping communities save water, the challenges involved, and its potential for future impact."
   },
   {
     date: "04.03.2025",
-    youtubeId: "d8mw9kot9pk", 
+    youtubeId: "4snXR5Scgvc", 
     thumbnail: "/mobile-assets/Podcasts/Thumbnail4.png",  
     episode: "EP – 1",
-    title: "How One County is Leading Rainwater Harvesting | Water Champions Podcast Ep.2 with Noelle Johnson",
+    title: "How Rainwater Harvesting is the Future | Water Champions Podcast Ep.1 with Rain Brothers",
     description: "The first episode of the series dives deep into the concept of rainwater harvesting and its role in sustainable water supply. The Rain Brothers explore different methods of rainwater collection and how it can change the way we think about water conservation."
   },
 ];
+// 4snXR5Scgvc
 
-
-
+// How Rainwater Harvesting is the Future | Water Champions Podcast Ep.1 with Rain Brothers
 export const sliderData = [
     {
       text: '“Love this podcast!”',
