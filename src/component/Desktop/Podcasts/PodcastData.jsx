@@ -1,7 +1,7 @@
 export const podcastData = [
   {
     date: "04.03.2025",
-    youtubeId: "4snXR5Scgvc",  
+    youtubeId: "4snXR5Scgvc?autoplay=1&mute=1",  
     thumbnail: "/public/mobile-assets/Podcasts/Thumbnail5.png",  
     episode: "EP – 2",
     title: "Inside California's Rainwater Program | Water Champions Podcast Ep.2 with Noelle Johnson",
@@ -9,7 +9,7 @@ export const podcastData = [
   },
   {
     date: "04.03.2025",
-    youtubeId: "d8mw9kot9pk", 
+    youtubeId: "d8mw9kot9pk?autoplay=1&mute=1", 
     thumbnail: "/public/mobile-assets/Podcasts/Thumbnail4.png",  
     episode: "EP – 1",
     title: "How Rainwater Harvesting Can Replace Water Supply | Water Champions Podcast Ep.1 with Rain Brothers",
