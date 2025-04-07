@@ -205,7 +205,7 @@ function PodcastsEveryDesktop() {
         {/* Display Podcasts */}
         <div ref={listContainerRef} className="space-y-12">
           {displayedPodcasts.map((podcast, index) => {
-            const youtubeUrl = `https://www.youtube.com/embed/${podcast.youtubeId}`;
+            const videoUrl = `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`;
             const isDescriptionExpanded = expandedDescription[index];
 
             return (
@@ -217,7 +217,7 @@ function PodcastsEveryDesktop() {
                   <div className="relative w-full h-[200px]">
                     {videoStates[index]?.isPlaying ? (
                       <iframe
-                        src={youtubeUrl}
+                        src={videoUrl}
                         title={`YouTube video ${index + 1}`}
                         className="object-cover w-full h-full"
                         frameBorder="0"

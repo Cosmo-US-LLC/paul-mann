@@ -11,7 +11,6 @@ import {
   FacebookShareButton,
   TwitterShareButton,
   LinkedinShareButton,
- 
 } from "react-share";
 import { FiShare2 } from "react-icons/fi";
 import { podcastData } from "../../Desktop/Podcasts/PodcastData";
@@ -148,7 +147,8 @@ function PodcastsEvery() {
         {/* Display Podcasts */}
         <div className="space-y-[43px]">
           {paginatedPodcasts.map((podcast, index) => {
-            const youtubeUrl = `https://www.youtube.com/embed/${podcast.youtubeId}`;
+            // const youtubeUrl = `https://www.youtube.com/embed/${podcast.youtubeId}`;
+            const videoUrl = `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`;
 
             return (
               <div key={index}>
@@ -158,7 +158,7 @@ function PodcastsEvery() {
                       {/* Video controls - Play/Pause */}
                       {videoStates[index]?.isPlaying ? (
                         <iframe
-                          src={`${youtubeUrl}?autoplay=1`}
+                          src={`${videoUrl}?autoplay=1`}
                           title={`YouTube video ${index + 1}`}
                           className="object-cover w-full h-full"
                           frameBorder="0"
@@ -182,11 +182,24 @@ function PodcastsEvery() {
                       )}
                     </div>
                   </div>
-                  <div style={{ writingMode: "sideways-lr" }}>
-                    <p className="text-[14px] font-[Roboto] font-[400]   uppercase">
-                      {podcast.episode} {/* Display episode number */}
+                  <div
+                  className="flex items-center justify-center "
+                    style={{
+                      transform: "rotate(90deg)",
+                      transformOrigin: "top",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    <p className="text-[14px] font-[Roboto] font-[400] uppercase">
+                      {podcast.episode}  
                     </p>
                   </div>
+
+                  {/* <div style={{ writingMode: "sideways-lr" }}>
+                    <p className="text-[14px] font-[Roboto] font-[400]   uppercase">
+                      {podcast.episode}  
+                    </p>
+                  </div> */}
                 </div>
 
                 {/* Episode Label (restored) */}
@@ -225,7 +238,7 @@ function PodcastsEvery() {
                     <p className="text-[16px] font-[Roboto] font-[400] leading-[182.592%] ">
                       SHARE
                     </p>
-                    <FiShare2 className="w-4 h-4"  />
+                    <FiShare2 className="w-4 h-4" />
 
                     {/* Show the icons when 'showIcons' state is true */}
                     {showIcons && (
