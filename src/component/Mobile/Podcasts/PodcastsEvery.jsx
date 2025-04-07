@@ -1,14 +1,19 @@
 import { useState } from "react";
-import { FaPlay, FaPause, FaInstagram } from "react-icons/fa";
-import { FiShare2 } from "react-icons/fi";
+import {
+  FaPlay,
+  FaPause,
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+} from "react-icons/fa";
 import {
   FacebookShareButton,
   TwitterShareButton,
   LinkedinShareButton,
-  FacebookIcon,
-  TwitterIcon,
-  LinkedinIcon,
+ 
 } from "react-share";
+import { FiShare2 } from "react-icons/fi";
 import { podcastData } from "../../Desktop/Podcasts/PodcastData";
 
 function PodcastsEvery() {
@@ -147,9 +152,9 @@ function PodcastsEvery() {
 
             return (
               <div key={index}>
-                <div className="flex space-x-[19px] justify-between items-center">
+                <div className="flex items-center justify-between gap-4">
                   <div className="relative w-[336px]">
-                    <div className="relative w-full h-[200px]">
+                    <div className="relative w-full h-[100%]">
                       {/* Video controls - Play/Pause */}
                       {videoStates[index]?.isPlaying ? (
                         <iframe
@@ -178,7 +183,7 @@ function PodcastsEvery() {
                     </div>
                   </div>
                   <div style={{ writingMode: "sideways-lr" }}>
-                    <p className="text-[14px] font-[Roboto] font-[400] leading-[200%] uppercase">
+                    <p className="text-[14px] font-[Roboto] font-[400]   uppercase">
                       {podcast.episode} {/* Display episode number */}
                     </p>
                   </div>
@@ -220,27 +225,42 @@ function PodcastsEvery() {
                     <p className="text-[16px] font-[Roboto] font-[400] leading-[182.592%] ">
                       SHARE
                     </p>
-                    <div>
-                      <img
-                        src="/mobile-assets/Podcasts/pd-card-icn (5).svg"
-                         
-                        alt="Share"
-                      />
-                    </div>
+                    <FiShare2 className="w-4 h-4"  />
 
                     {/* Show the icons when 'showIcons' state is true */}
                     {showIcons && (
-                      <div className="absolute left-0 z-10 flex items-center mt-2 space-x-2 top-full">
-                        <FacebookShareButton url={shareUrl} quote={title}>
-                          <FacebookIcon size={32} round />
+                      <div className="absolute left-0 z-10 flex items-center space-x-2 top-full">
+                        <FacebookShareButton url={shareUrl}>
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <FaFacebookF size={16} round target="_blank" />
+                          </div>
                         </FacebookShareButton>
-                        <TwitterShareButton url={shareUrl} title={title}>
-                          <TwitterIcon size={32} round />
+                        <TwitterShareButton url={shareUrl}>
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <FaTwitter size={16} round target="_blank" />
+                          </div>
                         </TwitterShareButton>
+
+                        {/* LinkedIn Share Button */}
                         <LinkedinShareButton url={shareUrl}>
-                          <LinkedinIcon size={32} round />
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <FaLinkedinIn size={16} round target="_blank" />
+                          </div>
                         </LinkedinShareButton>
-                        <FaInstagram size={32} className="cursor-pointer" />
+
+                        {/* Instagram Share Button (using link to Instagram) */}
+                        <a
+                          href={`https://www.instagram.com/?url=${encodeURIComponent(
+                            shareUrl
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center"
+                        >
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <FaInstagram size={16} />
+                          </div>
+                        </a>
                       </div>
                     )}
                   </div>

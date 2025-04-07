@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaPlay, FaPause, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram,  FaPlay, FaPause, } from "react-icons/fa";
 import { FiShare2 } from "react-icons/fi";
 import {
   FacebookShareButton,
   TwitterShareButton,
   LinkedinShareButton,
-  FacebookIcon,
-  TwitterIcon,
-  LinkedinIcon,
+ 
 } from "react-share";
 import ReviewSlider from "./ReviewSlider";
 import { podcastData, sliderData } from "./PodcastData";
@@ -309,20 +307,26 @@ function PodcastsEveryDesktop() {
                     </div>
                     {/* Social Media Share Buttons */}
                     {showShareButtons && (
-                      <div className="absolute left-0 flex gap-2 mt-2 top-full">
+                      <div className="absolute left-0 flex gap-3 mt-2 top-full">
                         {/* Facebook Share Button */}
                         <FacebookShareButton url={shareUrl}>
-                          <FacebookIcon size={32} round target="_blank" />
+                        <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                          <FaFacebookF size={16} round target="_blank" />
+                          </div>
                         </FacebookShareButton>
 
                         {/* Twitter Share Button */}
                         <TwitterShareButton url={shareUrl}>
-                          <TwitterIcon size={32} round target="_blank" />
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                          <FaTwitter size={16} round target="_blank" />
+                          </div>
                         </TwitterShareButton>
 
                         {/* LinkedIn Share Button */}
                         <LinkedinShareButton url={shareUrl}>
-                          <LinkedinIcon size={32} round target="_blank" />
+                        <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                          <FaLinkedinIn size={16} round target="_blank" />
+                          </div>
                         </LinkedinShareButton>
 
                         {/* Instagram Share Button (using link to Instagram) */}
@@ -334,7 +338,9 @@ function PodcastsEveryDesktop() {
                           rel="noopener noreferrer"
                           className="flex items-center justify-center"
                         >
-                          <FaInstagram size={32} />
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
+                          <FaInstagram size={16} />
+                          </div>
                         </a>
                       </div>
                     )}

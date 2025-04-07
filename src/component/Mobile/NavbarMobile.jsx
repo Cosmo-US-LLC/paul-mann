@@ -80,11 +80,11 @@ function NavbarMobile() {
                 </p>
               </Link>
 
-              {/* <Link to="/podcast" onClick={() => setIsOpen(false)}>
+              <Link to="/podcast" onClick={() => setIsOpen(false)}>
                 <p className="text-black font-[RFDewiExtended] px-2 text-[14px] hover:text-gray-900">
                   Podcast
                 </p>
-              </Link> */}
+              </Link>
               {/* <Link to="/glimpse" onClick={() => setIsOpen(false)}>
                 <p
                   onClick={() => setIsOpen(false)}
