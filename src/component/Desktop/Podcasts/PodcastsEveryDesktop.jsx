@@ -258,7 +258,7 @@ function PodcastsEveryDesktop() {
                   <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
                     {podcast.date}
                   </p>
-                  <h5 className="text-[18px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.04em] ">
+                  <h5 className="text-[16px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.06em] ">
                     {podcast.title}
                   </h5>
 
