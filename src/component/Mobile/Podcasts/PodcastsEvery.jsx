@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { podcastData } from "../../Desktop/Podcasts/PodcastData";
-
-import { FaPlay, FaPause, FaInstagram } from "react-icons/fa";  
+import { FaPlay, FaPause, FaInstagram } from "react-icons/fa";
+import { FiShare2 } from "react-icons/fi";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -10,16 +9,34 @@ import {
   TwitterIcon,
   LinkedinIcon,
 } from "react-share";
+import { podcastData } from "../../Desktop/Podcasts/PodcastData";
 
 function PodcastsEvery() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  const [showIcons, setShowIcons] = useState(false);  
-  const shareUrl = "https://example.com";  
-  const title = "Check out this podcast!";  
+  const [showIcons, setShowIcons] = useState(false);
+
+  // Define the videoStates state to track play/pause for each video
+  const [videoStates, setVideoStates] = useState(
+    podcastData.map(() => ({ isPlaying: false })) // Initialize with all videos paused
+  );
+
+  const shareUrl = "https://example.com";
+  const title = "Check out this podcast!";
 
   const handleShareClick = () => {
-    setShowIcons((prev) => !prev);  
+    setShowIcons((prev) => !prev);
+  };
+
+  const handlePlayPauseClick = (index) => {
+    setVideoStates((prevStates) => {
+      return prevStates.map((state, i) => {
+        if (i === index) {
+          return { isPlaying: !state.isPlaying }; // Toggle play/pause for clicked podcast
+        }
+        return state;
+      });
+    });
   };
 
   const paginatedPodcasts = podcastData.slice(
@@ -27,15 +44,6 @@ function PodcastsEvery() {
     currentPage * itemsPerPage
   );
 
-  const handleThumbnailClick = (youtubeId) => {
- 
-    const iframe = document.getElementById(`iframe-${youtubeId}`);
-    iframe.style.display = "block";  
-    const thumbnail = document.getElementById(`thumbnail-${youtubeId}`);
-    thumbnail.style.display = "none"; 
-  };
-
-  
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -49,174 +57,200 @@ function PodcastsEvery() {
           </h3>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-4">
+        {/* Platform Buttons */}
+        <div className="flex flex-col items-center justify-center gap-6 pt-1 pb-4">
           <a
             href="https://www.youtube.com/@IAmPaulMann"
-            className="hover:text-gray-300"
+            className="relative hover:text-black "
           >
-            <button className="flex justify-center items-center font-[Roboto] text-[16.152px] font-[400] border border-[#000] w-[147px] h-[47px] leading-[106.667%] uppercase">
+            <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-black hover:text-white">
               <img
                 src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
-                className="object-cover mr-2"
-                alt=""
+                className="w-6 h-6 mr-2"
+                alt="YouTube"
               />
-              Youtube
+              YouTube
             </button>
           </a>
-          <button className="flex justify-center bg-gray-200 items-center font-[Roboto] text-[16.152px] font-[400] border border-[#000] w-[147px] h-[47px] leading-[106.667%] uppercase">
-            <img
-              src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
-              className="object-cover mr-2"
-              alt=""
-            />
-            Spotify
-          </button>
-          <button className="flex justify-center bg-gray-200 items-center font-[Roboto] text-[16.152px] font-[400] border border-[#000] w-[147px] h-[47px] leading-[106.667%] uppercase">
-            <img
-              src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
-              className="object-cover mr-2"
-              alt=""
-            />
-            Apple
-          </button>
-          <button className="flex justify-center bg-gray-200 items-center font-[Roboto] text-[16.152px] font-[400] border border-[#000] w-[147px] h-[47px] leading-[106.667%] uppercase">
-            <img
-              src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
-              className="object-cover mr-2"
-              alt=""
-            />
-            amazon
-          </button>
-        </div>
-        <div className="flex items-center justify-between py-12">
-          <div className="w-[50%]">
-            <div className="flex items-center mt-1 space-x-2">
-              <h4 className="text-[16px] font-[Roboto] font-[500]">
-                Featured Episodes
-              </h4>
-              {/* <img
-                src="/mobile-assets/Podcasts/Arrow 2 (Stroke).svg"
-                className="mt-1"
-                alt=""
-              /> */}
-            </div>
-          </div>
-          <div className="w-[50%]">
-            <div className="flex justify-between border-b border-[#000]">
-              <input
-                className="w-[98%] font-[Roboto] px-2 outline-none text-[12px] placeholder:uppercase"
-                placeholder="Search"
-                type="text"
-                name=""
-                id=""
+
+          <div className="relative tooltip-container">
+            <button className="flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase bg-gray-200 hover:bg-gray-300 pointer-events-none">
+              <img
+                src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
+                className="w-6 h-6 mr-2"
+                alt="Spotify"
               />
-              <img src="/mobile-assets/Podcasts/SVG (1).svg" alt="" />
-            </div>
+              Spotify
+            </button>
+            <span className="absolute hidden w-[90px] px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+              Coming soon
+            </span>
+          </div>
+
+          <div className="relative tooltip-container">
+            <button className="flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black   bg-gray-200 w-[130px] h-[44px] uppercase hover:bg-gray-300 pointer-events-none">
+              <img
+                src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
+                className="w-6 h-6 mr-2"
+                alt="Apple"
+              />
+              Apple
+            </button>
+            <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+              Coming soon
+            </span>
+          </div>
+
+          <div className="relative tooltip-container">
+            <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[130px] h-[44px] bg-gray-200 uppercase hover:bg-gray-300 pointer-events-none">
+              <img
+                src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
+                className="w-6 h-6 mr-2"
+                alt="Amazon"
+              />
+              Amazon
+            </button>
+            <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+              Coming soon
+            </span>
           </div>
         </div>
-        <div className="space-y-[43px]">
-          {podcastData.map((podcast, index) => (
-            <div key={index}>
-              <div className="flex space-x-[19px] justify-between items-center">
-                <div>
-                  {/* Thumbnail Image */}
-                  <div
-                    id={`thumbnail-${podcast.youtubeId}`}
-                    className="relative cursor-pointer"
-                    onClick={() => handleThumbnailClick(podcast.youtubeId)}
-                  >
-                    <img
-                      src={podcast.thumbnail} // Use thumbnail from the data
-                      className="object-cover w-full"
-                      alt={`Podcast ${index + 1}`}
-                    />
-                    {/* <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center">
-                  <img
-                    src="/mobile-assets/Podcasts/play-icon.svg" // A play icon to indicate video
-                    alt="Play"
-                    className="w-12 h-12"
-                  />
-                </div> */}
-                  </div>
 
-                  {/* YouTube Embed (hidden by default) */}
-                  <iframe
-                    id={`iframe-${podcast.youtubeId}`}
-                    width="100%"
-                    height="215"
-                    style={{ display: "none" }} // Hidden initially, shown when thumbnail clicked
-                    src={`https://www.youtube.com/embed/${podcast.youtubeId}`} // YouTube ID for each podcast
-                    title={`YouTube video for ${podcast.title}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+        {/* Categories Buttons */}
+        <div className="flex items-center justify-between pt-8 pb-12">
+          <div className="flex gap-6">
+            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer border-b-2 border-black pb-1">
+              Featured Episodes
+            </button>
+          </div>
 
-                  <div className="py-2">
-                    <p className="text-[16px] font-[Roboto] font-[400] uppercase leading-[240%]">
-                      {podcast.date}
-                    </p>
-                    <h5 className="text-[14px] font-[Roboto] font-[500] uppercase leading-[142.857%]">
-                      {podcast.title}
-                    </h5>
-                  </div>
-                  {/* <p className="text-[12px] font-[Roboto] pt-[16px] font-[500] uppercase w-[70px] border-b border-[#000]">
-                Read More
-              </p> */}
-                </div>
-                <div style={{ writingMode: "sideways-lr" }}>
-                  <p className="text-[12px] font-[Roboto] font-[500] leading-[200%] uppercase">
-                    {podcast.episode}
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-left gap-6 pt-[20px]">
-                <div className="flex items-center space-x-2">
-                  <p className="text-[12px] font-[Roboto] font-[500] leading-[182.592%] mb-[2px]">
-                    Watch
-                  </p>
-                  <img
-                    src="/mobile-assets/Podcasts/pd-card-icn (1).svg"
-                    className="w-[12.115px] h-[14.306px]"
-                    alt="Watch"
-                  />
-                </div>
-
-                <div
-                  className="relative flex items-center space-x-2 cursor-pointer"
-                  onClick={handleShareClick}
-                >
-                  <p className="text-[12px] font-[Roboto] font-[500] leading-[182.592%] mb-[2px]">
-                    SHARE
-                  </p>
-                  <div>
-                    <img
-                      src="/mobile-assets/Podcasts/pd-card-icn (5).svg"
-                      className="w-[21.911px] h-[21.911px]"
-                      alt="Share"
-                    />
-                  </div>
-
-                  {/* Show the icons when 'showIcons' state is true */}
-                  {showIcons && (
-                    <div className="absolute left-0 z-10 flex items-center mt-2 space-x-2 top-full">
-                      <FacebookShareButton url={shareUrl} quote={title}>
-                        <FacebookIcon size={32} round />
-                      </FacebookShareButton>
-                      <TwitterShareButton url={shareUrl} title={title}>
-                        <TwitterIcon size={32} round />
-                      </TwitterShareButton>
-                      <LinkedinShareButton url={shareUrl}>
-                        <LinkedinIcon size={32} round />
-                      </LinkedinShareButton>
-                      <FaInstagram size={32} className="cursor-pointer" />
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
+          {/* Search Bar */}
+          <div className="flex items-center border-b border-black w-[130px]">
+            <input
+              className="w-full px-2 py-1 font-[Roboto] outline-none text-[14px] placeholder:uppercase"
+              placeholder="Search"
+              type="text"
+              aria-label="Search podcasts"
+            />
+            <img
+              src="/mobile-assets/Podcasts/SVG (1).svg"
+              className="w-5 h-5"
+              alt="Search Icon"
+            />
+          </div>
         </div>
+
+        {/* Display Podcasts */}
+        <div className="space-y-[43px]">
+          {paginatedPodcasts.map((podcast, index) => {
+            const youtubeUrl = `https://www.youtube.com/embed/${podcast.youtubeId}`;
+
+            return (
+              <div key={index}>
+                <div className="flex space-x-[19px] justify-between items-center">
+                  <div className="relative w-[336px]">
+                    <div className="relative w-full h-[200px]">
+                      {/* Video controls - Play/Pause */}
+                      {videoStates[index]?.isPlaying ? (
+                        <iframe
+                          src={`${youtubeUrl}?autoplay=1`}
+                          title={`YouTube video ${index + 1}`}
+                          className="object-cover w-full h-full"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      ) : (
+                        <div
+                          className="relative w-full h-full cursor-pointer"
+                          onClick={() => handlePlayPauseClick(index)} // Trigger play on thumbnail click
+                        >
+                          <img
+                            src={podcast.thumbnail}
+                            alt={`Podcast ${index + 1}`}
+                            className="object-cover w-full h-full"
+                          />
+                          <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center">
+                            <FaPlay className="w-12 h-12 text-white" />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div style={{ writingMode: "sideways-lr" }}>
+                    <p className="text-[14px] font-[Roboto] font-[400] leading-[200%] uppercase">
+                      {podcast.episode} {/* Display episode number */}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Episode Label (restored) */}
+
+                {/* Title and Date */}
+                <div className="py-4">
+                  <p className="text-[14px] font-[Roboto] font-[400] uppercase leading-[240%]">
+                    {podcast.date} {/* Display the date */}
+                  </p>
+                  <h5 className="text-[16px] font-[Roboto] font-[500] uppercase leading-[142.857%]">
+                    {podcast.title} {/* Display the title */}
+                  </h5>
+                </div>
+
+                {/* Play/Pause button */}
+                <div className="flex items-center gap-4">
+                  <div
+                    className="flex items-center gap-[8px]  "
+                    onClick={() => handlePlayPauseClick(index)} // Toggle play/pause on button click
+                  >
+                    <p className="text-[16px] font-[400] font-[Roboto]">
+                      {videoStates[index]?.isPlaying ? "Pause" : "Watch"}
+                    </p>
+                    {videoStates[index]?.isPlaying ? (
+                      <FaPause className="w-4 h-4" />
+                    ) : (
+                      <FaPlay className="w-4 h-4" />
+                    )}
+                  </div>
+
+                  {/* Share Button */}
+                  <div
+                    className="relative flex items-center gap-1 cursor-pointer"
+                    onClick={handleShareClick}
+                  >
+                    <p className="text-[16px] font-[Roboto] font-[400] leading-[182.592%] ">
+                      SHARE
+                    </p>
+                    <div>
+                      <img
+                        src="/mobile-assets/Podcasts/pd-card-icn (5).svg"
+                         
+                        alt="Share"
+                      />
+                    </div>
+
+                    {/* Show the icons when 'showIcons' state is true */}
+                    {showIcons && (
+                      <div className="absolute left-0 z-10 flex items-center mt-2 space-x-2 top-full">
+                        <FacebookShareButton url={shareUrl} quote={title}>
+                          <FacebookIcon size={32} round />
+                        </FacebookShareButton>
+                        <TwitterShareButton url={shareUrl} title={title}>
+                          <TwitterIcon size={32} round />
+                        </TwitterShareButton>
+                        <LinkedinShareButton url={shareUrl}>
+                          <LinkedinIcon size={32} round />
+                        </LinkedinShareButton>
+                        <FaInstagram size={32} className="cursor-pointer" />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Pagination */}
         <div className="flex items-center justify-center pt-8 space-x-4">
           <div className="w-[80px]">
             {currentPage > 1 && (

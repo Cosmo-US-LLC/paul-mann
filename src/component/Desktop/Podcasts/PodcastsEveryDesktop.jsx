@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaPlay, FaPause, FaInstagram } from "react-icons/fa"; // Play and Pause icons
+import { FaPlay, FaPause, FaInstagram } from "react-icons/fa";
+import { FiShare2 } from "react-icons/fi";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -8,7 +9,7 @@ import {
   TwitterIcon,
   LinkedinIcon,
 } from "react-share";
-import ReviewSlider from "./ReviewSlider"; 
+import ReviewSlider from "./ReviewSlider";
 import { podcastData, sliderData } from "./PodcastData";
 import SuggestTopicForm from "../../ui/SuggestTopicForm";
 
@@ -87,7 +88,7 @@ function PodcastsEveryDesktop() {
   return (
     <div className="max-w-[1440px] w-full h-full py-16 mx-auto">
       <div className="max-w-[1200px] mx-auto flex flex-col justify-center">
-        <div className="py-6 text-left">
+        <div className="py-3 text-left">
           <h3 className="text-[24px] font-bold font-[RFDewiExtended] uppercase leading-[1.5]">
             New Podcast Every Week
           </h3>
@@ -99,10 +100,10 @@ function PodcastsEveryDesktop() {
             href="https://www.youtube.com/@IAmPaulMann"
             className="relative hover:text-black "
           >
-            <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
+            <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-black hover:text-white">
               <img
                 src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
-                className="mr-2"
+                className="w-6 h-6 mr-2"
                 alt="YouTube"
               />
               YouTube
@@ -110,29 +111,29 @@ function PodcastsEveryDesktop() {
           </a>
 
           <div className="relative tooltip-container">
-            <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase bg-gray-200 hover:bg-gray-300 pointer-events-none">
+            <button className="flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase bg-gray-200 hover:bg-gray-300 pointer-events-none">
               <img
                 src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
-                className="mr-2"
+                className="w-6 h-6 mr-2"
                 alt="Spotify"
               />
               Spotify
             </button>
-            <span className="absolute hidden w-[90px] px-2 py-1 mb-2 text-xs text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+            <span className="absolute hidden w-[90px] px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
               Coming soon
             </span>
           </div>
 
           <div className="relative tooltip-container">
-            <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] bg-gray-200 h-[40px] uppercase hover:bg-gray-300 pointer-events-none">
+            <button className="flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] bg-gray-200 h-[40px] uppercase hover:bg-gray-300 pointer-events-none">
               <img
                 src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
-                className="mr-2"
+                className="w-6 h-6 mr-2"
                 alt="Apple"
               />
               Apple
             </button>
-            <span className="absolute w-[90px] hidden px-2 py-1 mb-2 text-xs text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+            <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
               Coming soon
             </span>
           </div>
@@ -141,19 +142,19 @@ function PodcastsEveryDesktop() {
             <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] bg-gray-200 uppercase hover:bg-gray-300 pointer-events-none">
               <img
                 src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
-                className="mr-2"
+                className="w-6 h-6 mr-2"
                 alt="Amazon"
               />
               Amazon
             </button>
-            <span className="absolute w-[90px] hidden px-2 py-1 mb-2 text-xs text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+            <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
               Coming soon
             </span>
           </div>
         </div>
 
         {/* Categories Buttons */}
-        <div className="flex items-center justify-between pt-8 pb-16">
+        <div className="flex items-center justify-between pt-8 pb-12">
           <div className="flex gap-6">
             <button
               title="Coming soon"
@@ -212,9 +213,8 @@ function PodcastsEveryDesktop() {
             return (
               <div
                 key={index}
-                className="flex items-start gap-8 pb-8 border-b border-gray-300"
+                className="flex items-start gap-6 pb-8 border-b border-gray-500"
               >
-                {/* Video Section */}
                 <div className="relative w-[336px]">
                   <div className="relative w-full h-[200px]">
                     {videoStates[index]?.isPlaying ? (
@@ -240,23 +240,25 @@ function PodcastsEveryDesktop() {
                     )}
                   </div>
                   {/* Episode Label */}
+                </div>
+                <div className="relative flex items-center justify-center h-[200px]  ">
                   <div
-                    className="absolute inset-y-0 right-[-40px] flex items-center justify-center text-black font-bold uppercase text-[14px] font-[Roboto]"
+                    className="      text-black font-bold uppercase text-[14px] font-[Roboto]"
                     style={{
                       writingMode: "vertical-rl",
                       transform: "rotate(180deg)",
                     }}
                   >
                     {podcast.episode}
-                  </div>
+                  </div>{" "}
                 </div>
 
-                {/* Podcast Info Section */}
-                <div className="flex-1 text-left w-[600px] flex flex-col px-12 py-12">
-                  <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 mb-2">
+         
+                <div className="  text-left  w-[600px] flex flex-col gap-2 ">
+                  <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
                     {podcast.date}
                   </p>
-                  <h5 className="text-[18px] font-bold font-[RFDewiExtended] leading-[1.4] mb-4 truncate">
+                  <h5 className="text-[18px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.04em] ">
                     {podcast.title}
                   </h5>
 
@@ -265,7 +267,7 @@ function PodcastsEveryDesktop() {
                     {isDescriptionExpanded
                       ? podcast.description
                       : podcast.description.substring(0, 100) + '...'}
-                  </p>
+                  < /p>
 
                   <button
                     onClick={() => handleDescriptionToggle(index)}
@@ -276,32 +278,35 @@ function PodcastsEveryDesktop() {
                 </div>
 
                 {/* Share Section */}
-                <div className="flex flex-col gap-4">
-                  {/* Action Section */}
-                  <div className="flex flex-col h-full gap-4 text-right">
+                <div className="flex flex-col flex-1 gap-3 pt-8">
+                  
+                  <div className="flex flex-col h-full gap-4 text-right ">
                     <div className="flex flex-col items-end gap-6">
                       <div
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-[8px]"
                         onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
                       >
-                        <p className="text-[14px] font-medium font-[Roboto]">
+                        <p className="text-[16px] font-[400] font-[Roboto]">
                           {videoStates[index]?.isPlaying ? "Pause" : "Watch"}
                         </p>
                         {videoStates[index]?.isPlaying ? (
-                          <FaPause className="w-6 h-6" /> // Pause Icon
+                          <FaPause className="w-4 h-4" />  
                         ) : (
-                          <FaPlay className="w-6 h-6" /> // Play Icon
+                          <FaPlay className="w-4 h-4" />  
                         )}
                       </div>
                     </div>
                   </div>
-                  <div className="relative group">
-                    <p
-                      className="text-[14px] font-medium font-[Roboto] cursor-pointer"
-                      onClick={toggleShareButtons}
-                    >
-                      Share
-                    </p>
+                  <div className="relative group" >
+                    <div className="flex items-center justify-end gap-2 cursor-pointer " >
+                      <p
+                        className="text-left text-[16px] font-[400] font-[Roboto]  "
+                        onClick={toggleShareButtons}
+                      >
+                        Share
+                      </p>
+                      <FiShare2 className="w-4 h-4" onClick={toggleShareButtons}/>
+                    </div>
                     {/* Social Media Share Buttons */}
                     {showShareButtons && (
                       <div className="absolute left-0 flex gap-2 mt-2 top-full">
