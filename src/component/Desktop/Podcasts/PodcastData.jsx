@@ -1,14 +1,14 @@
 export const podcastData = [
   {
-    date: "04.03.2025",
+    date: "08.04.2025",
     youtubeId: "d8mw9kot9pk",  
     thumbnail: "/mobile-assets/Podcasts/Thumbnail5.png",  
     episode: "EP – 2",
-    title: "How One County is Leading Rainwater Harvesting | Water Champions Podcast Ep.2 with Noelle Johnson",
+    title: "Rainwater Harvesting Rebates: Save Water & Money! Water Conservation & Reuse Guide",
     description: "In this episode, Noelle Johnson discusses California's rainwater harvesting program and its implications for water sustainability in the state. Learn how this program is helping communities save water, the challenges involved, and its potential for future impact."
   },
   {
-    date: "04.03.2025",
+    date: "04.04.2025",
     youtubeId: "4snXR5Scgvc", 
     thumbnail: "/mobile-assets/Podcasts/Thumbnail4.png",  
     episode: "EP – 1",
