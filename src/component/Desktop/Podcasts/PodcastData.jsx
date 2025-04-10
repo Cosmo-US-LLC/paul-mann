@@ -5,7 +5,8 @@ export const podcastData = [
     thumbnail: "/mobile-assets/Podcasts/Thumbnail5.png",  
     episode: "EP – 2",
     title: "Rainwater Harvesting Rebates: Save Water & Money! Water Conservation & Reuse Guide",
-    description: "In this episode, Noelle Johnson discusses California's rainwater harvesting program and its implications for water sustainability in the state. Learn how this program is helping communities save water, the challenges involved, and its potential for future impact."
+    description: "In this episode, Noelle Johnson discusses California's rainwater harvesting program and its implications for water sustainability in the state. Learn how this program is helping communities save water, the challenges involved, and its potential for future impact.",
+    shareUrl: "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s",
   },
   {
     date: "04.04.2025",
@@ -13,7 +14,8 @@ export const podcastData = [
     thumbnail: "/mobile-assets/Podcasts/Thumbnail4.png",  
     episode: "EP – 1",
     title: "How Rainwater Harvesting is the Future | Water Champions Podcast Ep.1 with Rain Brothers",
-    description: "The first episode of the series dives deep into the concept of rainwater harvesting and its role in sustainable water supply. The Rain Brothers explore different methods of rainwater collection and how it can change the way we think about water conservation."
+    description: "The first episode of the series dives deep into the concept of rainwater harvesting and its role in sustainable water supply. The Rain Brothers explore different methods of rainwater collection and how it can change the way we think about water conservation.",
+    shareUrl: "https://www.youtube.com/watch?v=4snXR5Scgvc&t=1s",
   },
 ];
 // 4snXR5Scgvc

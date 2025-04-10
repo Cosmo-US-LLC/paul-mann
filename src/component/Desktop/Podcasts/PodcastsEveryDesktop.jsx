@@ -19,6 +19,7 @@ import SuggestTopicForm from "../../ui/SuggestTopicForm";
 
 function PodcastsEveryDesktop() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [shareIndex, setShareIndex] = useState(null);
   const itemsPerPage = 10;
   const totalPages = Math.ceil(podcastData.length / itemsPerPage);
 
@@ -36,7 +37,7 @@ function PodcastsEveryDesktop() {
   ); // Initially, all descriptions are collapsed
 
   const listContainerRef = useRef(null);
-  const shareUrl = "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s";
+  // const shareUrl = "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s";
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const displayedPodcasts = podcastData.slice(
@@ -81,6 +82,9 @@ function PodcastsEveryDesktop() {
   const toggleShareButtons = () => {
     setShowShareButtons(!showShareButtons);
   };
+  // const toggleShareButtons = (index) => {
+  //   setShareIndex((prevIndex) => (prevIndex === index ? null : index));
+  // };
 
   useEffect(() => {
     window.scrollTo({
@@ -219,6 +223,8 @@ function PodcastsEveryDesktop() {
             const videoUrl = `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`;
             const isDescriptionExpanded = expandedDescription[index];
 
+            const isSharing = shareIndex === index;
+
             return (
               <div
                 key={index}
@@ -319,30 +325,51 @@ function PodcastsEveryDesktop() {
                     </div>
                     {/* Social Media Share Buttons */}
                     {showShareButtons && (
+                  <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                    <FacebookShareButton url={podcast.shareUrl}>
+                      <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                        <FaFacebookF size={16} />
+                      </div>
+                    </FacebookShareButton>
+
+                    <TwitterShareButton url={podcast.shareUrl}>
+                      <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                        <FaTwitter size={16} />
+                      </div>
+                    </TwitterShareButton>
+
+                    <LinkedinShareButton url={podcast.shareUrl}>
+                      <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                        <FaLinkedinIn size={16} />
+                      </div>
+                    </LinkedinShareButton>
+                  </div>
+                )}
+                    {/* {showShareButtons &&  (
                       <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
-                        {/* Facebook Share Button */}
-                        <FacebookShareButton url={shareUrl}>
+                        
+                        <FacebookShareButton url={podcast.shareUrl}>
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
                             <FaFacebookF size={16} round target="_blank" />
                           </div>
                         </FacebookShareButton>
 
-                        {/* Twitter Share Button */}
+                       
                         <TwitterShareButton url={shareUrl}>
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
                             <FaTwitter size={16} round target="_blank" />
                           </div>
                         </TwitterShareButton>
 
-                        {/* LinkedIn Share Button */}
+                    
                         <LinkedinShareButton url={shareUrl}>
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
                             <FaLinkedinIn size={16} round target="_blank" />
                           </div>
                         </LinkedinShareButton>
 
-                        {/* Instagram Share Button (using link to Instagram) */}
-                        {/* <a
+                        
+                        <a
                           href={`https://www.instagram.com/?url=${encodeURIComponent(
                             shareUrl
                           )}`}
@@ -353,9 +380,9 @@ function PodcastsEveryDesktop() {
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
                           <FaInstagram size={16} />
                           </div>
-                        </a> */}
+                        </a>
                       </div>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>
