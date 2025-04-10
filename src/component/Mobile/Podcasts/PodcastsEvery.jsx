@@ -251,19 +251,19 @@ function PodcastsEvery() {
                     {/* Show the icons when 'showIcons' state is true */}
                     {showIcons && (
                       <div className="absolute left-[30px] z-10 flex items-center space-x-2 top-full">
-                        <FacebookShareButton url={shareUrl}>
+                        <FacebookShareButton url={podcast.shareUrl}>
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
                             <FaFacebookF size={16} round target="_blank" />
                           </div>
                         </FacebookShareButton>
-                        <TwitterShareButton url={shareUrl}>
+                        <TwitterShareButton url={podcast.shareUrl}>
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
                             <FaTwitter size={16} round target="_blank" />
                           </div>
                         </TwitterShareButton>
 
                         {/* LinkedIn Share Button */}
-                        <LinkedinShareButton url={shareUrl}>
+                        <LinkedinShareButton url={podcast.shareUrl}>
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
                             <FaLinkedinIn size={16} round target="_blank" />
                           </div>
