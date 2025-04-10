@@ -25,7 +25,7 @@ function PodcastsEvery() {
     podcastData.map(() => ({ isPlaying: false })) // Initialize with all videos paused
   );
 
-  const shareUrl = "https://example.com";
+  const shareUrl = "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s";
   const title = "Check out this podcast!";
 
   const handleShareClick = () => {
@@ -55,68 +55,76 @@ function PodcastsEvery() {
   return (
     <section className="flex flex-col items-center py-12">
       <div className="w-[90%]">
-        <div className="py-6">
+        {/* <div className="py-6">
           <h3 className="text-[20px] font-[Roboto] font-[500] text-[#000] text-center uppercase leading-[171.429%]">
             New Podcast Every Week
           </h3>
-        </div>
+        </div> */}
 
         {/* Platform Buttons */}
-        <div className="flex flex-col items-center justify-center gap-6 pt-1 pb-4">
-          <a
-            href="https://www.youtube.com/@IAmPaulMann"
-            className="relative hover:text-black "
-          >
-            <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-black hover:text-white">
-              <img
-                src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
-                className="w-6 h-6 mr-2"
-                alt="YouTube"
-              />
-              YouTube
-            </button>
-          </a>
+        <div className="flex flex-col items-center justify-center gap-6 pb-4 pt-7 ">
+          <div className="flex space-x-4">
+            <a
+              href="https://www.youtube.com/@IAmPaulMann"
+              className="relative hover:text-black "
+            >
+              <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-black hover:text-white">
+                <img
+                  src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
+                  className="w-6 h-6 mr-2"
+                  alt="YouTube"
+                />
+                YouTube
+              </button>
+            </a>
 
-          <div className="relative tooltip-container">
-            <button className="flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase bg-gray-200 hover:bg-gray-300 pointer-events-none">
-              <img
-                src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
-                className="w-6 h-6 mr-2"
-                alt="Spotify"
-              />
-              Spotify
-            </button>
-            <span className="absolute hidden w-[90px] px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
-              Coming soon
-            </span>
+            <div className="relative tooltip-container">
+              <a
+                href="https://open.spotify.com/episode/4BHyrFASFVo5Bdo1LBpt7a?si=iYZ8XymFTvKRzLTQxplefQ&nd=1&dlsi=998b129cea51421b"
+                className="relative hover:text-black "
+              >
+                <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-black hover:text-white">
+                  <img
+                    src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
+                    className="w-6 h-6 mr-2"
+                    alt="Spotify"
+                  />
+                  Spotify
+                </button>
+              </a>
+              {/* <span className="absolute hidden w-[90px] px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+                Coming soon
+              </span> */}
+            </div>
           </div>
+          <div className="flex space-x-4">
+            <div className="relative tooltip-container">
+              <button className="flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black   bg-gray-200 w-[130px] h-[44px] uppercase hover:bg-gray-300 pointer-events-none">
+                <img
+                  src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
+                  className="w-6 h-6 mr-2"
+                  alt="Apple"
+                />
+                Apple
+              </button>
+              <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+                Coming soon
+              </span>
+            </div>
 
-          <div className="relative tooltip-container">
-            <button className="flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black   bg-gray-200 w-[130px] h-[44px] uppercase hover:bg-gray-300 pointer-events-none">
-              <img
-                src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
-                className="w-6 h-6 mr-2"
-                alt="Apple"
-              />
-              Apple
-            </button>
-            <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
-              Coming soon
-            </span>
-          </div>
-
-          <div className="relative tooltip-container">
-            <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[130px] h-[44px] bg-gray-200 uppercase hover:bg-gray-300 pointer-events-none">
-              <img
-                src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
-                className="w-6 h-6 mr-2"
-                alt="Amazon"
-              />
-              Amazon
-            </button>
-            <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
-              Coming soon
-            </span>
+            <div className="relative tooltip-container">
+              <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[130px] h-[44px] bg-gray-200 uppercase hover:bg-gray-300 pointer-events-none">
+                <img
+                  src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
+                  className="w-6 h-6 mr-2"
+                  alt="Amazon"
+                />
+                Amazon
+              </button>
+              <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+                Coming soon
+              </span>
+            </div>
           </div>
         </div>
 
@@ -183,7 +191,7 @@ function PodcastsEvery() {
                     </div>
                   </div>
                   <div
-                  className="flex items-center justify-center "
+                    className="flex items-center justify-center "
                     style={{
                       transform: "rotate(90deg)",
                       transformOrigin: "top",
@@ -191,7 +199,7 @@ function PodcastsEvery() {
                     }}
                   >
                     <p className="text-[14px] font-[Roboto] font-[400] uppercase">
-                      {podcast.episode}  
+                      {podcast.episode}
                     </p>
                   </div>
 
@@ -242,7 +250,7 @@ function PodcastsEvery() {
 
                     {/* Show the icons when 'showIcons' state is true */}
                     {showIcons && (
-                      <div className="absolute left-0 z-10 flex items-center space-x-2 top-full">
+                      <div className="absolute left-[30px] z-10 flex items-center space-x-2 top-full">
                         <FacebookShareButton url={shareUrl}>
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
                             <FaFacebookF size={16} round target="_blank" />
@@ -262,7 +270,7 @@ function PodcastsEvery() {
                         </LinkedinShareButton>
 
                         {/* Instagram Share Button (using link to Instagram) */}
-                        <a
+                        {/* <a
                           href={`https://www.instagram.com/?url=${encodeURIComponent(
                             shareUrl
                           )}`}
@@ -273,7 +281,7 @@ function PodcastsEvery() {
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
                             <FaInstagram size={16} />
                           </div>
-                        </a>
+                        </a> */}
                       </div>
                     )}
                   </div>

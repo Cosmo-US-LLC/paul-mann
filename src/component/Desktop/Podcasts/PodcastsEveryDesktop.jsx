@@ -1,11 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram,  FaPlay, FaPause, } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+  FaPlay,
+  FaPause,
+} from "react-icons/fa";
 import { FiShare2 } from "react-icons/fi";
 import {
   FacebookShareButton,
   TwitterShareButton,
   LinkedinShareButton,
- 
 } from "react-share";
 import ReviewSlider from "./ReviewSlider";
 import { podcastData, sliderData } from "./PodcastData";
@@ -30,7 +36,7 @@ function PodcastsEveryDesktop() {
   ); // Initially, all descriptions are collapsed
 
   const listContainerRef = useRef(null);
-  const shareUrl = window.location.href;
+  const shareUrl = "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s";
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const displayedPodcasts = podcastData.slice(
@@ -86,19 +92,19 @@ function PodcastsEveryDesktop() {
   return (
     <div className="max-w-[1440px] w-full h-full py-16 mx-auto">
       <div className="max-w-[1200px] mx-auto flex flex-col justify-center">
-        <div className="py-3 text-left">
+        {/* <div className="py-3 text-left">
           <h3 className="text-[24px] font-bold font-[RFDewiExtended] uppercase leading-[1.5]">
             New Podcast Every Week
           </h3>
-        </div>
+        </div> */}
 
         {/* Platform Buttons */}
-        <div className="flex justify-center gap-8 py-4">
+        <div className="flex justify-center gap-8 pt-8 pb-4">
           <a
             href="https://www.youtube.com/@IAmPaulMann"
             className="relative hover:text-black "
           >
-            <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-black hover:text-white">
+            <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-black hover:text-white">
               <img
                 src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
                 className="w-6 h-6 mr-2"
@@ -109,17 +115,22 @@ function PodcastsEveryDesktop() {
           </a>
 
           <div className="relative tooltip-container">
-            <button className="flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase bg-gray-200 hover:bg-gray-300 pointer-events-none">
-              <img
-                src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
-                className="w-6 h-6 mr-2"
-                alt="Spotify"
-              />
-              Spotify
-            </button>
-            <span className="absolute hidden w-[90px] px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+            <a
+              href="https://open.spotify.com/episode/4BHyrFASFVo5Bdo1LBpt7a?si=iYZ8XymFTvKRzLTQxplefQ&nd=1&dlsi=998b129cea51421b"
+              className="relative hover:text-black "
+            >
+              <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-black hover:text-white">
+                <img
+                  src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
+                  className="w-6 h-6 mr-2"
+                  alt="Spotify"
+                />
+                Spotify
+              </button>
+              {/* <span className="absolute hidden w-[90px] px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
               Coming soon
-            </span>
+            </span> */}
+            </a>
           </div>
 
           <div className="relative tooltip-container">
@@ -251,7 +262,6 @@ function PodcastsEveryDesktop() {
                   </div>{" "}
                 </div>
 
-         
                 <div className="  text-left  w-[600px] flex flex-col gap-2 ">
                   <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
                     {podcast.date}
@@ -277,7 +287,6 @@ function PodcastsEveryDesktop() {
 
                 {/* Share Section */}
                 <div className="flex flex-col flex-1 gap-3 pt-8">
-                  
                   <div className="flex flex-col h-full gap-4 text-right ">
                     <div className="flex flex-col items-end gap-6">
                       <div
@@ -288,49 +297,52 @@ function PodcastsEveryDesktop() {
                           {videoStates[index]?.isPlaying ? "Pause" : "Watch"}
                         </p>
                         {videoStates[index]?.isPlaying ? (
-                          <FaPause className="w-4 h-4" />  
+                          <FaPause className="w-4 h-4" />
                         ) : (
-                          <FaPlay className="w-4 h-4" />  
+                          <FaPlay className="w-4 h-4" />
                         )}
                       </div>
                     </div>
                   </div>
-                  <div className="relative group" >
-                    <div className="flex items-center justify-end gap-2 cursor-pointer " >
+                  <div className="relative group">
+                    <div className="flex items-center justify-end gap-2 cursor-pointer ">
                       <p
                         className="text-left text-[16px] font-[400] font-[Roboto]  "
                         onClick={toggleShareButtons}
                       >
                         Share
                       </p>
-                      <FiShare2 className="w-4 h-4" onClick={toggleShareButtons}/>
+                      <FiShare2
+                        className="w-4 h-4"
+                        onClick={toggleShareButtons}
+                      />
                     </div>
                     {/* Social Media Share Buttons */}
                     {showShareButtons && (
-                      <div className="absolute left-0 flex gap-3 mt-2 top-full">
+                      <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
                         {/* Facebook Share Button */}
                         <FacebookShareButton url={shareUrl}>
-                        <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                          <FaFacebookF size={16} round target="_blank" />
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <FaFacebookF size={16} round target="_blank" />
                           </div>
                         </FacebookShareButton>
 
                         {/* Twitter Share Button */}
                         <TwitterShareButton url={shareUrl}>
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                          <FaTwitter size={16} round target="_blank" />
+                            <FaTwitter size={16} round target="_blank" />
                           </div>
                         </TwitterShareButton>
 
                         {/* LinkedIn Share Button */}
                         <LinkedinShareButton url={shareUrl}>
-                        <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                          <FaLinkedinIn size={16} round target="_blank" />
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <FaLinkedinIn size={16} round target="_blank" />
                           </div>
                         </LinkedinShareButton>
 
                         {/* Instagram Share Button (using link to Instagram) */}
-                        <a
+                        {/* <a
                           href={`https://www.instagram.com/?url=${encodeURIComponent(
                             shareUrl
                           )}`}
@@ -341,7 +353,7 @@ function PodcastsEveryDesktop() {
                           <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
                           <FaInstagram size={16} />
                           </div>
-                        </a>
+                        </a> */}
                       </div>
                     )}
                   </div>
