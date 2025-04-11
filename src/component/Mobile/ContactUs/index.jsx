@@ -135,9 +135,9 @@ function ContactUsMobile() {
 
           <div className="flex justify-center w-full md:w-1/2">
             <img
-              src="/desktop-assets/ContactUs/contactUs.webp"
+              src="/desktop-assets/ContactUs/paul-mann-contact-us.webp"
               alt="Person relaxing on the grass"
-              className=""
+              className="rounded"
             />
           </div>
         </div>

@@ -98,7 +98,7 @@ const ContactForm = () => {
               <textarea
                 name="Message"
                 placeholder="Your Message"
-                rows="5"
+                rows="6"
                 value={formData.Message}
                 onChange={handleChange}
                 required
@@ -126,9 +126,9 @@ const ContactForm = () => {
 
           <div className="flex justify-center w-full md:w-1/2">
             <img
-              src="/desktop-assets/ContactUs/contactUs.webp"
+              src="/desktop-assets/ContactUs/paul-mann-contact-us.webp"
               alt="Person relaxing on the grass"
-              className="object-cover w-full h-full max-w-[662px] max-h-[652px]"
+              className="object-cover w-full h-full rounded max-w-[662px] max-h-[652px]"
             />
           </div>
         </div>
