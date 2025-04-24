@@ -1,5 +1,14 @@
 export const podcastData = [
   {
+    date: "24.04.2025",
+    youtubeId: "",  
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail6.png",  
+    episode: "EP – 3",
+    title: "Paul Mann on Becoming Water Champions",
+    description: "",
+    shareUrl: "https://flanigansecologic.transistor.fm/episodes/paul-mann-on-becoming-water-champions",
+  },
+  {
     date: "08.04.2025",
     youtubeId: "d8mw9kot9pk",  
     thumbnail: "/mobile-assets/Podcasts/Thumbnail5.png",  
