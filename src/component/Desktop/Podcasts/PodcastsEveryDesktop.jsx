@@ -337,7 +337,7 @@ function PodcastsEveryDesktop() {
                           }
                         >
                           <p className="text-[16px] font-[400] font-[Roboto]">
-                            listen
+                            Listen
                           </p>
                           <img
                             src="/mobile-assets/Podcasts/VoiceImage.png"
