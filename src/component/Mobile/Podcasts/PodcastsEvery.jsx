@@ -156,39 +156,55 @@ function PodcastsEvery() {
         <div className="space-y-[43px]">
           {paginatedPodcasts.map((podcast, index) => {
             // const youtubeUrl = `https://www.youtube.com/embed/${podcast.youtubeId}`;
-            const videoUrl = `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`;
+            const videoUrl = podcast?.youtubeId
+              ? `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`
+              : "";
 
             return (
               <div key={index}>
                 <div className="flex items-center justify-between gap-4">
                   <div className="relative w-[336px]">
-                    <div className="relative w-full h-[100%]">
-                      {/* Video controls - Play/Pause */}
-                      {videoStates[index]?.isPlaying ? (
-                        <iframe
-                          src={`${videoUrl}?autoplay=1`}
-                          title={`YouTube video ${index + 1}`}
-                          className="object-cover w-full h-full"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
-                      ) : (
-                        <div
-                          className="relative w-full h-full cursor-pointer"
-                          onClick={() => handlePlayPauseClick(index)} // Trigger play on thumbnail click
-                        >
-                          <img
-                            src={podcast.thumbnail}
-                            alt={`Podcast ${index + 1}`}
+                    {videoUrl !== "" ? (
+                      <div className="relative w-full h-[100%]]">
+                        {videoStates[index]?.isPlaying ? (
+                          <iframe
+                            src={videoUrl}
+                            title={`YouTube video ${index + 1}`}
                             className="object-cover w-full h-full"
-                          />
-                          <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center">
-                            <FaPlay className="w-12 h-12 text-white" />
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          ></iframe>
+                        ) : (
+                          <div
+                            className="relative w-full h-full cursor-pointer"
+                            onClick={() => handlePlayPauseClick(index)}
+                          >
+                            <img
+                              src={podcast.thumbnail}
+                              alt="Video Thumbnail"
+                              className="object-cover w-full h-full"
+                            />
                           </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="relative w-full h-[100%]">
+                        <div className="relative w-full h-full cursor-pointer">
+                          <a
+                            href={podcast?.shareUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img
+                              src={podcast.thumbnail}
+                              alt="Video Thumbnail"
+                              className="object-cover w-full h-full"
+                            />
+                          </a>
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                   <div
                     className="flex items-center justify-center "
@@ -224,19 +240,34 @@ function PodcastsEvery() {
 
                 {/* Play/Pause button */}
                 <div className="flex items-center gap-4">
-                  <div
-                    className="flex items-center gap-[8px]  "
-                    onClick={() => handlePlayPauseClick(index)} // Toggle play/pause on button click
-                  >
-                    <p className="text-[16px] font-[400] font-[Roboto]">
-                      {videoStates[index]?.isPlaying ? "Pause" : "Watch"}
-                    </p>
-                    {videoStates[index]?.isPlaying ? (
-                      <FaPause className="w-4 h-4" />
-                    ) : (
-                      <FaPlay className="w-4 h-4" />
-                    )}
-                  </div>
+                  {videoUrl !== "" ? (
+                    <div
+                      className="flex items-center gap-[8px]"
+                      onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
+                    >
+                      <p className="text-[16px] font-[400] font-[Roboto]">
+                        {videoStates[index]?.isPlaying ? "Pause" : "Watch"}
+                      </p>
+                      {videoStates[index]?.isPlaying ? (
+                        <FaPause className="w-4 h-4" />
+                      ) : (
+                        <FaPlay className="w-4 h-4" />
+                      )}
+                    </div>
+                  ) : (
+                    <div
+                      className="flex gap-2 cursor-pointer"
+                      onClick={() => window.open(podcast?.shareUrl, "_blank")}
+                    >
+                      <p className="text-[16px] font-[400] font-[Roboto]">
+                        Listen
+                      </p>
+                      <img
+                        src="/mobile-assets/Podcasts/VoiceImage.png"
+                        alt="Voice Image"
+                      />
+                    </div>
+                  )}
 
                   {/* Share Button */}
                   <div
