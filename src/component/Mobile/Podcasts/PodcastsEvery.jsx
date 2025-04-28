@@ -198,7 +198,7 @@ function PodcastsEvery() {
                           >
                             <img
                               src={podcast.thumbnail}
-                              alt="Video Thumbnail"
+                              alt="Image Thumbnail"
                               className="object-cover w-full h-full"
                             />
                           </a>
