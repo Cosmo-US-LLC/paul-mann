@@ -4,7 +4,7 @@ export const podcastData = [
     youtubeId: "",  
     thumbnail: "/mobile-assets/Podcasts/Thumbnail6.png",  
     episode: "EP – 3",
-    title: "Paul Mann on the Flanagan Eco Podcast",
+    title: "Paul Mann on the Flanigan Eco Podcast",
     description: "",
     shareUrl: "https://flanigansecologic.transistor.fm/episodes/paul-mann-on-becoming-water-champions",
   },
