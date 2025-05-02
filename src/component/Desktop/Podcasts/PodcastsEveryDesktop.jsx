@@ -96,9 +96,9 @@ function PodcastsEveryDesktop() {
   const [activeTab, setActiveTab] = useState("featured");
 
   const tabs = [
-    { key: "featured", label: "Featured Episodes:" },
-    { key: "guest", label: "Guest Podcast:" },
-    { key: "water", label: "Water Champions Podcast:" },
+    { key: "featured", label: "Featured Episodes" },
+    { key: "guest", label: "Guest Podcast" },
+    { key: "water", label: "Water Champions Podcast" },
   ];
 
   return (
@@ -175,7 +175,7 @@ function PodcastsEveryDesktop() {
         </div>
 
         {/* Categories Buttons */}
-        <div className="flex items-center justify-between pt-8 pb-12">
+        <div className="flex items-center justify-between pt-8 pb-4">
           <div className="flex gap-6">
             {tabs.map((tab) => (
               <button
@@ -249,7 +249,7 @@ function PodcastsEveryDesktop() {
                 {activeTab == "featured" ? (
                   <div
                     key={index}
-                    className="flex items-start gap-6 pb-8 border-b border-gray-500"
+                    className="flex items-start gap-6 py-8 border-b border-gray-500"
                   >
                     <div className="relative w-[336px]">
                       {videoUrl !== "" ? (
@@ -446,7 +446,7 @@ function PodcastsEveryDesktop() {
                 ) : activeTab == "guest" ? (
                   <div key={index}>
                     {videoUrl == "" && (
-                      <div className="flex items-start gap-6 p-6 border border-gray-200 rounded">
+                      <div className="flex items-start gap-6 py-8">
                         <div className="relative w-[336px]">
                           {videoUrl !== "" ? (
                             <div className="relative w-full h-[200px]">
@@ -644,7 +644,7 @@ function PodcastsEveryDesktop() {
                 ) : activeTab == "water" ? (
                   <div key={index}>
                     {videoUrl !== "" && (
-                      <div className="flex items-start gap-6 pb-8 border-b border-gray-500">
+                      <div className="flex items-start gap-6 py-8 border-b border-gray-500">
                         <div className="relative w-[336px]">
                           {videoUrl !== "" ? (
                             <div className="relative w-full h-[200px]">

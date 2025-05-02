@@ -1,5 +1,15 @@
 export const podcastData = [
   {
+    date: "24.04.2025",
+    youtubeId: "",
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail6.png",
+    episode: "EP – 4",
+    title: "Paul Mann on the Flanigan Eco Podcast",
+    description: "",
+    shareUrl:
+      "https://flanigansecologic.transistor.fm/episodes/paul-mann-on-becoming-water-champions",
+  },
+  {
     date: "01.05.2025",
     youtubeId: "w_VGWJvCLMg",
     thumbnail: "/mobile-assets/Podcasts/Thumbnail7.png",
@@ -8,16 +18,6 @@ export const podcastData = [
       "Never Waste Water Again! Inside Hydraloop's Innovative Water Recycling System | The Water Champions Podcast Episode 3",
     description: "",
     shareUrl: "https://www.youtube.com/watch?v=w_VGWJvCLMg",
-  },
-  {
-    date: "24.04.2025",
-    youtubeId: "",
-    thumbnail: "/mobile-assets/Podcasts/Thumbnail6.png",
-    episode: "EP – 3",
-    title: "Paul Mann on the Flanigan Eco Podcast",
-    description: "",
-    shareUrl:
-      "https://flanigansecologic.transistor.fm/episodes/paul-mann-on-becoming-water-champions",
   },
   {
     date: "08.04.2025",
