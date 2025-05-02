@@ -24,7 +24,7 @@ function PodcastsEvery() {
 
   const tabs = [
     { key: "featured", label: "Featured Episodes" },
-    { key: "guest", label: "Guest Podcast" },
+    { key: "guest", label: "Guest Appearances" },
     { key: "water", label: "Water Champions Podcast" },
   ]
 

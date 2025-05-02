@@ -1,23 +1,23 @@
 export const podcastData = [
   {
-    date: "24.04.2025",
-    youtubeId: "",
-    thumbnail: "/mobile-assets/Podcasts/Thumbnail6.png",
-    episode: "EP – 4",
-    title: "Paul Mann on the Flanigan Eco Podcast",
-    description: "",
-    shareUrl:
-      "https://flanigansecologic.transistor.fm/episodes/paul-mann-on-becoming-water-champions",
-  },
-  {
     date: "01.05.2025",
     youtubeId: "w_VGWJvCLMg",
     thumbnail: "/mobile-assets/Podcasts/Thumbnail7.png",
     episode: "EP – 3",
     title:
-      "Never Waste Water Again! Inside Hydraloop's Innovative Water Recycling System | The Water Champions Podcast Episode 3",
+      "Water Champions Podcast Episode 3 | Never Waste Water Again! Inside Hydraloop’s Innovative Water Recycling System",
     description: "",
     shareUrl: "https://www.youtube.com/watch?v=w_VGWJvCLMg",
+  },
+  {
+    date: "24.04.2025",
+    youtubeId: "",
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail6.png",
+    episode: "EP – 1",
+    title: "Guest Podcast Episode 1 | Paul Mann on the Flanigan Eco Podcast",
+    description: "",
+    shareUrl:
+      "https://flanigansecologic.transistor.fm/episodes/paul-mann-on-becoming-water-champions",
   },
   {
     date: "08.04.2025",
@@ -25,7 +25,7 @@ export const podcastData = [
     thumbnail: "/mobile-assets/Podcasts/Thumbnail5.png",
     episode: "EP – 2",
     title:
-      "Rainwater Harvesting Rebates: Save Water & Money! Water Conservation & Reuse Guide | The Water Champions Podcast Episode 2",
+      "Water Champions Podcast Episode 2 | Rainwater Harvesting Rebates: Save Water & Money! Water Conservation & Reuse Guide",
     description:
       "In this episode, Noelle Johnson discusses California's rainwater harvesting program and its implications for water sustainability in the state. Learn how this program is helping communities save water, the challenges involved, and its potential for future impact.",
     shareUrl: "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s",
@@ -36,7 +36,7 @@ export const podcastData = [
     thumbnail: "/mobile-assets/Podcasts/Thumbnail4.png",
     episode: "EP – 1",
     title:
-      "How Rainwater Harvesting is the Future | The Water Champions Podcast Episode 1",
+      "Water Champions Podcast Episode 1 | How Rainwater Harvesting is the Future",
     description:
       "The first episode of the series dives deep into the concept of rainwater harvesting and its role in sustainable water supply. The Rain Brothers explore different methods of rainwater collection and how it can change the way we think about water conservation.",
     shareUrl: "https://www.youtube.com/watch?v=4snXR5Scgvc&t=1s",
