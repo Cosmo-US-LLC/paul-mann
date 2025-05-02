@@ -19,6 +19,14 @@ function PodcastsEvery() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const [showIcons, setShowIcons] = useState(false);
+  const [shareIndex, setShareIndex] = useState(null)
+  const [activeTab, setActiveTab] = useState("featured")
+
+  const tabs = [
+    { key: "featured", label: "Featured Episodes" },
+    { key: "guest", label: "Guest Podcast" },
+    { key: "water", label: "Water Champions Podcast" },
+  ]
 
   // Define the videoStates state to track play/pause for each video
   const [videoStates, setVideoStates] = useState(
@@ -129,15 +137,8 @@ function PodcastsEvery() {
         </div>
 
         {/* Categories Buttons */}
-        <div className="flex items-center justify-between pt-8 pb-12">
-          <div className="flex gap-6">
-            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer border-b-2 border-black pb-1">
-              Featured Episodes
-            </button>
-          </div>
-
-          {/* Search Bar */}
-          <div className="flex items-center border-b border-black w-[130px]">
+        <div className="flex items-center flex-col justify-center pt-8 pb-12">
+        <div className="flex items-center justify-center border-b border-black max-w-[300px] w-[100%]">
             <input
               className="w-full px-2 py-1 font-[Roboto] outline-none text-[14px] placeholder:uppercase"
               placeholder="Search"
@@ -150,176 +151,154 @@ function PodcastsEvery() {
               alt="Search Icon"
             />
           </div>
+        <div className="flex flex-wrap w-[90%] max-w-[330px] pt-4 justify-around mx-auto pb-2">
+            {tabs.map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className={`text-[14px] font-medium mt-2 font-[Roboto] hover:border-black uppercase border-b-2 border-[#fff] cursor-pointer whitespace-nowrap ${
+                  activeTab === tab.key ? "border-b-2 border-black" : "text-gray-600"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Search Bar */}
+          
         </div>
 
         {/* Display Podcasts */}
         <div className="space-y-[43px]">
-          {paginatedPodcasts.map((podcast, index) => {
-            // const youtubeUrl = `https://www.youtube.com/embed/${podcast.youtubeId}`;
-            const videoUrl = podcast?.youtubeId
-              ? `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`
-              : "";
+          {paginatedPodcasts
+            .filter((podcast) => {
+              if (activeTab === "guest") return podcast.youtubeId === ""
+              if (activeTab === "water") return podcast.youtubeId !== ""
+              return true // "featured" tab shows all
+            })
+            .map((podcast, index) => {
+              const videoUrl = podcast?.youtubeId
+                ? `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`
+                : ""
 
-            return (
-              <div key={index}>
-                <div className="flex items-center justify-between gap-4">
-                  <div className="relative w-[336px]">
-                    {videoUrl !== "" ? (
-                      <div className="relative w-full h-[100%]]">
-                        {videoStates[index]?.isPlaying ? (
-                          <iframe
-                            src={videoUrl}
-                            title={`YouTube video ${index + 1}`}
-                            className="object-cover w-full h-full"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          ></iframe>
-                        ) : (
-                          <div
-                            className="relative w-full h-full cursor-pointer"
-                            onClick={() => handlePlayPauseClick(index)}
-                          >
-                            <img
-                              src={podcast.thumbnail}
-                              alt="Video Thumbnail"
+              return (
+                <div key={index}>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="relative w-[336px]">
+                      {videoUrl !== "" ? (
+                        <div className="relative w-full h-[100%]]">
+                          {videoStates[index]?.isPlaying ? (
+                            <iframe
+                              src={videoUrl}
+                              title={`YouTube video ${index + 1}`}
                               className="object-cover w-full h-full"
-                            />
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          ) : (
+                            <div
+                              className="relative w-full h-full cursor-pointer"
+                              onClick={() => handlePlayPauseClick(index)}
+                            >
+                              <img
+                                src={podcast.thumbnail || "/placeholder.svg"}
+                                alt="Video Thumbnail"
+                                className="object-cover w-full h-full"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="relative w-full h-[100%]">
+                          <div className="relative w-full h-full cursor-pointer">
+                            <a href={podcast?.shareUrl} target="_blank" rel="noopener noreferrer">
+                              <img
+                                src={podcast.thumbnail || "/placeholder.svg"}
+                                alt="Image Thumbnail"
+                                className="object-cover w-full h-full"
+                              />
+                            </a>
                           </div>
+                        </div>
+                      )}
+                    </div>
+                    <div
+                      className="flex items-center justify-center "
+                      style={{
+                        transform: "rotate(90deg)",
+                        transformOrigin: "top",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      <p className="text-[14px] font-[Roboto] font-[400] uppercase">{podcast.episode}</p>
+                    </div>
+                  </div>
+
+                  {/* Title and Date */}
+                  <div className="py-4">
+                    <p className="text-[14px] font-[Roboto] font-[400] uppercase leading-[240%]">{podcast.date}</p>
+                    <h5 className="text-[16px] font-[Roboto] font-[500] uppercase leading-[142.857%]">
+                      {podcast.title}
+                    </h5>
+                  </div>
+
+                  {/* Play/Pause button */}
+                  <div className="flex items-center gap-4">
+                    {videoUrl !== "" ? (
+                      <div className="flex items-center gap-[8px]" onClick={() => handlePlayPauseClick(index)}>
+                        <p className="text-[16px] font-[400] font-[Roboto]">
+                          {videoStates[index]?.isPlaying ? "Pause" : "Watch"}
+                        </p>
+                        {videoStates[index]?.isPlaying ? (
+                          <FaPause className="w-4 h-4" />
+                        ) : (
+                          <FaPlay className="w-4 h-4" />
                         )}
                       </div>
                     ) : (
-                      <div className="relative w-full h-[100%]">
-                        <div className="relative w-full h-full cursor-pointer">
-                          <a
-                            href={podcast?.shareUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <img
-                              src={podcast.thumbnail}
-                              alt="Image Thumbnail"
-                              className="object-cover w-full h-full"
-                            />
-                          </a>
-                        </div>
+                      <div
+                        className="flex gap-2 cursor-pointer"
+                        onClick={() => window.open(podcast?.shareUrl, "_blank")}
+                      >
+                        <p className="text-[16px] font-[400] font-[Roboto]">Listen</p>
+                        <img src="/mobile-assets/Podcasts/VoiceImage.png" alt="Voice Image" />
                       </div>
                     )}
-                  </div>
-                  <div
-                    className="flex items-center justify-center "
-                    style={{
-                      transform: "rotate(90deg)",
-                      transformOrigin: "top",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    <p className="text-[14px] font-[Roboto] font-[400] uppercase">
-                      {podcast.episode}
-                    </p>
-                  </div>
 
-                  {/* <div style={{ writingMode: "sideways-lr" }}>
-                    <p className="text-[14px] font-[Roboto] font-[400]   uppercase">
-                      {podcast.episode}  
-                    </p>
-                  </div> */}
-                </div>
+                    {/* Share Button */}
+                    <div className="relative flex items-center gap-1 cursor-pointer" onClick={handleShareClick}>
+                      <p className="text-[16px] font-[Roboto] font-[400] leading-[182.592%] ">SHARE</p>
+                      <FiShare2 className="w-4 h-4" />
 
-                {/* Episode Label (restored) */}
+                      {/* Show the icons when 'showIcons' state is true */}
+                      {showIcons && (
+                        <div className="absolute left-[30px] z-10 flex items-center space-x-2 top-full">
+                          <FacebookShareButton url={podcast.shareUrl}>
+                            <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <FaFacebookF size={16} round target="_blank" />
+                            </div>
+                          </FacebookShareButton>
+                          <TwitterShareButton url={podcast.shareUrl}>
+                            <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <FaTwitter size={16} round target="_blank" />
+                            </div>
+                          </TwitterShareButton>
 
-                {/* Title and Date */}
-                <div className="py-4">
-                  <p className="text-[14px] font-[Roboto] font-[400] uppercase leading-[240%]">
-                    {podcast.date} {/* Display the date */}
-                  </p>
-                  <h5 className="text-[16px] font-[Roboto] font-[500] uppercase leading-[142.857%]">
-                    {podcast.title} {/* Display the title */}
-                  </h5>
-                </div>
-
-                {/* Play/Pause button */}
-                <div className="flex items-center gap-4">
-                  {videoUrl !== "" ? (
-                    <div
-                      className="flex items-center gap-[8px]"
-                      onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
-                    >
-                      <p className="text-[16px] font-[400] font-[Roboto]">
-                        {videoStates[index]?.isPlaying ? "Pause" : "Watch"}
-                      </p>
-                      {videoStates[index]?.isPlaying ? (
-                        <FaPause className="w-4 h-4" />
-                      ) : (
-                        <FaPlay className="w-4 h-4" />
+                          {/* LinkedIn Share Button */}
+                          <LinkedinShareButton url={podcast.shareUrl}>
+                            <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <FaLinkedinIn size={16} round target="_blank" />
+                            </div>
+                          </LinkedinShareButton>
+                        </div>
                       )}
                     </div>
-                  ) : (
-                    <div
-                      className="flex gap-2 cursor-pointer"
-                      onClick={() => window.open(podcast?.shareUrl, "_blank")}
-                    >
-                      <p className="text-[16px] font-[400] font-[Roboto]">
-                        Listen
-                      </p>
-                      <img
-                        src="/mobile-assets/Podcasts/VoiceImage.png"
-                        alt="Voice Image"
-                      />
-                    </div>
-                  )}
-
-                  {/* Share Button */}
-                  <div
-                    className="relative flex items-center gap-1 cursor-pointer"
-                    onClick={handleShareClick}
-                  >
-                    <p className="text-[16px] font-[Roboto] font-[400] leading-[182.592%] ">
-                      SHARE
-                    </p>
-                    <FiShare2 className="w-4 h-4" />
-
-                    {/* Show the icons when 'showIcons' state is true */}
-                    {showIcons && (
-                      <div className="absolute left-[30px] z-10 flex items-center space-x-2 top-full">
-                        <FacebookShareButton url={podcast.shareUrl}>
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                            <FaFacebookF size={16} round target="_blank" />
-                          </div>
-                        </FacebookShareButton>
-                        <TwitterShareButton url={podcast.shareUrl}>
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                            <FaTwitter size={16} round target="_blank" />
-                          </div>
-                        </TwitterShareButton>
-
-                        {/* LinkedIn Share Button */}
-                        <LinkedinShareButton url={podcast.shareUrl}>
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                            <FaLinkedinIn size={16} round target="_blank" />
-                          </div>
-                        </LinkedinShareButton>
-
-                        {/* Instagram Share Button (using link to Instagram) */}
-                        {/* <a
-                          href={`https://www.instagram.com/?url=${encodeURIComponent(
-                            shareUrl
-                          )}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center"
-                        >
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                            <FaInstagram size={16} />
-                          </div>
-                        </a> */}
-                      </div>
-                    )}
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              )
+            })}
         </div>
 
         {/* Pagination */}
