@@ -97,7 +97,7 @@ function PodcastsEveryDesktop() {
 
   const tabs = [
     { key: "featured", label: "Featured Episodes" },
-    { key: "guest", label: "Guest Podcast" },
+    { key: "guest", label: "Guest Appearances" },
     { key: "water", label: "Water Champions Podcast" },
   ];
 
@@ -183,7 +183,6 @@ function PodcastsEveryDesktop() {
             {tabs.map((tab) => (
               <button
                 key={tab.key}
-                title="Coming soon"
                 onClick={() => setActiveTab(tab.key)}
                 className={`text-[14px] font-medium font-[Roboto] cursor-pointer pb-1 ${
                   activeTab === tab.key
