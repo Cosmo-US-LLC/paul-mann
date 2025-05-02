@@ -1,29 +1,44 @@
 export const podcastData = [
   {
+    date: "01.05.2025",
+    youtubeId: "w_VGWJvCLMg",
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail7.png",
+    episode: "EP – 3",
+    title:
+      "Never Waste Water Again! Inside Hydraloop's Innovative Water Recycling System | The Water Champions Podcast Episode 3",
+    description: "",
+    shareUrl: "https://www.youtube.com/watch?v=w_VGWJvCLMg",
+  },
+  {
     date: "24.04.2025",
-    youtubeId: "",  
-    thumbnail: "/mobile-assets/Podcasts/Thumbnail6.png",  
+    youtubeId: "",
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail6.png",
     episode: "EP – 3",
     title: "Paul Mann on the Flanigan Eco Podcast",
     description: "",
-    shareUrl: "https://flanigansecologic.transistor.fm/episodes/paul-mann-on-becoming-water-champions",
+    shareUrl:
+      "https://flanigansecologic.transistor.fm/episodes/paul-mann-on-becoming-water-champions",
   },
   {
     date: "08.04.2025",
-    youtubeId: "d8mw9kot9pk",  
-    thumbnail: "/mobile-assets/Podcasts/Thumbnail5.png",  
+    youtubeId: "d8mw9kot9pk",
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail5.png",
     episode: "EP – 2",
-    title: "Rainwater Harvesting Rebates: Save Water & Money! Water Conservation & Reuse Guide",
-    description: "In this episode, Noelle Johnson discusses California's rainwater harvesting program and its implications for water sustainability in the state. Learn how this program is helping communities save water, the challenges involved, and its potential for future impact.",
+    title:
+      "Rainwater Harvesting Rebates: Save Water & Money! Water Conservation & Reuse Guide | The Water Champions Podcast Episode 2",
+    description:
+      "In this episode, Noelle Johnson discusses California's rainwater harvesting program and its implications for water sustainability in the state. Learn how this program is helping communities save water, the challenges involved, and its potential for future impact.",
     shareUrl: "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s",
   },
   {
     date: "04.04.2025",
-    youtubeId: "4snXR5Scgvc", 
-    thumbnail: "/mobile-assets/Podcasts/Thumbnail4.png",  
+    youtubeId: "4snXR5Scgvc",
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail4.png",
     episode: "EP – 1",
-    title: "How Rainwater Harvesting is the Future | Water Champions Podcast Ep.1 with Rain Brothers",
-    description: "The first episode of the series dives deep into the concept of rainwater harvesting and its role in sustainable water supply. The Rain Brothers explore different methods of rainwater collection and how it can change the way we think about water conservation.",
+    title:
+      "How Rainwater Harvesting is the Future | The Water Champions Podcast Episode 1",
+    description:
+      "The first episode of the series dives deep into the concept of rainwater harvesting and its role in sustainable water supply. The Rain Brothers explore different methods of rainwater collection and how it can change the way we think about water conservation.",
     shareUrl: "https://www.youtube.com/watch?v=4snXR5Scgvc&t=1s",
   },
 ];
@@ -31,33 +46,31 @@ export const podcastData = [
 
 // How Rainwater Harvesting is the Future | Water Champions Podcast Ep.1 with Rain Brothers
 export const sliderData = [
-    {
-      text: '“Love this podcast!”',
-      user: 'By SHU12323',
-    },
-    {
-      text: '“Amazing and life-changing podcast”',
-      user: 'By ChrisAlan83',
-    },
-    {
-      text: '“Jay has a special energy that draws people towards him, and a talent at taking people on a journey”',
-      user: 'By ChrisAlan83',
-    },
-    {
-      text: '“Thank you Paul Mann for your spiritual wisdom and insight.”',
-      user: 'By PearlJelly9',
-    },
-    {
-      text: '“Thank you Paul Mann for your spiritual wisdom and insight.”',
-      user: 'By PearlJelly9',
-    },
-  ];
-
-
+  {
+    text: "“Love this podcast!”",
+    user: "By SHU12323",
+  },
+  {
+    text: "“Amazing and life-changing podcast”",
+    user: "By ChrisAlan83",
+  },
+  {
+    text: "“Jay has a special energy that draws people towards him, and a talent at taking people on a journey”",
+    user: "By ChrisAlan83",
+  },
+  {
+    text: "“Thank you Paul Mann for your spiritual wisdom and insight.”",
+    user: "By PearlJelly9",
+  },
+  {
+    text: "“Thank you Paul Mann for your spiritual wisdom and insight.”",
+    user: "By PearlJelly9",
+  },
+];
 
 export const formatDate = (date) => {
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");  
-    const day = date.getDate().toString().padStart(2, "0");
-    const year = date.getFullYear();
-    return `${month}.${day}.${year}`;
-  };
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+  const year = date.getFullYear();
+  return `${month}.${day}.${year}`;
+};

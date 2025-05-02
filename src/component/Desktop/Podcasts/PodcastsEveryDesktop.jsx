@@ -93,6 +93,14 @@ function PodcastsEveryDesktop() {
     });
   }, [currentPage]);
 
+  const [activeTab, setActiveTab] = useState("featured");
+
+  const tabs = [
+    { key: "featured", label: "Featured Episodes:" },
+    { key: "guest", label: "Guest Podcast:" },
+    { key: "water", label: "Water Champions Podcast:" },
+  ];
+
   return (
     <div className="max-w-[1440px] w-full h-full py-16 mx-auto">
       <div className="max-w-[1200px] mx-auto flex flex-col justify-center">
@@ -169,12 +177,20 @@ function PodcastsEveryDesktop() {
         {/* Categories Buttons */}
         <div className="flex items-center justify-between pt-8 pb-12">
           <div className="flex gap-6">
-            <button
-              title="Coming soon"
-              className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer border-b-2 border-black pb-1"
-            >
-              Featured Episodes
-            </button>
+            {tabs.map((tab) => (
+              <button
+                key={tab.key}
+                title="Coming soon"
+                onClick={() => setActiveTab(tab.key)}
+                className={`text-[14px] font-medium font-[Roboto] cursor-pointer pb-1 ${
+                  activeTab === tab.key
+                    ? "border-b-2 border-black"
+                    : "border-b-2 border-transparent"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
             {/* <button
               title="Coming soon"
               className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black"
@@ -218,7 +234,7 @@ function PodcastsEveryDesktop() {
         </div>
 
         {/* Display Podcasts */}
-        <div ref={listContainerRef} className="space-y-12">
+        <div ref={listContainerRef} className={`${activeTab == "guest"} ? "" : "space-y-12" `}>
           {displayedPodcasts.map((podcast, index) => {
             console.log("podcast", podcast);
             const videoUrl = podcast?.youtubeId
@@ -229,75 +245,77 @@ function PodcastsEveryDesktop() {
             const isSharing = shareIndex === index;
 
             return (
-              <div
-                key={index}
-                className="flex items-start gap-6 pb-8 border-b border-gray-500"
-              >
-                <div className="relative w-[336px]">
-                  {videoUrl !== "" ? (
-                    <div className="relative w-full h-[200px]">
-                      {videoStates[index]?.isPlaying ? (
-                        <iframe
-                          src={videoUrl}
-                          title={`YouTube video ${index + 1}`}
-                          className="object-cover w-full h-full"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
+              <>
+                {activeTab == "featured" ? (
+                  <div
+                    key={index}
+                    className="flex items-start gap-6 pb-8 border-b border-gray-500"
+                  >
+                    <div className="relative w-[336px]">
+                      {videoUrl !== "" ? (
+                        <div className="relative w-full h-[200px]">
+                          {videoStates[index]?.isPlaying ? (
+                            <iframe
+                              src={videoUrl}
+                              title={`YouTube video ${index + 1}`}
+                              className="object-cover w-full h-full"
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          ) : (
+                            <div
+                              className="relative w-full h-full cursor-pointer"
+                              onClick={() => handlePlayPauseClick(index)}
+                            >
+                              <img
+                                src={podcast.thumbnail}
+                                alt="Video Thumbnail"
+                                className="object-cover w-full h-full"
+                              />
+                            </div>
+                          )}
+                        </div>
                       ) : (
-                        <div
-                          className="relative w-full h-full cursor-pointer"
-                          onClick={() => handlePlayPauseClick(index)}
-                        >
-                          <img
-                            src={podcast.thumbnail}
-                            alt="Video Thumbnail"
-                            className="object-cover w-full h-full"
-                          />
+                        <div className="relative w-full h-[200px]">
+                          <div className="relative w-full h-full cursor-pointer">
+                            <a
+                              href={podcast?.shareUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <img
+                                src={podcast.thumbnail}
+                                alt="Image Thumbnail"
+                                className="object-cover w-full h-full"
+                              />
+                            </a>
+                          </div>
                         </div>
                       )}
                     </div>
-                  ) : (
-                    <div className="relative w-full h-[200px]">
-                      <div className="relative w-full h-full cursor-pointer">
-                        <a
-                          href={podcast?.shareUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <img
-                            src={podcast.thumbnail}
-                            alt="Image Thumbnail"
-                            className="object-cover w-full h-full"
-                          />
-                        </a>
-                      </div>
+                    <div className="relative flex items-center justify-center h-[200px]  ">
+                      <div
+                        className="text-black font-bold uppercase text-[14px] font-[Roboto]"
+                        style={{
+                          writingMode: "vertical-rl",
+                          transform: "rotate(180deg)",
+                        }}
+                      >
+                        {podcast.episode || ""}
+                      </div>{" "}
                     </div>
-                  )}
-                </div>
-                <div className="relative flex items-center justify-center h-[200px]  ">
-                  <div
-                    className="text-black font-bold uppercase text-[14px] font-[Roboto]"
-                    style={{
-                      writingMode: "vertical-rl",
-                      transform: "rotate(180deg)",
-                    }}
-                  >
-                    {podcast.episode || ""}
-                  </div>{" "}
-                </div>
 
-                <div className="  text-left  w-[600px] flex flex-col gap-2 ">
-                  <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
-                    {podcast.date}
-                  </p>
-                  <h5 className="text-[16px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.06em] ">
-                    {podcast.title}
-                  </h5>
+                    <div className="  text-left  w-[600px] flex flex-col gap-2 ">
+                      <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
+                        {podcast.date}
+                      </p>
+                      <h5 className="text-[16px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.06em] ">
+                        {podcast.title}
+                      </h5>
 
-                  {/* Description Section */}
-                  {/* <p className="text-[14px] text-gray-700 mb-4">
+                      {/* Description Section */}
+                      {/* <p className="text-[14px] text-gray-700 mb-4">
                     {isDescriptionExpanded
                       ? podcast.description
                       : podcast.description.substring(0, 100) + '...'}
@@ -309,80 +327,82 @@ function PodcastsEveryDesktop() {
                   >
                     {isDescriptionExpanded ? 'Read Less' : 'Read More'}
                   </button> */}
-                </div>
+                    </div>
 
-                {/* Share Section */}
-                <div className="flex flex-col flex-1 gap-3 pt-8">
-                  <div className="flex flex-col h-full gap-4 text-right ">
-                    <div className="flex flex-col items-end gap-6">
-                      {videoUrl !== "" ? (
-                        <div
-                          className="flex items-center gap-[8px]"
-                          onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
-                        >
-                          <p className="text-[16px] font-[400] font-[Roboto]">
-                            {videoStates[index]?.isPlaying ? "Pause" : "Watch"}
-                          </p>
-                          {videoStates[index]?.isPlaying ? (
-                            <FaPause className="w-4 h-4" />
+                    {/* Share Section */}
+                    <div className="flex flex-col flex-1 gap-3 pt-8">
+                      <div className="flex flex-col h-full gap-4 text-right ">
+                        <div className="flex flex-col items-end gap-6">
+                          {videoUrl !== "" ? (
+                            <div
+                              className="flex items-center gap-[8px]"
+                              onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
+                            >
+                              <p className="text-[16px] font-[400] font-[Roboto]">
+                                {videoStates[index]?.isPlaying
+                                  ? "Pause"
+                                  : "Watch"}
+                              </p>
+                              {videoStates[index]?.isPlaying ? (
+                                <FaPause className="w-4 h-4" />
+                              ) : (
+                                <FaPlay className="w-4 h-4" />
+                              )}
+                            </div>
                           ) : (
-                            <FaPlay className="w-4 h-4" />
+                            <div
+                              className="flex gap-2 cursor-pointer"
+                              onClick={() =>
+                                window.open(podcast?.shareUrl, "_blank")
+                              }
+                            >
+                              <p className="text-[16px] font-[400] font-[Roboto]">
+                                Listen
+                              </p>
+                              <img
+                                src="/mobile-assets/Podcasts/VoiceImage.png"
+                                alt="Voice Image"
+                              />
+                            </div>
                           )}
                         </div>
-                      ) : (
-                        <div
-                          className="flex gap-2 cursor-pointer"
-                          onClick={() =>
-                            window.open(podcast?.shareUrl, "_blank")
-                          }
-                        >
-                          <p className="text-[16px] font-[400] font-[Roboto]">
-                            Listen
+                      </div>
+                      <div className="relative group">
+                        <div className="flex items-center justify-end gap-2 cursor-pointer ">
+                          <p
+                            className="text-left text-[16px] font-[400] font-[Roboto]  "
+                            onClick={toggleShareButtons}
+                          >
+                            Share
                           </p>
-                          <img
-                            src="/mobile-assets/Podcasts/VoiceImage.png"
-                            alt="Voice Image"
+                          <FiShare2
+                            className="w-4 h-4"
+                            onClick={toggleShareButtons}
                           />
                         </div>
-                      )}
-                    </div>
-                  </div>
-                  <div className="relative group">
-                    <div className="flex items-center justify-end gap-2 cursor-pointer ">
-                      <p
-                        className="text-left text-[16px] font-[400] font-[Roboto]  "
-                        onClick={toggleShareButtons}
-                      >
-                        Share
-                      </p>
-                      <FiShare2
-                        className="w-4 h-4"
-                        onClick={toggleShareButtons}
-                      />
-                    </div>
-                    {/* Social Media Share Buttons */}
-                    {showShareButtons && (
-                      <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
-                        <FacebookShareButton url={podcast.shareUrl}>
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                            <FaFacebookF size={16} />
-                          </div>
-                        </FacebookShareButton>
+                        {/* Social Media Share Buttons */}
+                        {showShareButtons && (
+                          <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                            <FacebookShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaFacebookF size={16} />
+                              </div>
+                            </FacebookShareButton>
 
-                        <TwitterShareButton url={podcast.shareUrl}>
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                            <FaTwitter size={16} />
-                          </div>
-                        </TwitterShareButton>
+                            <TwitterShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaTwitter size={16} />
+                              </div>
+                            </TwitterShareButton>
 
-                        <LinkedinShareButton url={podcast.shareUrl}>
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
-                            <FaLinkedinIn size={16} />
+                            <LinkedinShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaLinkedinIn size={16} />
+                              </div>
+                            </LinkedinShareButton>
                           </div>
-                        </LinkedinShareButton>
-                      </div>
-                    )}
-                    {/* {showShareButtons &&  (
+                        )}
+                        {/* {showShareButtons &&  (
                       <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
                         
                         <FacebookShareButton url={podcast.shareUrl}>
@@ -420,9 +440,407 @@ function PodcastsEveryDesktop() {
                         </a>
                       </div>
                     )} */}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                ) : activeTab == "guest" ? (
+                  <div key={index}>
+                    {videoUrl == "" && (
+                      <div className="flex items-start gap-6 p-6 border border-gray-200 rounded">
+                        <div className="relative w-[336px]">
+                          {videoUrl !== "" ? (
+                            <div className="relative w-full h-[200px]">
+                              {videoStates[index]?.isPlaying ? (
+                                <iframe
+                                  src={videoUrl}
+                                  title={`YouTube video ${index + 1}`}
+                                  className="object-cover w-full h-full"
+                                  frameBorder="0"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                ></iframe>
+                              ) : (
+                                <div
+                                  className="relative w-full h-full cursor-pointer"
+                                  onClick={() => handlePlayPauseClick(index)}
+                                >
+                                  <img
+                                    src={podcast.thumbnail}
+                                    alt="Video Thumbnail"
+                                    className="object-cover w-full h-full"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="relative w-full h-[200px]">
+                              <div className="relative w-full h-full cursor-pointer">
+                                <a
+                                  href={podcast?.shareUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <img
+                                    src={podcast.thumbnail}
+                                    alt="Image Thumbnail"
+                                    className="object-cover w-full h-full"
+                                  />
+                                </a>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <div className="relative flex items-center justify-center h-[200px]  ">
+                          <div
+                            className="text-black font-bold uppercase text-[14px] font-[Roboto]"
+                            style={{
+                              writingMode: "vertical-rl",
+                              transform: "rotate(180deg)",
+                            }}
+                          >
+                            {podcast.episode || ""}
+                          </div>{" "}
+                        </div>
+
+                        <div className="  text-left  w-[600px] flex flex-col gap-2 ">
+                          <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
+                            {podcast.date}
+                          </p>
+                          <h5 className="text-[16px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.06em] ">
+                            {podcast.title}
+                          </h5>
+
+                          {/* Description Section */}
+                          {/* <p className="text-[14px] text-gray-700 mb-4">
+                        {isDescriptionExpanded
+                          ? podcast.description
+                          : podcast.description.substring(0, 100) + '...'}
+                      < /p>
+    
+                      <button
+                        onClick={() => handleDescriptionToggle(index)}
+                        className="text-[14px] font-medium text-blue-500"
+                      >
+                        {isDescriptionExpanded ? 'Read Less' : 'Read More'}
+                      </button> */}
+                        </div>
+
+                        {/* Share Section */}
+                        <div className="flex flex-col flex-1 gap-3 pt-8">
+                          <div className="flex flex-col h-full gap-4 text-right ">
+                            <div className="flex flex-col items-end gap-6">
+                              {videoUrl !== "" ? (
+                                <div
+                                  className="flex items-center gap-[8px]"
+                                  onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
+                                >
+                                  <p className="text-[16px] font-[400] font-[Roboto]">
+                                    {videoStates[index]?.isPlaying
+                                      ? "Pause"
+                                      : "Watch"}
+                                  </p>
+                                  {videoStates[index]?.isPlaying ? (
+                                    <FaPause className="w-4 h-4" />
+                                  ) : (
+                                    <FaPlay className="w-4 h-4" />
+                                  )}
+                                </div>
+                              ) : (
+                                <div
+                                  className="flex gap-2 cursor-pointer"
+                                  onClick={() =>
+                                    window.open(podcast?.shareUrl, "_blank")
+                                  }
+                                >
+                                  <p className="text-[16px] font-[400] font-[Roboto]">
+                                    Listen
+                                  </p>
+                                  <img
+                                    src="/mobile-assets/Podcasts/VoiceImage.png"
+                                    alt="Voice Image"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                          <div className="relative group">
+                            <div className="flex items-center justify-end gap-2 cursor-pointer ">
+                              <p
+                                className="text-left text-[16px] font-[400] font-[Roboto]  "
+                                onClick={toggleShareButtons}
+                              >
+                                Share
+                              </p>
+                              <FiShare2
+                                className="w-4 h-4"
+                                onClick={toggleShareButtons}
+                              />
+                            </div>
+                            {/* Social Media Share Buttons */}
+                            {showShareButtons && (
+                              <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                                <FacebookShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaFacebookF size={16} />
+                                  </div>
+                                </FacebookShareButton>
+
+                                <TwitterShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaTwitter size={16} />
+                                  </div>
+                                </TwitterShareButton>
+
+                                <LinkedinShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaLinkedinIn size={16} />
+                                  </div>
+                                </LinkedinShareButton>
+                              </div>
+                            )}
+                            {/* {showShareButtons &&  (
+                          <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                            
+                            <FacebookShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaFacebookF size={16} round target="_blank" />
+                              </div>
+                            </FacebookShareButton>
+    
+                           
+                            <TwitterShareButton url={shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaTwitter size={16} round target="_blank" />
+                              </div>
+                            </TwitterShareButton>
+    
+                        
+                            <LinkedinShareButton url={shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaLinkedinIn size={16} round target="_blank" />
+                              </div>
+                            </LinkedinShareButton>
+    
+                            
+                            <a
+                              href={`https://www.instagram.com/?url=${encodeURIComponent(
+                                shareUrl
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center"
+                            >
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
+                              <FaInstagram size={16} />
+                              </div>
+                            </a>
+                          </div>
+                        )} */}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : activeTab == "water" ? (
+                  <div key={index}>
+                    {videoUrl !== "" && (
+                      <div className="flex items-start gap-6 pb-8 border-b border-gray-500">
+                        <div className="relative w-[336px]">
+                          {videoUrl !== "" ? (
+                            <div className="relative w-full h-[200px]">
+                              {videoStates[index]?.isPlaying ? (
+                                <iframe
+                                  src={videoUrl}
+                                  title={`YouTube video ${index + 1}`}
+                                  className="object-cover w-full h-full"
+                                  frameBorder="0"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                ></iframe>
+                              ) : (
+                                <div
+                                  className="relative w-full h-full cursor-pointer"
+                                  onClick={() => handlePlayPauseClick(index)}
+                                >
+                                  <img
+                                    src={podcast.thumbnail}
+                                    alt="Video Thumbnail"
+                                    className="object-cover w-full h-full"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="relative w-full h-[200px]">
+                              <div className="relative w-full h-full cursor-pointer">
+                                <a
+                                  href={podcast?.shareUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <img
+                                    src={podcast.thumbnail}
+                                    alt="Image Thumbnail"
+                                    className="object-cover w-full h-full"
+                                  />
+                                </a>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <div className="relative flex items-center justify-center h-[200px]  ">
+                          <div
+                            className="text-black font-bold uppercase text-[14px] font-[Roboto]"
+                            style={{
+                              writingMode: "vertical-rl",
+                              transform: "rotate(180deg)",
+                            }}
+                          >
+                            {podcast.episode || ""}
+                          </div>{" "}
+                        </div>
+
+                        <div className="  text-left  w-[600px] flex flex-col gap-2 ">
+                          <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
+                            {podcast.date}
+                          </p>
+                          <h5 className="text-[16px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.06em] ">
+                            {podcast.title}
+                          </h5>
+
+                          {/* Description Section */}
+                          {/* <p className="text-[14px] text-gray-700 mb-4">
+                        {isDescriptionExpanded
+                          ? podcast.description
+                          : podcast.description.substring(0, 100) + '...'}
+                      < /p>
+    
+                      <button
+                        onClick={() => handleDescriptionToggle(index)}
+                        className="text-[14px] font-medium text-blue-500"
+                      >
+                        {isDescriptionExpanded ? 'Read Less' : 'Read More'}
+                      </button> */}
+                        </div>
+
+                        {/* Share Section */}
+                        <div className="flex flex-col flex-1 gap-3 pt-8">
+                          <div className="flex flex-col h-full gap-4 text-right ">
+                            <div className="flex flex-col items-end gap-6">
+                              {videoUrl !== "" ? (
+                                <div
+                                  className="flex items-center gap-[8px]"
+                                  onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
+                                >
+                                  <p className="text-[16px] font-[400] font-[Roboto]">
+                                    {videoStates[index]?.isPlaying
+                                      ? "Pause"
+                                      : "Watch"}
+                                  </p>
+                                  {videoStates[index]?.isPlaying ? (
+                                    <FaPause className="w-4 h-4" />
+                                  ) : (
+                                    <FaPlay className="w-4 h-4" />
+                                  )}
+                                </div>
+                              ) : (
+                                <div
+                                  className="flex gap-2 cursor-pointer"
+                                  onClick={() =>
+                                    window.open(podcast?.shareUrl, "_blank")
+                                  }
+                                >
+                                  <p className="text-[16px] font-[400] font-[Roboto]">
+                                    Listen
+                                  </p>
+                                  <img
+                                    src="/mobile-assets/Podcasts/VoiceImage.png"
+                                    alt="Voice Image"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                          <div className="relative group">
+                            <div className="flex items-center justify-end gap-2 cursor-pointer ">
+                              <p
+                                className="text-left text-[16px] font-[400] font-[Roboto]  "
+                                onClick={toggleShareButtons}
+                              >
+                                Share
+                              </p>
+                              <FiShare2
+                                className="w-4 h-4"
+                                onClick={toggleShareButtons}
+                              />
+                            </div>
+                            {/* Social Media Share Buttons */}
+                            {showShareButtons && (
+                              <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                                <FacebookShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaFacebookF size={16} />
+                                  </div>
+                                </FacebookShareButton>
+
+                                <TwitterShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaTwitter size={16} />
+                                  </div>
+                                </TwitterShareButton>
+
+                                <LinkedinShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaLinkedinIn size={16} />
+                                  </div>
+                                </LinkedinShareButton>
+                              </div>
+                            )}
+                            {/* {showShareButtons &&  (
+                          <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                            
+                            <FacebookShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaFacebookF size={16} round target="_blank" />
+                              </div>
+                            </FacebookShareButton>
+    
+                           
+                            <TwitterShareButton url={shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaTwitter size={16} round target="_blank" />
+                              </div>
+                            </TwitterShareButton>
+    
+                        
+                            <LinkedinShareButton url={shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaLinkedinIn size={16} round target="_blank" />
+                              </div>
+                            </LinkedinShareButton>
+    
+                            
+                            <a
+                              href={`https://www.instagram.com/?url=${encodeURIComponent(
+                                shareUrl
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center"
+                            >
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
+                              <FaInstagram size={16} />
+                              </div>
+                            </a>
+                          </div>
+                        )} */}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : ""}
+              </>
             );
           })}
         </div>
