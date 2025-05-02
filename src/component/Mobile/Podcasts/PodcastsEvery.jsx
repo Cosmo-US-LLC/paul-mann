@@ -76,7 +76,7 @@ function PodcastsEvery() {
               href="https://www.youtube.com/@IAmPaulMann"
               className="relative hover:text-black "
             >
-              <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-black hover:text-white">
+              <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
                 <img
                   src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
                   className="w-6 h-6 mr-2"
@@ -88,10 +88,10 @@ function PodcastsEvery() {
 
             <div className="relative tooltip-container">
               <a
-                href="https://open.spotify.com/episode/4BHyrFASFVo5Bdo1LBpt7a?si=iYZ8XymFTvKRzLTQxplefQ&nd=1&dlsi=998b129cea51421b"
+                href="https://open.spotify.com/show/5JGG4GsUy9X3Zv41o0utGN"
                 className="relative hover:text-black "
               >
-                <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-black hover:text-white">
+                <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
                   <img
                     src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
                     className="w-6 h-6 mr-2"
@@ -107,7 +107,11 @@ function PodcastsEvery() {
           </div>
           <div className="flex space-x-4">
             <div className="relative tooltip-container">
-              <button className="flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black   bg-gray-200 w-[130px] h-[44px] uppercase hover:bg-gray-300 pointer-events-none">
+              <a
+                href="https://podcasts.apple.com/us/podcast/the-water-champions-podcast/id1811129595"
+                className="relative hover:text-black "
+              >
+              <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
                 <img
                   src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
                   className="w-6 h-6 mr-2"
@@ -115,13 +119,15 @@ function PodcastsEvery() {
                 />
                 Apple
               </button>
-              <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
-                Coming soon
-              </span>
+              </a>
             </div>
 
             <div className="relative tooltip-container">
-              <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[130px] h-[44px] bg-gray-200 uppercase hover:bg-gray-300 pointer-events-none">
+            <a
+                href="https://music.amazon.com/podcasts/1085a5b3-0753-4e00-923d-a9817fced663/the-water-champions-podcast"
+                className="relative hover:text-black "
+              >
+              <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
                 <img
                   src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
                   className="w-6 h-6 mr-2"
@@ -129,9 +135,7 @@ function PodcastsEvery() {
                 />
                 Amazon
               </button>
-              <span className="absolute w-[90px] hidden px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
-                Coming soon
-              </span>
+              </a>
             </div>
           </div>
         </div>
