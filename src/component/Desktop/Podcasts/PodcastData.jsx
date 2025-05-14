@@ -22,7 +22,7 @@ export const podcastData = [
   {
     date: "08.04.2025",
     youtubeId: "d8mw9kot9pk",
-    thumbnail: "/mobile-assets/Podcasts/Thumbnail5.png",
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail2.png",
     episode: "EP – 2",
     title:
       "Rainwater Harvesting Rebates: Save Water & Money! Water Conservation & Reuse Guide | The Water Champions Podcast Episode 2",
@@ -33,7 +33,7 @@ export const podcastData = [
   {
     date: "04.04.2025",
     youtubeId: "4snXR5Scgvc",
-    thumbnail: "/mobile-assets/Podcasts/Thumbnail4.png",
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail1.png",
     episode: "EP – 1",
     title:
       "How Rainwater Harvesting is the Future | The Water Champions Podcast Episode 1",
