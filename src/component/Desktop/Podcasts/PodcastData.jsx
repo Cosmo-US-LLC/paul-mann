@@ -2,7 +2,7 @@ export const podcastData = [
   {
     date: "01.05.2025",
     youtubeId: "w_VGWJvCLMg",
-    thumbnail: "/mobile-assets/Podcasts/Thumbnail7.png",
+    thumbnail: "/mobile-assets/Podcasts/Thumbnail3.jpg",
     episode: "EP – 3",
     title:
       "Water Champions Podcast Episode 3 | Never Waste Water Again! Inside Hydraloop’s Innovative Water Recycling System",
