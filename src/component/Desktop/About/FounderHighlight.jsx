@@ -21,13 +21,13 @@ const FounderHighlight = () => {
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="text-[46px] font-[400] font-[RFDewi-Light] uppercase">1.1K+</h2>
+                <h2 className="text-[46px] font-[400] font-[RFDewi-Light] uppercase">2.1K+</h2>
                 <p className="text-[12px] font-[Roboto]  font-[500] uppercase">
                   Followers Across Social Media
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="text-[46px]  font-[400] font-[RFDewi-Light] uppercase ">5K+</h2>
+                <h2 className="text-[46px]  font-[400] font-[RFDewi-Light] uppercase ">33K+</h2>
                 <p className="text-[12px] font-[Roboto]  font-[500] uppercase ">
                   Impressions Across Media Platforms
                 </p>

@@ -1,261 +1,222 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-
+import React, { useState, useEffect, useRef } from "react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+  FaPlay,
+  FaPause,
+} from "react-icons/fa";
+import { FiShare2 } from "react-icons/fi";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+} from "react-share";
+import ReviewSlider from "./ReviewSlider";
+import { podcastData, sliderData } from "./PodcastData";
 import SuggestTopicForm from "../../ui/SuggestTopicForm";
 
-const podcastData = [
-  {
-    date: "7.31.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (11).webp",
-    episode: "EP – 497",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla enim, consectetur sagittis mauris tincidunt sollicitudin. Nulla scelerisque efficitur euismod.",
-  },
-  {
-    date: "7.30.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (10).webp",
-    episode: "EP – 496",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla enim, consectetur sagittis mauris tincidunt sollicitudin.",
-  },
-  {
-    date: "7.29.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (9).webp",
-    episode: "EP – 495",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla enim, consectetur sagittis mauris tincidunt sollicitudin.",
-  },
-  {
-    date: "7.28.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (8).webp",
-    episode: "EP – 494",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla enim, consectetur sagittis mauris tincidunt sollicitudin.",
-  },
-  {
-    date: "7.27.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (7).webp",
-    episode: "EP – 493",
-    title: "Accusantium doloremque laudantium.",
-  },
-  {
-    date: "7.26.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (6).webp",
-    episode: "EP – 492",
-    title: "Nemo enim ipsam voluptatem quia voluptas.",
-  },
-  {
-    date: "7.25.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (5).webp",
-    episode: "EP – 491",
-    title: "Neque porro quisquam est qui dolorem ipsum.",
-  },
-  {
-    date: "7.24.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (4).webp",
-    episode: "EP – 490",
-    title: "Dolor sit amet, consectetur, adipisci velit.",
-  },
-  {
-    date: "7.23.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (3).webp",
-    episode: "EP – 489",
-    title: "Lorem ipsum dolor sit amet consectetur elit.",
-  },
-  {
-    date: "7.22.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (2).webp",
-    episode: "EP – 488",
-    title: "Nam libero tempore, cum soluta nobis est eligendi.",
-  },
-  {
-    date: "7.21.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (1).webp",
-    episode: "EP – 487",
-    title: "Quis autem vel eum iure reprehenderit.",
-  },
-  {
-    date: "7.20.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (11).webp",
-    episode: "EP – 486",
-    title: "Velit esse quam nihil molestiae consequatur.",
-  },
-  {
-    date: "7.19.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (10).webp",
-    episode: "EP – 485",
-    title: "Quis nostrum exercitationem ullam corporis suscipit.",
-  },
-  {
-    date: "7.18.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (9).webp",
-    episode: "EP – 484",
-    title: "Ut aliquid ex ea commodi consequatur.",
-  },
-  {
-    date: "7.17.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (8).webp",
-    episode: "EP – 483",
-    title: "Facere possimus, omnis voluptas assumenda est.",
-  },
-  {
-    date: "7.24.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (4).webp",
-    episode: "EP – 490",
-    title: "Dolor sit amet, consectetur, adipisci velit.",
-  },
-  {
-    date: "7.23.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (3).webp",
-    episode: "EP – 489",
-    title: "Lorem ipsum dolor sit amet consectetur elit.",
-  },
-  {
-    date: "7.22.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (2).webp",
-    episode: "EP – 488",
-    title: "Nam libero tempore, cum soluta nobis est eligendi.",
-  },
-  {
-    date: "7.21.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (1).webp",
-    episode: "EP – 487",
-    title: "Quis autem vel eum iure reprehenderit.",
-  },
-  {
-    date: "7.20.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (11).webp",
-    episode: "EP – 486",
-    title: "Velit esse quam nihil molestiae consequatur.",
-  },
-  {
-    date: "7.19.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (10).webp",
-    episode: "EP – 485",
-    title: "Quis nostrum exercitationem ullam corporis suscipit.",
-  },
-  {
-    date: "7.18.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (9).webp",
-    episode: "EP – 484",
-    title: "Ut aliquid ex ea commodi consequatur.",
-  },
-  {
-    date: "7.17.2023",
-    image: "/mobile-assets/Podcasts/pd-card-img (8).webp",
-    episode: "EP – 483",
-    title: "Facere possimus, omnis voluptas assumenda est.",
-  },
-];
 function PodcastsEveryDesktop() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [shareIndex, setShareIndex] = useState(null);
   const itemsPerPage = 10;
-  const listContainerRef = useRef(null); // New ref for scrolling
-
-  // Pagination logic
   const totalPages = Math.ceil(podcastData.length / itemsPerPage);
+
+  // Play/pause state for each video
+  const [videoStates, setVideoStates] = useState(
+    podcastData.map(() => ({ isPlaying: false }))
+  );
+
+  // State to track visibility of share buttons
+  const [showShareButtons, setShowShareButtons] = useState(false);
+
+  // Track expanded/collapsed descriptions
+  const [expandedDescription, setExpandedDescription] = useState(
+    podcastData.map(() => false)
+  ); // Initially, all descriptions are collapsed
+
+  const listContainerRef = useRef(null);
+  // const shareUrl = "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s";
+
   const startIndex = (currentPage - 1) * itemsPerPage;
   const displayedPodcasts = podcastData.slice(
     startIndex,
     startIndex + itemsPerPage
   );
 
-  const scrollToTop = () => {
-    const cardHeight = 200; // Adjust this value based on your card height
-    const offset = 80; // Adjust this value for additional spacing if needed
-    const targetPosition =
-      listContainerRef.current.offsetTop - (cardHeight + offset);
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
+  // Handle play/pause toggle for each video
+  const handlePlayPauseClick = (index) => {
+    setVideoStates((prevStates) => {
+      return prevStates.map((state, i) => {
+        if (i === index) {
+          return { isPlaying: !state.isPlaying };
+        }
+        return state;
+      });
     });
   };
 
-  // Effect to scroll to top when currentPage changes
-  useEffect(() => {
-    scrollToTop();
-  }, [currentPage]);
+  // Toggle expanded/collapsed state for descriptions
+  const handleDescriptionToggle = (index) => {
+    setExpandedDescription((prev) => {
+      const newState = [...prev];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1); // Update the current page immediately
+      setCurrentPage(currentPage + 1);
     }
   };
 
   const handlePreviousPage = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1); // Update the current page immediately
+      setCurrentPage(currentPage - 1);
     }
   };
 
+  // Toggle the visibility of share buttons
+  const toggleShareButtons = () => {
+    setShowShareButtons(!showShareButtons);
+  };
+  // const toggleShareButtons = (index) => {
+  //   setShareIndex((prevIndex) => (prevIndex === index ? null : index));
+  // };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: listContainerRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  }, [currentPage]);
+
+  const [activeTab, setActiveTab] = useState("featured");
+
+  const tabs = [
+    { key: "featured", label: "Featured Episodes" },
+    { key: "guest", label: "Guest Appearances" },
+    { key: "water", label: "Water Champions Podcast" },
+  ];
+
   return (
     <div className="max-w-[1440px] w-full h-full py-16 mx-auto">
-      <div className="max-w-[1200px]   mx-auto flex flex-col justify-center">
-        <div className="mb-8 text-center">
+      <div className="max-w-[1200px] mx-auto flex flex-col justify-center">
+        {/* <div className="py-3 text-left">
           <h3 className="text-[24px] font-bold font-[RFDewiExtended] uppercase leading-[1.5]">
-          New Podcast Every Week
+            New Podcast Every Week
           </h3>
-        </div>
+        </div> */}
 
         {/* Platform Buttons */}
-        <div className="flex justify-center gap-8 mb-8">
-          <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
-            <img
-              src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
-              className="mr-2"
-              alt="Spotify"
-            />
-            Spotify
-          </button>
-          <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
-            <img
-              src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
-              className="mr-2"
-              alt="Apple"
-            />
-            Apple
-          </button>
-          <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
-            <img
-              src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
-              className="mr-2"
-              alt="Amazon"
-            />
-            Amazon
-          </button>
-          <a href="https://www.youtube.com/@IAmPaulMann" className="hover:text-gray-300">
-          <button className="flex items-center justify-center text-sm font-medium font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-gray-300">
-            <img
-              src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
-              className="mr-2"
-              alt="YouTube"
-            />
-            YouTube
-          </button>
+        <div className="flex justify-center gap-8 pt-8 pb-4">
+          <a
+            href="https://www.youtube.com/@IAmPaulMann"
+            className="relative hover:text-black "
+          >
+            <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
+              <img
+                src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
+                className="w-6 h-6 mr-2"
+                alt="YouTube"
+              />
+              YouTube
+            </button>
           </a>
+
+          <div className="relative tooltip-container">
+            <a
+              href="https://open.spotify.com/show/5JGG4GsUy9X3Zv41o0utGN"
+              className="relative hover:text-black "
+            >
+              <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
+                <img
+                  src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
+                  className="w-6 h-6 mr-2"
+                  alt="Spotify"
+                />
+                Spotify
+              </button>
+              {/* <span className="absolute hidden w-[90px] px-2 py-2 mb-2 text-[12px] font-[400] text-white transform -translate-x-1/2 bg-black rounded tooltip-text bottom-full left-1/2">
+              Coming soon
+            </span> */}
+            </a>
+          </div>
+
+          <div className="relative tooltip-container">
+          <a
+              href="https://podcasts.apple.com/us/podcast/the-water-champions-podcast/id1811129595"
+              className="relative hover:text-black "
+            >
+            <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
+              <img
+                src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
+                className="w-6 h-6 mr-2"
+                alt="Apple"
+              />
+              Apple
+            </button>
+            </a>
+          </div>
+
+          <div className="relative tooltip-container">
+          <a
+              href="https://music.amazon.com/podcasts/1085a5b3-0753-4e00-923d-a9817fced663/the-water-champions-podcast"
+            >
+            <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
+              <img
+                src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
+                className="w-6 h-6 mr-2"
+                alt="Amazon"
+              />
+              Amazon
+            </button>
+            </a>
+          </div>
         </div>
 
-        <div className="flex items-center justify-between pb-2 mb-12">
+        {/* Categories Buttons */}
+        <div className="flex items-center justify-between pt-8 pb-4">
           <div className="flex gap-6">
-            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer border-b-2 border-black pb-1">
-              Featured Episodes
-            </button>
-            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black">
+            {tabs.map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className={`text-[14px] font-medium font-[Roboto] cursor-pointer pb-1 ${
+                  activeTab === tab.key
+                    ? "border-b-2 border-black"
+                    : "border-b-2 border-transparent"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+            {/* <button
+              title="Coming soon"
+              className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black"
+            >
               Rain Water
             </button>
-            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black">
+            <button
+              title="Coming soon"
+              className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black"
+            >
               Project Design
             </button>
-            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black">
+            <button
+              title="Coming soon"
+              className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black"
+            >
               Implementation
             </button>
-            <button className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black">
+            <button
+              title="Coming soon"
+              className="text-[14px] font-medium font-[Roboto] uppercase cursor-pointer text-gray-600 hover:text-black"
+            >
               On Work
-            </button>
+            </button> */}
           </div>
 
           {/* Search Bar */}
@@ -274,92 +235,620 @@ function PodcastsEveryDesktop() {
           </div>
         </div>
 
-        <div ref={listContainerRef} className="space-y-12">
-          {displayedPodcasts.map((podcast, index) => (
-            <div
-              key={index}
-              className="flex items-start gap-8 pb-8 border-b border-gray-300"
-            >
-              <div className="relative w-[336px]">
-                <img
-                  src={podcast.image}
-                  className="object-cover "
-                  alt={`Podcast ${index + 1}`}
-                />
+        {/* Display Podcasts */}
+        <div ref={listContainerRef} className={`${activeTab == "guest"} ? "" : "space-y-12" `}>
+          {displayedPodcasts.map((podcast, index) => {
+            console.log("podcast", podcast);
+            const videoUrl = podcast?.youtubeId
+              ? `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`
+              : "";
+            const isDescriptionExpanded = expandedDescription[index];
 
-                <div
-                  className="absolute inset-y-0 right-[-40px] flex items-center justify-center text-black font-bold uppercase text-[14px] font-[Roboto]"
-                  style={{
-                    writingMode: "vertical-rl",
-                    transform: "rotate(180deg)",
-                  }}
-                >
-                  {podcast.episode}
-                </div>
-              </div>
+            const isSharing = shareIndex === index;
 
-              <div className="flex-1 text-left w-[600px] flex flex-col px-12 py-12">
-                <p className="text-[14px] font-medium  font-[Roboto] uppercase text-gray-600 mb-2">
-                  {podcast.date}
-                </p>
-                <h5 className="text-[18px] font-bold font-[RFDewiExtended] leading-[1.4] mb-4 truncate">
-                  {podcast.title}
-                </h5>
-                <p className="text-[14px] font-semibold font-[Roboto] uppercase cursor-pointer underline">
-                  Read More
-                </p>
-              </div>
+            return (
+              <>
+                {activeTab == "featured" ? (
+                  <div
+                    key={index}
+                    className="flex items-start gap-6 py-8 border-b border-gray-500"
+                  >
+                    <div className="relative w-[336px]">
+                      {videoUrl !== "" ? (
+                        <div className="relative w-full h-[200px]">
+                          {videoStates[index]?.isPlaying ? (
+                            <iframe
+                              src={videoUrl}
+                              title={`YouTube video ${index + 1}`}
+                              className="object-cover w-full h-full"
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          ) : (
+                            <div
+                              className="relative w-full h-full cursor-pointer"
+                              onClick={() => handlePlayPauseClick(index)}
+                            >
+                              <img
+                                src={podcast.thumbnail}
+                                alt="Video Thumbnail"
+                                className="object-cover w-full h-full"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="relative w-full h-[200px]">
+                          <div className="relative w-full h-full cursor-pointer">
+                            <a
+                              href={podcast?.shareUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <img
+                                src={podcast.thumbnail}
+                                alt="Image Thumbnail"
+                                className="object-cover w-full h-full"
+                              />
+                            </a>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <div className="relative flex items-center justify-center h-[200px]  ">
+                      <div
+                        className="text-black font-bold uppercase text-[14px] font-[Roboto]"
+                        style={{
+                          writingMode: "vertical-rl",
+                          transform: "rotate(180deg)",
+                        }}
+                      >
+                        {podcast.episode || ""}
+                      </div>{" "}
+                    </div>
 
-              <div className="flex flex-col gap-4 text-right">
-                <div className="flex flex-col items-end gap-6">
-                  <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium font-[Roboto]">Watch</p>
-                    <img
-                      src="/mobile-assets/Podcasts/pd-card-icn (1).svg"
-                      className="w-6 h-6"
-                      alt="Watch"
-                    />
+                    <div className="  text-left  w-[600px] flex flex-col gap-2 ">
+                      <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
+                        {podcast.date}
+                      </p>
+                      <h5 className="text-[16px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.06em] ">
+                        {podcast.title}
+                      </h5>
+
+                      {/* Description Section */}
+                      {/* <p className="text-[14px] text-gray-700 mb-4">
+                    {isDescriptionExpanded
+                      ? podcast.description
+                      : podcast.description.substring(0, 100) + '...'}
+                  < /p>
+
+                  <button
+                    onClick={() => handleDescriptionToggle(index)}
+                    className="text-[14px] font-medium text-blue-500"
+                  >
+                    {isDescriptionExpanded ? 'Read Less' : 'Read More'}
+                  </button> */}
+                    </div>
+
+                    {/* Share Section */}
+                    <div className="flex flex-col flex-1 gap-3 pt-8">
+                      <div className="flex flex-col h-full gap-4 text-right ">
+                        <div className="flex flex-col items-end gap-6">
+                          {videoUrl !== "" ? (
+                            <div
+                              className="flex items-center gap-[8px]"
+                              onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
+                            >
+                              <p className="text-[16px] font-[400] font-[Roboto]">
+                                {videoStates[index]?.isPlaying
+                                  ? "Pause"
+                                  : "Watch"}
+                              </p>
+                              {videoStates[index]?.isPlaying ? (
+                                <FaPause className="w-4 h-4" />
+                              ) : (
+                                <FaPlay className="w-4 h-4" />
+                              )}
+                            </div>
+                          ) : (
+                            <div
+                              className="flex gap-2 cursor-pointer"
+                              onClick={() =>
+                                window.open(podcast?.shareUrl, "_blank")
+                              }
+                            >
+                              <p className="text-[16px] font-[400] font-[Roboto]">
+                                Listen
+                              </p>
+                              <img
+                                src="/mobile-assets/Podcasts/VoiceImage.png"
+                                alt="Voice Image"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div className="relative group">
+                        <div className="flex items-center justify-end gap-2 cursor-pointer ">
+                          <p
+                            className="text-left text-[16px] font-[400] font-[Roboto]  "
+                            onClick={toggleShareButtons}
+                          >
+                            Share
+                          </p>
+                          <FiShare2
+                            className="w-4 h-4"
+                            onClick={toggleShareButtons}
+                          />
+                        </div>
+                        {/* Social Media Share Buttons */}
+                        {showShareButtons && (
+                          <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                            <FacebookShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaFacebookF size={16} />
+                              </div>
+                            </FacebookShareButton>
+
+                            <TwitterShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaTwitter size={16} />
+                              </div>
+                            </TwitterShareButton>
+
+                            <LinkedinShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaLinkedinIn size={16} />
+                              </div>
+                            </LinkedinShareButton>
+                          </div>
+                        )}
+                        {/* {showShareButtons &&  (
+                      <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                        
+                        <FacebookShareButton url={podcast.shareUrl}>
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <FaFacebookF size={16} round target="_blank" />
+                          </div>
+                        </FacebookShareButton>
+
+                       
+                        <TwitterShareButton url={shareUrl}>
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <FaTwitter size={16} round target="_blank" />
+                          </div>
+                        </TwitterShareButton>
+
+                    
+                        <LinkedinShareButton url={shareUrl}>
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <FaLinkedinIn size={16} round target="_blank" />
+                          </div>
+                        </LinkedinShareButton>
+
+                        
+                        <a
+                          href={`https://www.instagram.com/?url=${encodeURIComponent(
+                            shareUrl
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center"
+                        >
+                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
+                          <FaInstagram size={16} />
+                          </div>
+                        </a>
+                      </div>
+                    )} */}
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium font-[Roboto]">Listen</p>
-                    <img
-                      src="/mobile-assets/Podcasts/pd-card-icn (2).svg"
-                      className="w-6 h-6"
-                      alt="Listen"
-                    />
+                ) : activeTab == "guest" ? (
+                  <div key={index}>
+                    {videoUrl == "" && (
+                      <div className="flex items-start gap-6 py-8">
+                        <div className="relative w-[336px]">
+                          {videoUrl !== "" ? (
+                            <div className="relative w-full h-[200px]">
+                              {videoStates[index]?.isPlaying ? (
+                                <iframe
+                                  src={videoUrl}
+                                  title={`YouTube video ${index + 1}`}
+                                  className="object-cover w-full h-full"
+                                  frameBorder="0"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                ></iframe>
+                              ) : (
+                                <div
+                                  className="relative w-full h-full cursor-pointer"
+                                  onClick={() => handlePlayPauseClick(index)}
+                                >
+                                  <img
+                                    src={podcast.thumbnail}
+                                    alt="Video Thumbnail"
+                                    className="object-cover w-full h-full"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="relative w-full h-[200px]">
+                              <div className="relative w-full h-full cursor-pointer">
+                                <a
+                                  href={podcast?.shareUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <img
+                                    src={podcast.thumbnail}
+                                    alt="Image Thumbnail"
+                                    className="object-cover w-full h-full"
+                                  />
+                                </a>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <div className="relative flex items-center justify-center h-[200px]  ">
+                          <div
+                            className="text-black font-bold uppercase text-[14px] font-[Roboto]"
+                            style={{
+                              writingMode: "vertical-rl",
+                              transform: "rotate(180deg)",
+                            }}
+                          >
+                            {podcast.episode || ""}
+                          </div>{" "}
+                        </div>
+
+                        <div className="  text-left  w-[600px] flex flex-col gap-2 ">
+                          <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
+                            {podcast.date}
+                          </p>
+                          <h5 className="text-[16px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.06em] ">
+                            {podcast.title}
+                          </h5>
+
+                          {/* Description Section */}
+                          {/* <p className="text-[14px] text-gray-700 mb-4">
+                        {isDescriptionExpanded
+                          ? podcast.description
+                          : podcast.description.substring(0, 100) + '...'}
+                      < /p>
+    
+                      <button
+                        onClick={() => handleDescriptionToggle(index)}
+                        className="text-[14px] font-medium text-blue-500"
+                      >
+                        {isDescriptionExpanded ? 'Read Less' : 'Read More'}
+                      </button> */}
+                        </div>
+
+                        {/* Share Section */}
+                        <div className="flex flex-col flex-1 gap-3 pt-8">
+                          <div className="flex flex-col h-full gap-4 text-right ">
+                            <div className="flex flex-col items-end gap-6">
+                              {videoUrl !== "" ? (
+                                <div
+                                  className="flex items-center gap-[8px]"
+                                  onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
+                                >
+                                  <p className="text-[16px] font-[400] font-[Roboto]">
+                                    {videoStates[index]?.isPlaying
+                                      ? "Pause"
+                                      : "Watch"}
+                                  </p>
+                                  {videoStates[index]?.isPlaying ? (
+                                    <FaPause className="w-4 h-4" />
+                                  ) : (
+                                    <FaPlay className="w-4 h-4" />
+                                  )}
+                                </div>
+                              ) : (
+                                <div
+                                  className="flex gap-2 cursor-pointer"
+                                  onClick={() =>
+                                    window.open(podcast?.shareUrl, "_blank")
+                                  }
+                                >
+                                  <p className="text-[16px] font-[400] font-[Roboto]">
+                                    Listen
+                                  </p>
+                                  <img
+                                    src="/mobile-assets/Podcasts/VoiceImage.png"
+                                    alt="Voice Image"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                          <div className="relative group">
+                            <div className="flex items-center justify-end gap-2 cursor-pointer ">
+                              <p
+                                className="text-left text-[16px] font-[400] font-[Roboto]  "
+                                onClick={toggleShareButtons}
+                              >
+                                Share
+                              </p>
+                              <FiShare2
+                                className="w-4 h-4"
+                                onClick={toggleShareButtons}
+                              />
+                            </div>
+                            {/* Social Media Share Buttons */}
+                            {showShareButtons && (
+                              <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                                <FacebookShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaFacebookF size={16} />
+                                  </div>
+                                </FacebookShareButton>
+
+                                <TwitterShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaTwitter size={16} />
+                                  </div>
+                                </TwitterShareButton>
+
+                                <LinkedinShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaLinkedinIn size={16} />
+                                  </div>
+                                </LinkedinShareButton>
+                              </div>
+                            )}
+                            {/* {showShareButtons &&  (
+                          <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                            
+                            <FacebookShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaFacebookF size={16} round target="_blank" />
+                              </div>
+                            </FacebookShareButton>
+    
+                           
+                            <TwitterShareButton url={shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaTwitter size={16} round target="_blank" />
+                              </div>
+                            </TwitterShareButton>
+    
+                        
+                            <LinkedinShareButton url={shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaLinkedinIn size={16} round target="_blank" />
+                              </div>
+                            </LinkedinShareButton>
+    
+                            
+                            <a
+                              href={`https://www.instagram.com/?url=${encodeURIComponent(
+                                shareUrl
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center"
+                            >
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
+                              <FaInstagram size={16} />
+                              </div>
+                            </a>
+                          </div>
+                        )} */}
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium font-[Roboto]">24</p>
-                    <img
-                      src="/mobile-assets/Podcasts/pd-card-icn (3).svg"
-                      className="w-6 h-6"
-                      alt="Comments"
-                    />
+                ) : activeTab == "water" ? (
+                  <div key={index}>
+                    {videoUrl !== "" && (
+                      <div className="flex items-start gap-6 py-8 border-b border-gray-500">
+                        <div className="relative w-[336px]">
+                          {videoUrl !== "" ? (
+                            <div className="relative w-full h-[200px]">
+                              {videoStates[index]?.isPlaying ? (
+                                <iframe
+                                  src={videoUrl}
+                                  title={`YouTube video ${index + 1}`}
+                                  className="object-cover w-full h-full"
+                                  frameBorder="0"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                ></iframe>
+                              ) : (
+                                <div
+                                  className="relative w-full h-full cursor-pointer"
+                                  onClick={() => handlePlayPauseClick(index)}
+                                >
+                                  <img
+                                    src={podcast.thumbnail}
+                                    alt="Video Thumbnail"
+                                    className="object-cover w-full h-full"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="relative w-full h-[200px]">
+                              <div className="relative w-full h-full cursor-pointer">
+                                <a
+                                  href={podcast?.shareUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <img
+                                    src={podcast.thumbnail}
+                                    alt="Image Thumbnail"
+                                    className="object-cover w-full h-full"
+                                  />
+                                </a>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <div className="relative flex items-center justify-center h-[200px]  ">
+                          <div
+                            className="text-black font-bold uppercase text-[14px] font-[Roboto]"
+                            style={{
+                              writingMode: "vertical-rl",
+                              transform: "rotate(180deg)",
+                            }}
+                          >
+                            {podcast.episode || ""}
+                          </div>{" "}
+                        </div>
+
+                        <div className="  text-left  w-[600px] flex flex-col gap-2 ">
+                          <p className="text-[14px] font-medium font-[Roboto] uppercase text-gray-600 ">
+                            {podcast.date}
+                          </p>
+                          <h5 className="text-[16px] font-[600] font-[RFDewiExtended] leading-[24px] tracking-[0.06em] ">
+                            {podcast.title}
+                          </h5>
+
+                          {/* Description Section */}
+                          {/* <p className="text-[14px] text-gray-700 mb-4">
+                        {isDescriptionExpanded
+                          ? podcast.description
+                          : podcast.description.substring(0, 100) + '...'}
+                      < /p>
+    
+                      <button
+                        onClick={() => handleDescriptionToggle(index)}
+                        className="text-[14px] font-medium text-blue-500"
+                      >
+                        {isDescriptionExpanded ? 'Read Less' : 'Read More'}
+                      </button> */}
+                        </div>
+
+                        {/* Share Section */}
+                        <div className="flex flex-col flex-1 gap-3 pt-8">
+                          <div className="flex flex-col h-full gap-4 text-right ">
+                            <div className="flex flex-col items-end gap-6">
+                              {videoUrl !== "" ? (
+                                <div
+                                  className="flex items-center gap-[8px]"
+                                  onClick={() => handlePlayPauseClick(index)} // Play/Pause toggle on thumbnail click
+                                >
+                                  <p className="text-[16px] font-[400] font-[Roboto]">
+                                    {videoStates[index]?.isPlaying
+                                      ? "Pause"
+                                      : "Watch"}
+                                  </p>
+                                  {videoStates[index]?.isPlaying ? (
+                                    <FaPause className="w-4 h-4" />
+                                  ) : (
+                                    <FaPlay className="w-4 h-4" />
+                                  )}
+                                </div>
+                              ) : (
+                                <div
+                                  className="flex gap-2 cursor-pointer"
+                                  onClick={() =>
+                                    window.open(podcast?.shareUrl, "_blank")
+                                  }
+                                >
+                                  <p className="text-[16px] font-[400] font-[Roboto]">
+                                    Listen
+                                  </p>
+                                  <img
+                                    src="/mobile-assets/Podcasts/VoiceImage.png"
+                                    alt="Voice Image"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                          <div className="relative group">
+                            <div className="flex items-center justify-end gap-2 cursor-pointer ">
+                              <p
+                                className="text-left text-[16px] font-[400] font-[Roboto]  "
+                                onClick={toggleShareButtons}
+                              >
+                                Share
+                              </p>
+                              <FiShare2
+                                className="w-4 h-4"
+                                onClick={toggleShareButtons}
+                              />
+                            </div>
+                            {/* Social Media Share Buttons */}
+                            {showShareButtons && (
+                              <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                                <FacebookShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaFacebookF size={16} />
+                                  </div>
+                                </FacebookShareButton>
+
+                                <TwitterShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaTwitter size={16} />
+                                  </div>
+                                </TwitterShareButton>
+
+                                <LinkedinShareButton url={podcast.shareUrl}>
+                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                    <FaLinkedinIn size={16} />
+                                  </div>
+                                </LinkedinShareButton>
+                              </div>
+                            )}
+                            {/* {showShareButtons &&  (
+                          <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
+                            
+                            <FacebookShareButton url={podcast.shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaFacebookF size={16} round target="_blank" />
+                              </div>
+                            </FacebookShareButton>
+    
+                           
+                            <TwitterShareButton url={shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaTwitter size={16} round target="_blank" />
+                              </div>
+                            </TwitterShareButton>
+    
+                        
+                            <LinkedinShareButton url={shareUrl}>
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                <FaLinkedinIn size={16} round target="_blank" />
+                              </div>
+                            </LinkedinShareButton>
+    
+                            
+                            <a
+                              href={`https://www.instagram.com/?url=${encodeURIComponent(
+                                shareUrl
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center"
+                            >
+                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
+                              <FaInstagram size={16} />
+                              </div>
+                            </a>
+                          </div>
+                        )} */}
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium font-[Roboto]">155</p>
-                    <img
-                      src="/mobile-assets/Podcasts/pd-card-icn (4).svg"
-                      className="w-6 h-6"
-                      alt="Likes"
-                    />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <p className="text-[14px] font-medium font-[Roboto]">Share</p>
-                    <img
-                      src="/mobile-assets/Podcasts/pd-card-icn (5).svg"
-                      className="w-6 h-6"
-                      alt="Share"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+                ) : ""}
+              </>
+            );
+          })}
         </div>
 
-        {/* Pagination Controls */}
-        <div className="flex items-center justify-between mt-8">
+        {/* Pagination */}
+        <div className="flex items-center justify-end gap-6 mt-8">
           <button
             onClick={handlePreviousPage}
             disabled={currentPage === 1}
@@ -372,7 +861,7 @@ function PodcastsEveryDesktop() {
             <span>&lt;</span> Previous
           </button>
           <p className="text-[14px] font-medium font-[Roboto]">
-            {currentPage}/{podcastData.length}{" "}
+            {currentPage}/{totalPages}
           </p>
           <button
             onClick={handleNextPage}
@@ -380,116 +869,14 @@ function PodcastsEveryDesktop() {
             className={`text-[14px] font-medium font-[Roboto] ${
               currentPage === totalPages
                 ? "text-gray-400 cursor-not-allowed"
-                : "hover:text-black "
+                : "hover:text-black"
             }`}
           >
-            Next
-            <span className="ml-1">&gt;</span>
+            Next <span className="ml-1">&gt;</span>
           </button>
         </div>
 
-        <div className="relative pt-[4rem]">
-          <div className="max-w-[300px] flex space-x-3 mx-auto">
-            <button className="swiper-button-prev-3  !w-[30px] !h-[30px]  absolute z-10 !left-[-2%] !top-[40%]  ">
-              <img
-                className="w-[30px] h-[30px] "
-                src={"/mobile-assets/Podcasts/Button - Previous slide.svg"}
-                alt=""
-              />
-            </button>
-            <button className="swiper-button-next-3 rotate-[180deg] !w-[30px] !h-[30px]  absolute z-10 !right-[-2%] !top-[40%] ">
-              <img
-                className="w-[30px] h-[30px]"
-                src={"/mobile-assets/Podcasts/Button - Previous slide.svg"}
-                alt=""
-              />
-            </button>
-          </div>
-          <Swiper
-            slidesPerView={4}
-            navigation={{
-              nextEl: ".swiper-button-next-3",
-              prevEl: ".swiper-button-prev-3",
-            }}
-            modules={[Navigation]}
-            loop={false}
-            className="relative mySwiper "
-          >
-            <SwiperSlide>
-              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
-                <div>
-                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
-                    “Love this podcast!”
-                  </p>
-                </div>
-                <div>
-                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
-                    By SHU12323
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
-                <div>
-                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
-                    “Amazing and life changing podcast”
-                  </p>
-                </div>
-                <div>
-                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
-                    By ChrisAlan83
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
-                <div>
-                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
-                    “Jay has a special energy that draws people towards him, and
-                    a talent at taking people on a journey””
-                  </p>
-                </div>
-                <div>
-                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
-                    By ChrisAlan83
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
-                <div>
-                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
-                    “Thank you Paul Mann for your spiritual wisdom and insight.
-                    ”
-                  </p>
-                </div>
-                <div>
-                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
-                  By PearlJelly9
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="min-h-[196px] p-[24px] flex flex-col justify-between">
-                <div>
-                  <p className="text-[14px] font-[Roboto] leading-[200%] uppercase font-[500]">
-                    “Thank you Paul Mann for your spiritual wisdom and insight.
-                    ”
-                  </p>
-                </div>
-                <div>
-                  <p className="uppercase text-[12px] font-[Roboto] text-[#000] opacity-[0.6]">
-                  By PearlJelly9
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
+        {/* <ReviewSlider sliderData={sliderData} /> */}
 
         <SuggestTopicForm />
       </div>
