@@ -37,7 +37,7 @@ const AdvocacyOfPaulMann = () => {
               />
               <div className="flex flex-row pr-12">
                 <span className="text-[45px] font-[600] leading-[52px] text-[#073B63] font-[RFDewiExtended]">
-                  2,100+
+                  2,300+
                 </span>
               </div>
               <div className="flex flex-row pl-3 border-l-2 border-gray-800">
