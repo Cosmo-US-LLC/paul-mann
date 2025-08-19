@@ -38,7 +38,7 @@ const AdvocacyMob = () => {
           </div>
           <div className="flex items-center justify-between space-x-6">
             <span className="font-[Roboto] text-[27.877px] font-[900] text-[#073B63]">
-              2,100+
+              2,300+
             </span>
             <div className="w-[2px] h-[29px] bg-[#073B63]"></div>
             <p className="text-[12.39px] font-[Roboto] font-[700] text-[#073B63] leading-[114%]">
