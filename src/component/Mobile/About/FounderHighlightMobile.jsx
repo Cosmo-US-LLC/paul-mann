@@ -28,7 +28,7 @@ const FounderHighlightMobile = () => {
           </div>
           <div className="">
             <h2 className="text-[33px] font-[400] font-[RFDewiExtended] uppercase">
-              2.3K+
+             2.5K+
             </h2>
             <p className="text-[14px] font-[500] font-[Roboto] uppercase mt-1">
               Followers Across Social Media
