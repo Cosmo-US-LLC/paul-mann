@@ -1,13 +1,25 @@
 export const podcastData = [
   {
+    date: "09.09.2025",
+    youtubeId: "2OU0BEGOZbk",
+    thumbnail: "/mobile-assets/Podcasts/guest_ep_2.png",
+    episode: "EP – 2",
+    title:
+      "Guest Podcast Episode 2 | The Future of Landscape Architecture is Water-Smart",
+    description: "",
+    shareUrl: "https://www.youtube.com/live/2OU0BEGOZbk",
+    type: "guest",
+  },
+  {
     date: "01.05.2025",
     youtubeId: "w_VGWJvCLMg",
     thumbnail: "/mobile-assets/Podcasts/Thumbnail3.jpg",
     episode: "EP – 3",
     title:
-      "Water Champions Podcast Episode 3 | Never Waste Water Again! Inside Hydraloop’s Innovative Water Recycling System",
+      "Water Champions Podcast Episode 3 | Never Waste Water Again! Inside Hydraloop's Innovative Water Recycling System",
     description: "",
     shareUrl: "https://www.youtube.com/watch?v=w_VGWJvCLMg",
+    type: "water",
   },
   {
     date: "24.04.2025",
@@ -18,6 +30,7 @@ export const podcastData = [
     description: "",
     shareUrl:
       "https://flanigansecologic.transistor.fm/episodes/paul-mann-on-becoming-water-champions",
+    type: "guest",
   },
   {
     date: "08.04.2025",
@@ -29,6 +42,7 @@ export const podcastData = [
     description:
       "In this episode, Noelle Johnson discusses California's rainwater harvesting program and its implications for water sustainability in the state. Learn how this program is helping communities save water, the challenges involved, and its potential for future impact.",
     shareUrl: "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s",
+    type: "water",
   },
   {
     date: "04.04.2025",
@@ -40,6 +54,7 @@ export const podcastData = [
     description:
       "The first episode of the series dives deep into the concept of rainwater harvesting and its role in sustainable water supply. The Rain Brothers explore different methods of rainwater collection and how it can change the way we think about water conservation.",
     shareUrl: "https://www.youtube.com/watch?v=4snXR5Scgvc&t=1s",
+    type: "water",
   },
 ];
 // 4snXR5Scgvc
