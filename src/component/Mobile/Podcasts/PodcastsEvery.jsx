@@ -19,14 +19,14 @@ function PodcastsEvery() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const [showIcons, setShowIcons] = useState(false);
-  const [shareIndex, setShareIndex] = useState(null)
-  const [activeTab, setActiveTab] = useState("featured")
+  const [shareIndex, setShareIndex] = useState(null);
+  const [activeTab, setActiveTab] = useState("featured");
 
   const tabs = [
     { key: "featured", label: "Featured Episodes" },
     { key: "guest", label: "Guest Appearances" },
     { key: "water", label: "Water Champions Podcast" },
-  ]
+  ];
 
   // Define the videoStates state to track play/pause for each video
   const [videoStates, setVideoStates] = useState(
@@ -70,16 +70,16 @@ function PodcastsEvery() {
         </div> */}
 
         {/* Platform Buttons */}
-        <div className="flex flex-col items-center justify-center gap-6 pb-4 pt-7 ">
+        <div className="flex flex-col gap-6 justify-center items-center pt-7 pb-4">
           <div className="flex space-x-4">
             <a
               href="https://www.youtube.com/@IAmPaulMann"
-              className="relative hover:text-black "
+              className="relative hover:text-black"
             >
               <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
                 <img
                   src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
-                  className="w-6 h-6 mr-2"
+                  className="mr-2 w-6 h-6"
                   alt="YouTube"
                 />
                 YouTube
@@ -89,12 +89,12 @@ function PodcastsEvery() {
             <div className="relative tooltip-container">
               <a
                 href="https://open.spotify.com/show/5JGG4GsUy9X3Zv41o0utGN"
-                className="relative hover:text-black "
+                className="relative hover:text-black"
               >
                 <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
                   <img
                     src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
-                    className="w-6 h-6 mr-2"
+                    className="mr-2 w-6 h-6"
                     alt="Spotify"
                   />
                   Spotify
@@ -109,40 +109,40 @@ function PodcastsEvery() {
             <div className="relative tooltip-container">
               <a
                 href="https://podcasts.apple.com/us/podcast/the-water-champions-podcast/id1811129595"
-                className="relative hover:text-black "
+                className="relative hover:text-black"
               >
-              <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
-                <img
-                  src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
-                  className="w-6 h-6 mr-2"
-                  alt="Apple"
-                />
-                Apple
-              </button>
+                <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
+                  <img
+                    src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
+                    className="mr-2 w-6 h-6"
+                    alt="Apple"
+                  />
+                  Apple
+                </button>
               </a>
             </div>
 
             <div className="relative tooltip-container">
-            <a
+              <a
                 href="https://music.amazon.com/podcasts/1085a5b3-0753-4e00-923d-a9817fced663/the-water-champions-podcast"
-                className="relative hover:text-black "
+                className="relative hover:text-black"
               >
-              <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
-                <img
-                  src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
-                  className="w-6 h-6 mr-2"
-                  alt="Amazon"
-                />
-                Amazon
-              </button>
+                <button className="tracking-[0.9px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[130px] h-[44px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
+                  <img
+                    src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
+                    className="mr-2 w-6 h-6"
+                    alt="Amazon"
+                  />
+                  Amazon
+                </button>
               </a>
             </div>
           </div>
         </div>
 
         {/* Categories Buttons */}
-        <div className="flex items-center flex-col justify-center pt-8 pb-12">
-        <div className="flex items-center justify-center border-b border-black max-w-[300px] w-[100%]">
+        <div className="flex flex-col justify-center items-center pt-8 pb-12">
+          <div className="flex items-center justify-center border-b border-black max-w-[300px] w-[100%]">
             <input
               className="w-full px-2 py-1 font-[Roboto] outline-none text-[14px] placeholder:uppercase"
               placeholder="Search"
@@ -155,13 +155,15 @@ function PodcastsEvery() {
               alt="Search Icon"
             />
           </div>
-        <div className="flex flex-wrap w-[90%] max-w-[330px] pt-4 justify-around mx-auto pb-2">
+          <div className="flex flex-wrap w-[90%] max-w-[330px] pt-4 justify-around mx-auto pb-2">
             {tabs.map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
                 className={`text-[14px] font-medium mt-2 font-[Roboto] hover:border-black uppercase border-b-2 border-[#fff] cursor-pointer whitespace-nowrap ${
-                  activeTab === tab.key ? "border-b-2 border-black" : "text-gray-600"
+                  activeTab === tab.key
+                    ? "border-b-2 border-black"
+                    : "text-gray-600"
                 }`}
               >
                 {tab.label}
@@ -170,25 +172,24 @@ function PodcastsEvery() {
           </div>
 
           {/* Search Bar */}
-          
         </div>
 
         {/* Display Podcasts */}
         <div className="space-y-[43px]">
           {paginatedPodcasts
             .filter((podcast) => {
-              if (activeTab === "guest") return podcast.youtubeId === ""
-              if (activeTab === "water") return podcast.youtubeId !== ""
-              return true // "featured" tab shows all
+              if (activeTab === "guest") return podcast.type === "guest";
+              if (activeTab === "water") return podcast.type === "water";
+              return true; // "featured" tab shows all
             })
             .map((podcast, index) => {
               const videoUrl = podcast?.youtubeId
                 ? `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`
-                : ""
+                : "";
 
               return (
                 <div key={index}>
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex gap-4 justify-between items-center">
                     <div className="relative w-[336px]">
                       {videoUrl !== "" ? (
                         <div className="relative w-full h-[100%]]">
@@ -217,7 +218,11 @@ function PodcastsEvery() {
                       ) : (
                         <div className="relative w-full h-[100%]">
                           <div className="relative w-full h-full cursor-pointer">
-                            <a href={podcast?.shareUrl} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={podcast?.shareUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <img
                                 src={podcast.thumbnail || "/placeholder.svg"}
                                 alt="Image Thumbnail"
@@ -229,29 +234,36 @@ function PodcastsEvery() {
                       )}
                     </div>
                     <div
-                      className="flex items-center justify-center "
+                      className="flex justify-center items-center"
                       style={{
                         transform: "rotate(90deg)",
                         transformOrigin: "top",
                         whiteSpace: "nowrap",
                       }}
                     >
-                      <p className="text-[14px] font-[Roboto] font-[400] uppercase">{podcast.episode}</p>
+                      <p className="text-[14px] font-[Roboto] font-[400] uppercase">
+                        {podcast.episode}
+                      </p>
                     </div>
                   </div>
 
                   {/* Title and Date */}
                   <div className="py-4">
-                    <p className="text-[14px] font-[Roboto] font-[400] uppercase leading-[240%]">{podcast.date}</p>
+                    <p className="text-[14px] font-[Roboto] font-[400] uppercase leading-[240%]">
+                      {podcast.date}
+                    </p>
                     <h5 className="text-[16px] font-[Roboto] font-[500] uppercase leading-[142.857%]">
                       {podcast.title}
                     </h5>
                   </div>
 
                   {/* Play/Pause button */}
-                  <div className="flex items-center gap-4">
+                  <div className="flex gap-4 items-center">
                     {videoUrl !== "" ? (
-                      <div className="flex items-center gap-[8px]" onClick={() => handlePlayPauseClick(index)}>
+                      <div
+                        className="flex items-center gap-[8px]"
+                        onClick={() => handlePlayPauseClick(index)}
+                      >
                         <p className="text-[16px] font-[400] font-[Roboto]">
                           {videoStates[index]?.isPlaying ? "Pause" : "Watch"}
                         </p>
@@ -266,33 +278,43 @@ function PodcastsEvery() {
                         className="flex gap-2 cursor-pointer"
                         onClick={() => window.open(podcast?.shareUrl, "_blank")}
                       >
-                        <p className="text-[16px] font-[400] font-[Roboto]">Listen</p>
-                        <img src="/mobile-assets/Podcasts/VoiceImage.png" alt="Voice Image" />
+                        <p className="text-[16px] font-[400] font-[Roboto]">
+                          Listen
+                        </p>
+                        <img
+                          src="/mobile-assets/Podcasts/VoiceImage.png"
+                          alt="Voice Image"
+                        />
                       </div>
                     )}
 
                     {/* Share Button */}
-                    <div className="relative flex items-center gap-1 cursor-pointer" onClick={handleShareClick}>
-                      <p className="text-[16px] font-[Roboto] font-[400] leading-[182.592%] ">SHARE</p>
+                    <div
+                      className="flex relative gap-1 items-center cursor-pointer"
+                      onClick={handleShareClick}
+                    >
+                      <p className="text-[16px] font-[Roboto] font-[400] leading-[182.592%] ">
+                        SHARE
+                      </p>
                       <FiShare2 className="w-4 h-4" />
 
                       {/* Show the icons when 'showIcons' state is true */}
                       {showIcons && (
                         <div className="absolute left-[30px] z-10 flex items-center space-x-2 top-full">
                           <FacebookShareButton url={podcast.shareUrl}>
-                            <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                               <FaFacebookF size={16} round target="_blank" />
                             </div>
                           </FacebookShareButton>
                           <TwitterShareButton url={podcast.shareUrl}>
-                            <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                               <FaTwitter size={16} round target="_blank" />
                             </div>
                           </TwitterShareButton>
 
                           {/* LinkedIn Share Button */}
                           <LinkedinShareButton url={podcast.shareUrl}>
-                            <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                            <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                               <FaLinkedinIn size={16} round target="_blank" />
                             </div>
                           </LinkedinShareButton>
@@ -301,12 +323,12 @@ function PodcastsEvery() {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
         </div>
 
         {/* Pagination */}
-        <div className="flex items-center justify-center pt-8 space-x-4">
+        <div className="flex justify-center items-center pt-8 space-x-4">
           <div className="w-[80px]">
             {currentPage > 1 && (
               <button
@@ -525,7 +547,7 @@ export default PodcastsEvery;
 //             </div>
 //           ))}
 //         </div>
-//      <div className="flex items-center justify-center pt-8 space-x-4">
+//      <div className="flex justify-center items-center pt-8 space-x-4">
 //      <div className="w-[80px]">
 //   {currentPage > 1 && (
 //     <button
