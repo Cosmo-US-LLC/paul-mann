@@ -21,7 +21,6 @@ function PodcastsEveryDesktop() {
   const [currentPage, setCurrentPage] = useState(1);
   const [shareIndex, setShareIndex] = useState(null);
   const itemsPerPage = 10;
-  const totalPages = Math.ceil(podcastData.length / itemsPerPage);
 
   // Play/pause state for each video
   const [videoStates, setVideoStates] = useState(
@@ -39,8 +38,25 @@ function PodcastsEveryDesktop() {
   const listContainerRef = useRef(null);
   // const shareUrl = "https://www.youtube.com/watch?v=d8mw9kot9pk&t=2032s";
 
+  const [activeTab, setActiveTab] = useState("featured");
+
+  // Filter podcasts based on active tab
+  const filteredPodcasts = podcastData.filter((podcast) => {
+    switch (activeTab) {
+      case "featured":
+        return true; // Show all podcasts in featured tab
+      case "guest":
+        return podcast.type === "guest";
+      case "water":
+        return podcast.type === "water";
+      default:
+        return true;
+    }
+  });
+
+  const totalPages = Math.ceil(filteredPodcasts.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const displayedPodcasts = podcastData.slice(
+  const displayedPodcasts = filteredPodcasts.slice(
     startIndex,
     startIndex + itemsPerPage
   );
@@ -93,7 +109,10 @@ function PodcastsEveryDesktop() {
     });
   }, [currentPage]);
 
-  const [activeTab, setActiveTab] = useState("featured");
+  // Reset to first page when tab changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeTab]);
 
   const tabs = [
     { key: "featured", label: "Featured Episodes" },
@@ -111,15 +130,15 @@ function PodcastsEveryDesktop() {
         </div> */}
 
         {/* Platform Buttons */}
-        <div className="flex justify-center gap-8 pt-8 pb-4">
+        <div className="flex gap-8 justify-center pt-8 pb-4">
           <a
             href="https://www.youtube.com/@IAmPaulMann"
-            className="relative hover:text-black "
+            className="relative hover:text-black"
           >
             <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
               <img
                 src="/mobile-assets/Podcasts/pd-btn-icn (4).svg"
-                className="w-6 h-6 mr-2"
+                className="mr-2 w-6 h-6"
                 alt="YouTube"
               />
               YouTube
@@ -129,12 +148,12 @@ function PodcastsEveryDesktop() {
           <div className="relative tooltip-container">
             <a
               href="https://open.spotify.com/show/5JGG4GsUy9X3Zv41o0utGN"
-              className="relative hover:text-black "
+              className="relative hover:text-black"
             >
               <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
                 <img
                   src="/mobile-assets/Podcasts/pd-btn-icn (1).svg"
-                  className="w-6 h-6 mr-2"
+                  className="mr-2 w-6 h-6"
                   alt="Spotify"
                 />
                 Spotify
@@ -146,39 +165,37 @@ function PodcastsEveryDesktop() {
           </div>
 
           <div className="relative tooltip-container">
-          <a
+            <a
               href="https://podcasts.apple.com/us/podcast/the-water-champions-podcast/id1811129595"
-              className="relative hover:text-black "
+              className="relative hover:text-black"
             >
-            <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
-              <img
-                src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
-                className="w-6 h-6 mr-2"
-                alt="Apple"
-              />
-              Apple
-            </button>
+              <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
+                <img
+                  src="/mobile-assets/Podcasts/pd-btn-icn (2).svg"
+                  className="mr-2 w-6 h-6"
+                  alt="Apple"
+                />
+                Apple
+              </button>
             </a>
           </div>
 
           <div className="relative tooltip-container">
-          <a
-              href="https://music.amazon.com/podcasts/1085a5b3-0753-4e00-923d-a9817fced663/the-water-champions-podcast"
-            >
-            <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
-              <img
-                src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
-                className="w-6 h-6 mr-2"
-                alt="Amazon"
-              />
-              Amazon
-            </button>
+            <a href="https://music.amazon.com/podcasts/1085a5b3-0753-4e00-923d-a9817fced663/the-water-champions-podcast">
+              <button className="tracking-[0.5px] flex items-center justify-center text-[14px] font-[500] font-[Roboto] border border-black w-[120px] h-[40px] uppercase hover:bg-[#e5e7eb] hover:text-gray-800">
+                <img
+                  src="/mobile-assets/Podcasts/pd-btn-icn (3).svg"
+                  className="mr-2 w-6 h-6"
+                  alt="Amazon"
+                />
+                Amazon
+              </button>
             </a>
           </div>
         </div>
 
         {/* Categories Buttons */}
-        <div className="flex items-center justify-between pt-8 pb-4">
+        <div className="flex justify-between items-center pt-8 pb-4">
           <div className="flex gap-6">
             {tabs.map((tab) => (
               <button
@@ -236,22 +253,18 @@ function PodcastsEveryDesktop() {
         </div>
 
         {/* Display Podcasts */}
-        <div ref={listContainerRef} className={`${activeTab == "guest"} ? "" : "space-y-12" `}>
+        <div ref={listContainerRef} className="space-y-4">
           {displayedPodcasts.map((podcast, index) => {
-            console.log("podcast", podcast);
             const videoUrl = podcast?.youtubeId
               ? `https://www.youtube.com/embed/${podcast.youtubeId}?autoplay=1&mute=1`
               : "";
-            const isDescriptionExpanded = expandedDescription[index];
-
-            const isSharing = shareIndex === index;
 
             return (
               <>
                 {activeTab == "featured" ? (
                   <div
                     key={index}
-                    className="flex items-start gap-6 py-8 border-b border-gray-500"
+                    className="flex gap-6 items-start py-8 border-b border-gray-500"
                   >
                     <div className="relative w-[336px]">
                       {videoUrl !== "" ? (
@@ -333,8 +346,8 @@ function PodcastsEveryDesktop() {
 
                     {/* Share Section */}
                     <div className="flex flex-col flex-1 gap-3 pt-8">
-                      <div className="flex flex-col h-full gap-4 text-right ">
-                        <div className="flex flex-col items-end gap-6">
+                      <div className="flex flex-col gap-4 h-full text-right">
+                        <div className="flex flex-col gap-6 items-end">
                           {videoUrl !== "" ? (
                             <div
                               className="flex items-center gap-[8px]"
@@ -370,7 +383,7 @@ function PodcastsEveryDesktop() {
                         </div>
                       </div>
                       <div className="relative group">
-                        <div className="flex items-center justify-end gap-2 cursor-pointer ">
+                        <div className="flex gap-2 justify-end items-center cursor-pointer">
                           <p
                             className="text-left text-[16px] font-[400] font-[Roboto]  "
                             onClick={toggleShareButtons}
@@ -386,19 +399,19 @@ function PodcastsEveryDesktop() {
                         {showShareButtons && (
                           <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
                             <FacebookShareButton url={podcast.shareUrl}>
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                 <FaFacebookF size={16} />
                               </div>
                             </FacebookShareButton>
 
                             <TwitterShareButton url={podcast.shareUrl}>
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                 <FaTwitter size={16} />
                               </div>
                             </TwitterShareButton>
 
                             <LinkedinShareButton url={podcast.shareUrl}>
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                 <FaLinkedinIn size={16} />
                               </div>
                             </LinkedinShareButton>
@@ -408,21 +421,21 @@ function PodcastsEveryDesktop() {
                       <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
                         
                         <FacebookShareButton url={podcast.shareUrl}>
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                          <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                             <FaFacebookF size={16} round target="_blank" />
                           </div>
                         </FacebookShareButton>
 
                        
                         <TwitterShareButton url={shareUrl}>
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                          <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                             <FaTwitter size={16} round target="_blank" />
                           </div>
                         </TwitterShareButton>
 
                     
                         <LinkedinShareButton url={shareUrl}>
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                          <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                             <FaLinkedinIn size={16} round target="_blank" />
                           </div>
                         </LinkedinShareButton>
@@ -434,9 +447,9 @@ function PodcastsEveryDesktop() {
                           )}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center"
+                          className="flex justify-center items-center"
                         >
-                          <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
+                          <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500"> 
                           <FaInstagram size={16} />
                           </div>
                         </a>
@@ -447,8 +460,8 @@ function PodcastsEveryDesktop() {
                   </div>
                 ) : activeTab == "guest" ? (
                   <div key={index}>
-                    {videoUrl == "" && (
-                      <div className="flex items-start gap-6 py-8">
+                    {podcast.type === "guest" && (
+                      <div className="flex gap-6 items-start py-8">
                         <div className="relative w-[336px]">
                           {videoUrl !== "" ? (
                             <div className="relative w-full h-[200px]">
@@ -529,8 +542,8 @@ function PodcastsEveryDesktop() {
 
                         {/* Share Section */}
                         <div className="flex flex-col flex-1 gap-3 pt-8">
-                          <div className="flex flex-col h-full gap-4 text-right ">
-                            <div className="flex flex-col items-end gap-6">
+                          <div className="flex flex-col gap-4 h-full text-right">
+                            <div className="flex flex-col gap-6 items-end">
                               {videoUrl !== "" ? (
                                 <div
                                   className="flex items-center gap-[8px]"
@@ -566,7 +579,7 @@ function PodcastsEveryDesktop() {
                             </div>
                           </div>
                           <div className="relative group">
-                            <div className="flex items-center justify-end gap-2 cursor-pointer ">
+                            <div className="flex gap-2 justify-end items-center cursor-pointer">
                               <p
                                 className="text-left text-[16px] font-[400] font-[Roboto]  "
                                 onClick={toggleShareButtons}
@@ -582,19 +595,19 @@ function PodcastsEveryDesktop() {
                             {showShareButtons && (
                               <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
                                 <FacebookShareButton url={podcast.shareUrl}>
-                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                  <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                     <FaFacebookF size={16} />
                                   </div>
                                 </FacebookShareButton>
 
                                 <TwitterShareButton url={podcast.shareUrl}>
-                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                  <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                     <FaTwitter size={16} />
                                   </div>
                                 </TwitterShareButton>
 
                                 <LinkedinShareButton url={podcast.shareUrl}>
-                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                  <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                     <FaLinkedinIn size={16} />
                                   </div>
                                 </LinkedinShareButton>
@@ -604,21 +617,21 @@ function PodcastsEveryDesktop() {
                           <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
                             
                             <FacebookShareButton url={podcast.shareUrl}>
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                 <FaFacebookF size={16} round target="_blank" />
                               </div>
                             </FacebookShareButton>
     
                            
                             <TwitterShareButton url={shareUrl}>
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                 <FaTwitter size={16} round target="_blank" />
                               </div>
                             </TwitterShareButton>
     
                         
                             <LinkedinShareButton url={shareUrl}>
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                 <FaLinkedinIn size={16} round target="_blank" />
                               </div>
                             </LinkedinShareButton>
@@ -630,9 +643,9 @@ function PodcastsEveryDesktop() {
                               )}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center justify-center"
+                              className="flex justify-center items-center"
                             >
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500"> 
                               <FaInstagram size={16} />
                               </div>
                             </a>
@@ -645,8 +658,8 @@ function PodcastsEveryDesktop() {
                   </div>
                 ) : activeTab == "water" ? (
                   <div key={index}>
-                    {videoUrl !== "" && (
-                      <div className="flex items-start gap-6 py-8 border-b border-gray-500">
+                    {podcast.type === "water" && (
+                      <div className="flex gap-6 items-start py-8 border-b border-gray-500">
                         <div className="relative w-[336px]">
                           {videoUrl !== "" ? (
                             <div className="relative w-full h-[200px]">
@@ -727,8 +740,8 @@ function PodcastsEveryDesktop() {
 
                         {/* Share Section */}
                         <div className="flex flex-col flex-1 gap-3 pt-8">
-                          <div className="flex flex-col h-full gap-4 text-right ">
-                            <div className="flex flex-col items-end gap-6">
+                          <div className="flex flex-col gap-4 h-full text-right">
+                            <div className="flex flex-col gap-6 items-end">
                               {videoUrl !== "" ? (
                                 <div
                                   className="flex items-center gap-[8px]"
@@ -764,7 +777,7 @@ function PodcastsEveryDesktop() {
                             </div>
                           </div>
                           <div className="relative group">
-                            <div className="flex items-center justify-end gap-2 cursor-pointer ">
+                            <div className="flex gap-2 justify-end items-center cursor-pointer">
                               <p
                                 className="text-left text-[16px] font-[400] font-[Roboto]  "
                                 onClick={toggleShareButtons}
@@ -780,19 +793,19 @@ function PodcastsEveryDesktop() {
                             {showShareButtons && (
                               <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
                                 <FacebookShareButton url={podcast.shareUrl}>
-                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                  <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                     <FaFacebookF size={16} />
                                   </div>
                                 </FacebookShareButton>
 
                                 <TwitterShareButton url={podcast.shareUrl}>
-                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                  <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                     <FaTwitter size={16} />
                                   </div>
                                 </TwitterShareButton>
 
                                 <LinkedinShareButton url={podcast.shareUrl}>
-                                  <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                                  <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                     <FaLinkedinIn size={16} />
                                   </div>
                                 </LinkedinShareButton>
@@ -802,21 +815,21 @@ function PodcastsEveryDesktop() {
                           <div className="absolute right-[20px] flex gap-3 mt-2 top-full">
                             
                             <FacebookShareButton url={podcast.shareUrl}>
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                 <FaFacebookF size={16} round target="_blank" />
                               </div>
                             </FacebookShareButton>
     
                            
                             <TwitterShareButton url={shareUrl}>
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                 <FaTwitter size={16} round target="_blank" />
                               </div>
                             </TwitterShareButton>
     
                         
                             <LinkedinShareButton url={shareUrl}>
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7">
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500">
                                 <FaLinkedinIn size={16} round target="_blank" />
                               </div>
                             </LinkedinShareButton>
@@ -828,9 +841,9 @@ function PodcastsEveryDesktop() {
                               )}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center justify-center"
+                              className="flex justify-center items-center"
                             >
-                              <div className="flex items-center justify-center border border-gray-500 rounded-full w-7 h-7"> 
+                              <div className="flex justify-center items-center w-7 h-7 rounded-full border border-gray-500"> 
                               <FaInstagram size={16} />
                               </div>
                             </a>
@@ -841,14 +854,16 @@ function PodcastsEveryDesktop() {
                       </div>
                     )}
                   </div>
-                ) : ""}
+                ) : (
+                  ""
+                )}
               </>
             );
           })}
         </div>
 
         {/* Pagination */}
-        <div className="flex items-center justify-end gap-6 mt-8">
+        <div className="flex gap-6 justify-end items-center mt-8">
           <button
             onClick={handlePreviousPage}
             disabled={currentPage === 1}
